@@ -36,11 +36,13 @@ namespace TechSupport.View
             this.lblError = new System.Windows.Forms.Label();
             this.txtError = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(551, 73);
+            this.txtUsername.Location = new System.Drawing.Point(708, 3);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(513, 38);
             this.txtUsername.TabIndex = 1;
@@ -48,7 +50,7 @@ namespace TechSupport.View
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(551, 239);
+            this.txtPassword.Location = new System.Drawing.Point(708, 109);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(513, 38);
@@ -59,7 +61,7 @@ namespace TechSupport.View
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(253, 79);
+            this.lblUsername.Location = new System.Drawing.Point(3, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(145, 32);
             this.lblUsername.TabIndex = 2;
@@ -68,7 +70,7 @@ namespace TechSupport.View
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(253, 245);
+            this.lblPassword.Location = new System.Drawing.Point(3, 106);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(139, 32);
             this.lblPassword.TabIndex = 3;
@@ -77,7 +79,7 @@ namespace TechSupport.View
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(253, 404);
+            this.lblError.Location = new System.Drawing.Point(3, 216);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(77, 32);
             this.lblError.TabIndex = 4;
@@ -85,7 +87,7 @@ namespace TechSupport.View
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(551, 398);
+            this.txtError.Location = new System.Drawing.Point(708, 219);
             this.txtError.Multiline = true;
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(513, 174);
@@ -95,7 +97,7 @@ namespace TechSupport.View
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(551, 669);
+            this.btnLogin.Location = new System.Drawing.Point(708, 525);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(255, 143);
             this.btnLogin.TabIndex = 3;
@@ -103,25 +105,42 @@ namespace TechSupport.View
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.btnLogin, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblPassword, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtPassword, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblError, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtError, 1, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-2, 63);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.07407F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.92593F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 306F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 441F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1410, 964);
+            this.tableLayoutPanel1.TabIndex = 5;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 1028);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtError);
-            this.Controls.Add(this.lblError);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -134,5 +153,6 @@ namespace TechSupport.View
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.TextBox txtError;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
