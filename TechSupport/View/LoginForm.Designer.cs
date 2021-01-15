@@ -44,6 +44,7 @@ namespace TechSupport.View
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(513, 38);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
@@ -53,6 +54,7 @@ namespace TechSupport.View
             this.txtPassword.Size = new System.Drawing.Size(513, 38);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lblUsername
             // 

@@ -21,13 +21,26 @@ namespace TechSupport.View
         {
             if (txtUsername.Text != "Jane" || txtPassword.Text != "test1234")
             {
-
+                txtError.Text = "invalid username/password";
+                txtError.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
+                //this.Hide();
                 MainForm main = new MainForm();
-                main.Show();
+                main.ShowDialog();
+                //this.Close();
             }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            txtError.Text = "";
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtError.Text = "";
         }
     }
 }
