@@ -33,6 +33,9 @@ namespace TechSupport.View
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
+            this.txtError = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -69,11 +72,42 @@ namespace TechSupport.View
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password";
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(254, 454);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(77, 32);
+            this.lblError.TabIndex = 4;
+            this.lblError.Text = "Error";
+            // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(552, 448);
+            this.txtError.Multiline = true;
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(513, 174);
+            this.txtError.TabIndex = 3;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(552, 766);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(255, 143);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 1028);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtError);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
@@ -91,5 +125,8 @@ namespace TechSupport.View
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.TextBox txtError;
+        private System.Windows.Forms.Button btnLogin;
     }
 }

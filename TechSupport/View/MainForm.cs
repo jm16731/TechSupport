@@ -10,23 +10,11 @@ using System.Windows.Forms;
 
 namespace TechSupport.View
 {
-    public partial class LoginForm : Form
+    public partial class MainForm : Form
     {
-        public LoginForm()
+        public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (txtUsername.Text != "Jane" || txtPassword.Text != "test1234")
-            {
-
-            }
-            else
-            {
-
-            }
         }
     }
 }
