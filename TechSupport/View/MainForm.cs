@@ -12,9 +12,28 @@ namespace TechSupport.View
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        LoginForm login;
+
+        public MainForm(LoginForm login)
         {
             InitializeComponent();
+            this.login = login;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lblMainUsername.Text = login.getUsername();
+        }
+
+        private void closeAll(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lnklblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            this.login.Show();
         }
     }
 }

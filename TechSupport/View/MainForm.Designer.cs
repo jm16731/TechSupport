@@ -29,22 +29,55 @@ namespace TechSupport.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblMainUsername = new System.Windows.Forms.Label();
+            this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
+            // 
+            // lblMainUsername
+            // 
+            this.lblMainUsername.AutoSize = true;
+            this.lblMainUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainUsername.Location = new System.Drawing.Point(592, 33);
+            this.lblMainUsername.Name = "lblMainUsername";
+            this.lblMainUsername.Size = new System.Drawing.Size(196, 46);
+            this.lblMainUsername.TabIndex = 0;
+            this.lblMainUsername.Text = "username";
+            this.lblMainUsername.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lnklblLogout
+            // 
+            this.lnklblLogout.AutoSize = true;
+            this.lnklblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnklblLogout.Location = new System.Drawing.Point(610, 141);
+            this.lnklblLogout.Name = "lnklblLogout";
+            this.lnklblLogout.Size = new System.Drawing.Size(143, 46);
+            this.lnklblLogout.TabIndex = 1;
+            this.lnklblLogout.TabStop = true;
+            this.lnklblLogout.Text = "Logout";
+            this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblLogout_LinkClicked);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 895);
+            this.ClientSize = new System.Drawing.Size(1413, 271);
+            this.Controls.Add(this.lnklblLogout);
+            this.Controls.Add(this.lblMainUsername);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeAll);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblMainUsername;
+        private System.Windows.Forms.LinkLabel lnklblLogout;
     }
 }

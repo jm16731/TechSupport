@@ -17,6 +17,11 @@ namespace TechSupport.View
             InitializeComponent();
         }
 
+        public String getUsername()
+        {
+            return txtUsername.Text;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text != "Jane" || txtPassword.Text != "test1234")
@@ -26,9 +31,9 @@ namespace TechSupport.View
             }
             else
             {
-                //this.Hide();
-                MainForm main = new MainForm();
-                main.ShowDialog();
+                this.Hide();
+                MainForm main = new MainForm(this);
+                main.Show();
                 //this.Close();
             }
         }
@@ -41,6 +46,11 @@ namespace TechSupport.View
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             txtError.Text = "";
+        }
+
+        private void closeAll(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
