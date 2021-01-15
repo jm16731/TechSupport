@@ -40,14 +40,14 @@ namespace TechSupport.View
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(552, 123);
+            this.txtUsername.Location = new System.Drawing.Point(551, 73);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(513, 38);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(552, 289);
+            this.txtPassword.Location = new System.Drawing.Point(551, 239);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(513, 38);
@@ -57,7 +57,7 @@ namespace TechSupport.View
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(254, 129);
+            this.lblUsername.Location = new System.Drawing.Point(253, 79);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(145, 32);
             this.lblUsername.TabIndex = 2;
@@ -66,7 +66,7 @@ namespace TechSupport.View
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(254, 295);
+            this.lblPassword.Location = new System.Drawing.Point(253, 245);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(139, 32);
             this.lblPassword.TabIndex = 3;
@@ -75,7 +75,7 @@ namespace TechSupport.View
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(254, 454);
+            this.lblError.Location = new System.Drawing.Point(253, 404);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(77, 32);
             this.lblError.TabIndex = 4;
@@ -83,7 +83,7 @@ namespace TechSupport.View
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(552, 448);
+            this.txtError.Location = new System.Drawing.Point(551, 398);
             this.txtError.Multiline = true;
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(513, 174);
@@ -92,7 +92,7 @@ namespace TechSupport.View
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(552, 766);
+            this.btnLogin.Location = new System.Drawing.Point(551, 669);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(255, 143);
             this.btnLogin.TabIndex = 5;
@@ -112,7 +112,10 @@ namespace TechSupport.View
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

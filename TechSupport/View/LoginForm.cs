@@ -25,7 +25,8 @@ namespace TechSupport.View
             }
             else
             {
-
+                MainForm main = new MainForm();
+                main.Show();
             }
         }
     }
