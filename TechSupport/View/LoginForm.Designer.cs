@@ -43,7 +43,7 @@ namespace TechSupport.View
             this.txtUsername.Location = new System.Drawing.Point(551, 73);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(513, 38);
-            this.txtUsername.TabIndex = 0;
+            this.txtUsername.TabIndex = 1;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
@@ -52,7 +52,7 @@ namespace TechSupport.View
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(513, 38);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -89,7 +89,8 @@ namespace TechSupport.View
             this.txtError.Multiline = true;
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(513, 174);
-            this.txtError.TabIndex = 3;
+            this.txtError.TabIndex = 0;
+            this.txtError.TabStop = false;
             // 
             // btnLogin
             // 
@@ -97,7 +98,7 @@ namespace TechSupport.View
             this.btnLogin.Location = new System.Drawing.Point(551, 669);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(255, 143);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
