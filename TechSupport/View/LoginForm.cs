@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Partial class for defining a LoginForm for a tech supporter login to the main TechSupport
+    /// </summary>
     public partial class LoginForm : Form
     {
         /// <summary>
