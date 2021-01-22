@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TechSupport.Controller;
 
 namespace TechSupport.View
 {
@@ -9,6 +10,7 @@ namespace TechSupport.View
     public partial class MainForm : Form
     {
         LoginForm login;
+        private readonly IncidentController controller;
 
         /// <summary>
         /// Initializes a MainForm with a LoginForm
@@ -18,11 +20,19 @@ namespace TechSupport.View
         {
             InitializeComponent();
             this.login = login;
+            this.controller = new IncidentController();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             lblMainUsername.Text = login.getUsername();
+            this.RefreshDataGrid();
+        }
+
+        private void RefreshDataGrid()
+        {
+            this.gridViewIncidentViewer.DataSource = null;
+            this.gridViewIncidentViewer.DataSource = this.controller.getIncidents();
         }
 
         private void closeAll(object sender, FormClosedEventArgs e)
@@ -34,6 +44,16 @@ namespace TechSupport.View
         {
             this.Hide();
             this.login.Show();
+        }
+
+        private void addBtnIncident_click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBtnIncident_click(object sender, EventArgs e)
+        {
+
         }
     }
 }

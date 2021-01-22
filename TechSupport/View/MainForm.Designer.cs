@@ -29,12 +29,15 @@ namespace TechSupport.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.gridViewIncidentViewer = new System.Windows.Forms.DataGridView();
             this.btnAddIncident = new System.Windows.Forms.Button();
             this.btnSearchIncident = new System.Windows.Forms.Button();
+            this.incidentControllerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewIncidentViewer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentControllerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMainUsername
@@ -85,6 +88,7 @@ namespace TechSupport.View
             this.btnAddIncident.TabIndex = 3;
             this.btnAddIncident.Text = "Add Incident";
             this.btnAddIncident.UseVisualStyleBackColor = true;
+            this.btnAddIncident.Click += new System.EventHandler(this.addBtnIncident_click);
             // 
             // btnSearchIncident
             // 
@@ -95,6 +99,11 @@ namespace TechSupport.View
             this.btnSearchIncident.TabIndex = 4;
             this.btnSearchIncident.Text = "Search Incident";
             this.btnSearchIncident.UseVisualStyleBackColor = true;
+            this.btnSearchIncident.Click += new System.EventHandler(this.searchBtnIncident_click);
+            // 
+            // incidentControllerBindingSource
+            // 
+            this.incidentControllerBindingSource.DataSource = typeof(TechSupport.Controller.IncidentController);
             // 
             // MainForm
             // 
@@ -114,6 +123,7 @@ namespace TechSupport.View
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeAll);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewIncidentViewer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentControllerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +136,6 @@ namespace TechSupport.View
         private System.Windows.Forms.DataGridView gridViewIncidentViewer;
         private System.Windows.Forms.Button btnAddIncident;
         private System.Windows.Forms.Button btnSearchIncident;
+        private System.Windows.Forms.BindingSource incidentControllerBindingSource;
     }
 }
