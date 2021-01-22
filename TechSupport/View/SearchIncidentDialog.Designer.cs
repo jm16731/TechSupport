@@ -32,7 +32,7 @@ namespace TechSupport.View
             this.gridViewSearchIncident = new System.Windows.Forms.DataGridView();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearchIncident)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,22 +67,24 @@ namespace TechSupport.View
             this.txtCustomerID.Size = new System.Drawing.Size(342, 53);
             this.txtCustomerID.TabIndex = 2;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.Location = new System.Drawing.Point(597, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(321, 90);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(597, 168);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(321, 90);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.Search_Click);
             // 
             // SearchIncidentDialog
             // 
-            this.AcceptButton = this.button1;
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 1002);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.lblCustomerID);
             this.Controls.Add(this.gridViewSearchIncident);
@@ -102,6 +104,6 @@ namespace TechSupport.View
         private System.Windows.Forms.DataGridView gridViewSearchIncident;
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
