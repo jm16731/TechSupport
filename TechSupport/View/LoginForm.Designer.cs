@@ -129,6 +129,7 @@ namespace TechSupport.View
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 1028);

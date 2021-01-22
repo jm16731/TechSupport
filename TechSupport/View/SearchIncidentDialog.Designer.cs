@@ -32,6 +32,7 @@ namespace TechSupport.View
             this.gridViewSearchIncident = new System.Windows.Forms.DataGridView();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearchIncident)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@ namespace TechSupport.View
             // 
             this.lblCustomerID.AutoSize = true;
             this.lblCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomerID.Location = new System.Drawing.Point(435, 129);
+            this.lblCustomerID.Location = new System.Drawing.Point(435, 73);
             this.lblCustomerID.Name = "lblCustomerID";
             this.lblCustomerID.Size = new System.Drawing.Size(243, 46);
             this.lblCustomerID.TabIndex = 1;
@@ -61,16 +62,27 @@ namespace TechSupport.View
             // txtCustomerID
             // 
             this.txtCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.Location = new System.Drawing.Point(869, 129);
+            this.txtCustomerID.Location = new System.Drawing.Point(868, 73);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(342, 53);
             this.txtCustomerID.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(597, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(321, 90);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // SearchIncidentDialog
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 1002);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.lblCustomerID);
             this.Controls.Add(this.gridViewSearchIncident);
@@ -90,5 +102,6 @@ namespace TechSupport.View
         private System.Windows.Forms.DataGridView gridViewSearchIncident;
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.Button button1;
     }
 }
