@@ -18,7 +18,7 @@ namespace TechSupport.DAL
         /// <summary>
         /// Gets the List of Incidents
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of Incidents</returns>
         public List<Incident> getIncidents()
         {
             return _incidents;
@@ -27,7 +27,7 @@ namespace TechSupport.DAL
         /// <summary>
         /// Adds an Incident to the List of Incidents
         /// </summary>
-        /// <param name="incident"></param>
+        /// <param name="incident">The Incident to add to the List of Incidents</param>
         public void Add(Incident incident)
         {
             if (incident == null)

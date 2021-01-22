@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -24,18 +21,18 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
-        /// Gets the List of Incidents
+        /// Gets the incidents in the database as a List of Incidents
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The List Of Incidents</returns>
         public List<Incident> getIncidents()
         {
             return this.database.getIncidents();
         }
 
         /// <summary>
-        /// 
+        /// Adds an Incident to the database
         /// </summary>
-        /// <param name="incident"></param>
+        /// <param name="incident">The incident to add to the database</param>
         public void Add(Incident incident)
         {
             if (incident == null)
