@@ -9,7 +9,7 @@ namespace TechSupport.View
     /// </summary>
     public partial class MainForm : Form
     {
-        LoginForm login;
+        readonly LoginForm login;
         private readonly IncidentController controller;
 
         /// <summary>
@@ -46,12 +46,18 @@ namespace TechSupport.View
             this.login.Show();
         }
 
-        private void addBtnIncident_click(object sender, EventArgs e)
+        private void AddBtnIncident_click(object sender, EventArgs e)
         {
+            Form AddIncidentDialog = new AddIncidentDialog();
+            DialogResult result = AddIncidentDialog.ShowDialog();
 
+            if (result == DialogResult.OK)
+            {
+                this.RefreshDataGrid();
+            }
         }
 
-        private void searchBtnIncident_click(object sender, EventArgs e)
+        private void SearchBtnIncident_click(object sender, EventArgs e)
         {
 
         }

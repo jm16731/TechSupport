@@ -88,7 +88,7 @@ namespace TechSupport.View
             this.btnAddIncident.TabIndex = 3;
             this.btnAddIncident.Text = "Add Incident";
             this.btnAddIncident.UseVisualStyleBackColor = true;
-            this.btnAddIncident.Click += new System.EventHandler(this.addBtnIncident_click);
+            this.btnAddIncident.Click += new System.EventHandler(this.AddBtnIncident_click);
             // 
             // btnSearchIncident
             // 
@@ -99,7 +99,7 @@ namespace TechSupport.View
             this.btnSearchIncident.TabIndex = 4;
             this.btnSearchIncident.Text = "Search Incident";
             this.btnSearchIncident.UseVisualStyleBackColor = true;
-            this.btnSearchIncident.Click += new System.EventHandler(this.searchBtnIncident_click);
+            this.btnSearchIncident.Click += new System.EventHandler(this.SearchBtnIncident_click);
             // 
             // incidentControllerBindingSource
             // 
