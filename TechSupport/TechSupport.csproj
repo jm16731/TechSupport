@@ -96,7 +96,6 @@
     <EmbeddedResource Include="View\SearchIncidentDialog.resx">
       <DependentUpon>SearchIncidentDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\TechSupport.Controller.IncidentController.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

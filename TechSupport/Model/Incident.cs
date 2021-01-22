@@ -17,7 +17,8 @@ namespace TechSupport.Model
         /// <param name="title">Meaningful name for the Incident</param>
         /// <param name="description">Explanation of the Incident</param>
         /// <param name="customerID">ID the of the customer whose is the Incident</param>
-        public Incident(string title, string description, int customerID) {
+        public Incident(string title, string description, int customerID)
+        {
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))
             {
                 throw new ArgumentException("title " + "description", "Title and Description cannot be null or empty");
