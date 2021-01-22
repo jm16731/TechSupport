@@ -1,7 +1,7 @@
 ﻿
 namespace TechSupport.View
 {
-    partial class AddIncidentForm
+    partial class AddIncidentDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,12 @@ namespace TechSupport.View
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtIncidentCustomerID = new System.Windows.Forms.TextBox();
+            this.txtIncidentDescription = new System.Windows.Forms.TextBox();
             this.lblIncidentName = new System.Windows.Forms.Label();
             this.lblIncidentDescription = new System.Windows.Forms.Label();
             this.lblIncidentCustomerID = new System.Windows.Forms.Label();
             this.txtIncidentName = new System.Windows.Forms.TextBox();
-            this.txtIncidentDescription = new System.Windows.Forms.TextBox();
-            this.txtIncidentCustomerID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@ namespace TechSupport.View
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.add_click);
+            this.btnAdd.Click += new System.EventHandler(this.Add_click);
             // 
             // btnCancel
             // 
@@ -61,7 +61,7 @@ namespace TechSupport.View
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.cancel_click);
+            this.btnCancel.Click += new System.EventHandler(this.Cancel_click);
             // 
             // tableLayoutPanel1
             // 
@@ -85,6 +85,23 @@ namespace TechSupport.View
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 307F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1466, 1040);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // txtIncidentCustomerID
+            // 
+            this.txtIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncidentCustomerID.Location = new System.Drawing.Point(736, 538);
+            this.txtIncidentCustomerID.Name = "txtIncidentCustomerID";
+            this.txtIncidentCustomerID.Size = new System.Drawing.Size(516, 53);
+            this.txtIncidentCustomerID.TabIndex = 3;
+            // 
+            // txtIncidentDescription
+            // 
+            this.txtIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncidentDescription.Location = new System.Drawing.Point(736, 151);
+            this.txtIncidentDescription.Multiline = true;
+            this.txtIncidentDescription.Name = "txtIncidentDescription";
+            this.txtIncidentDescription.Size = new System.Drawing.Size(727, 283);
+            this.txtIncidentDescription.TabIndex = 2;
             // 
             // lblIncidentName
             // 
@@ -124,24 +141,7 @@ namespace TechSupport.View
             this.txtIncidentName.Size = new System.Drawing.Size(516, 53);
             this.txtIncidentName.TabIndex = 1;
             // 
-            // txtIncidentDescription
-            // 
-            this.txtIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentDescription.Location = new System.Drawing.Point(736, 151);
-            this.txtIncidentDescription.Multiline = true;
-            this.txtIncidentDescription.Name = "txtIncidentDescription";
-            this.txtIncidentDescription.Size = new System.Drawing.Size(727, 283);
-            this.txtIncidentDescription.TabIndex = 2;
-            // 
-            // txtIncidentCustomerID
-            // 
-            this.txtIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentCustomerID.Location = new System.Drawing.Point(736, 538);
-            this.txtIncidentCustomerID.Name = "txtIncidentCustomerID";
-            this.txtIncidentCustomerID.Size = new System.Drawing.Size(516, 53);
-            this.txtIncidentCustomerID.TabIndex = 3;
-            // 
-            // AddIncidentForm
+            // AddIncidentDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,7 +149,7 @@ namespace TechSupport.View
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AddIncidentForm";
+            this.Name = "AddIncidentDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Incident";
             this.tableLayoutPanel1.ResumeLayout(false);
