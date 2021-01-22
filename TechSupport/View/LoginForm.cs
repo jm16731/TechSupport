@@ -5,11 +5,18 @@ namespace TechSupport.View
 {
     public partial class LoginForm : Form
     {
+        /// <summary>
+        /// Initializes a LoginForm
+        /// </summary>
         public LoginForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Returns the Username as a String
+        /// </summary>
+        /// <returns></returns>
         public String getUsername()
         {
             return txtUsername.Text;

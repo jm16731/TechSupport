@@ -7,6 +7,10 @@ namespace TechSupport.View
     {
         LoginForm login;
 
+        /// <summary>
+        /// Initializes a MainForm with a LoginForm
+        /// </summary>
+        /// <param name="login"></param>
         public MainForm(LoginForm login)
         {
             InitializeComponent();
