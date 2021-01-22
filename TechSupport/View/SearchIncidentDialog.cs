@@ -36,7 +36,7 @@ namespace TechSupport.View
         private void RefreshDataGrid(int customerID)
         {
             this.gridViewSearchIncident.DataSource = null;
-            this.gridViewSearchIncident.DataSource = this.controller.getIncidents();
+            this.gridViewSearchIncident.DataSource = this.controller.getIncidents(customerID);
         }
     }
 }

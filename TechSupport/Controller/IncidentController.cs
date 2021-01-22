@@ -30,6 +30,16 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Gets the incidents of this customer ID in the database as a List of Incidents
+        /// </summary>
+        /// <param name="customerID">Customer ID whose incidents are desired</param>
+        /// <returns>The List of Incidents for this customer ID</returns>
+        public List<Incident> getIncidents(int customerID)
+        {
+            return this.database.getIncidents(customerID);
+        }
+
+        /// <summary>
         /// Adds an Incident to the database
         /// </summary>
         /// <param name="incident">The incident to add to the database</param>

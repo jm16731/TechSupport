@@ -25,6 +25,24 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
+        /// Gets a List of Incidents that only involve the given customer ID
+        /// </summary>
+        /// <param name="customerID">The customer ID of the customer's whose Incidents you wish to return</param>
+        /// <returns>List of Incidents only for the given customer ID</returns>
+        public List<Incident> getIncidents(int customerID)
+        {
+            List<Incident> incidentsByCusomterID = new List<Incident>();
+            foreach (Incident incident in _incidents)
+            {
+                if (incident.CustomerID == customerID)
+                {
+                    incidentsByCusomterID.Add(incident);
+                }
+            }
+            return incidentsByCusomterID;
+        }
+
+        /// <summary>
         /// Adds an Incident to the List of Incidents
         /// </summary>
         /// <param name="incident">The Incident to add to the List of Incidents</param>
