@@ -48,7 +48,7 @@ namespace TechSupport.View
             // 
             this.lnklblLogout.AutoSize = true;
             this.lnklblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnklblLogout.Location = new System.Drawing.Point(610, 141);
+            this.lnklblLogout.Location = new System.Drawing.Point(592, 839);
             this.lnklblLogout.Name = "lnklblLogout";
             this.lnklblLogout.Size = new System.Drawing.Size(143, 46);
             this.lnklblLogout.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace TechSupport.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1413, 271);
+            this.ClientSize = new System.Drawing.Size(1413, 926);
             this.Controls.Add(this.lnklblLogout);
             this.Controls.Add(this.lblMainUsername);
             this.MaximizeBox = false;
