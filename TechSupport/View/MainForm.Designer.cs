@@ -67,8 +67,7 @@ namespace TechSupport.View
             // 
             this.gridViewIncidentViewer.AllowUserToAddRows = false;
             this.gridViewIncidentViewer.AllowUserToDeleteRows = false;
-            this.gridViewIncidentViewer.AllowUserToResizeColumns = false;
-            this.gridViewIncidentViewer.AllowUserToResizeRows = false;
+            this.gridViewIncidentViewer.AllowUserToOrderColumns = true;
             this.gridViewIncidentViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewIncidentViewer.Location = new System.Drawing.Point(12, 349);
             this.gridViewIncidentViewer.Name = "gridViewIncidentViewer";
