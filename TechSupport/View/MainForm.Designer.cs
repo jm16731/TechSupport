@@ -98,7 +98,6 @@ namespace TechSupport.View
             this.btnSearchIncident.TabIndex = 4;
             this.btnSearchIncident.Text = "Search Incident";
             this.btnSearchIncident.UseVisualStyleBackColor = true;
-            this.btnSearchIncident.Click += new System.EventHandler(this.SearchBtnIncident_click);
             // 
             // incidentControllerBindingSource
             // 

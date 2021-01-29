@@ -57,6 +57,12 @@
     <Compile Include="UserControls\AddIncident.Designer.cs">
       <DependentUpon>AddIncident.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\LoadAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LoadAll.Designer.cs">
+      <DependentUpon>LoadAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\AddIncident.resx">
       <DependentUpon>AddIncident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LoadAll.resx">
+      <DependentUpon>LoadAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
