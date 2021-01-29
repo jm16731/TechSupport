@@ -33,7 +33,9 @@ namespace TechSupport.View
             this.tabAddIncident = new System.Windows.Forms.TabPage();
             this.tabLoadAll = new System.Windows.Forms.TabPage();
             this.tabSearchIncident = new System.Windows.Forms.TabPage();
+            this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
             this.tabControl1.SuspendLayout();
+            this.tabAddIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -50,6 +52,7 @@ namespace TechSupport.View
             // 
             // tabAddIncident
             // 
+            this.tabAddIncident.Controls.Add(this.usrCntrlAddIncident);
             this.tabAddIncident.Location = new System.Drawing.Point(10, 48);
             this.tabAddIncident.Name = "tabAddIncident";
             this.tabAddIncident.Padding = new System.Windows.Forms.Padding(3);
@@ -77,6 +80,14 @@ namespace TechSupport.View
             this.tabSearchIncident.Text = "Search Incidents";
             this.tabSearchIncident.UseVisualStyleBackColor = true;
             // 
+            // usrCntrlAddIncident
+            // 
+            this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-1, 6);
+            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
+            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1414, 607);
+            this.usrCntrlAddIncident.TabIndex = 0;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -90,6 +101,7 @@ namespace TechSupport.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.tabControl1.ResumeLayout(false);
+            this.tabAddIncident.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +112,6 @@ namespace TechSupport.View
         private System.Windows.Forms.TabPage tabAddIncident;
         private System.Windows.Forms.TabPage tabLoadAll;
         private System.Windows.Forms.TabPage tabSearchIncident;
+        private UserControls.AddIncident usrCntrlAddIncident;
     }
 }
