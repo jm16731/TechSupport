@@ -48,13 +48,13 @@ namespace TechSupport.View
 
         private void AddBtnIncident_click(object sender, EventArgs e)
         {
-            Form AddIncidentDialog = new AddIncidentDialog();
-            DialogResult result = AddIncidentDialog.ShowDialog();
+            //Form AddIncidentDialog = new AddIncidentDialog();
+            //DialogResult result = AddIncidentDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
-            {
-                this.RefreshDataGrid();
-            }
+           // if (result == DialogResult.OK)
+            //{
+           //     this.RefreshDataGrid();
+            //}
         }
 
     }

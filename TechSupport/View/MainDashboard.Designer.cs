@@ -33,11 +33,13 @@ namespace TechSupport.View
             this.tabAddIncident = new System.Windows.Forms.TabPage();
             this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
             this.tabLoadAll = new System.Windows.Forms.TabPage();
+            this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
             this.tabSearchIncident = new System.Windows.Forms.TabPage();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
+            this.tabLoadAll.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -51,6 +53,7 @@ namespace TechSupport.View
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1436, 725);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabSelectedIndexChanged);
             // 
             // tabAddIncident
             // 
@@ -75,6 +78,7 @@ namespace TechSupport.View
             // 
             // tabLoadAll
             // 
+            this.tabLoadAll.Controls.Add(this.usrCntrlLoadAll);
             this.tabLoadAll.Location = new System.Drawing.Point(10, 48);
             this.tabLoadAll.Name = "tabLoadAll";
             this.tabLoadAll.Padding = new System.Windows.Forms.Padding(3);
@@ -82,6 +86,15 @@ namespace TechSupport.View
             this.tabLoadAll.TabIndex = 1;
             this.tabLoadAll.Text = "Load All";
             this.tabLoadAll.UseVisualStyleBackColor = true;
+            // 
+            // usrCntrlLoadAll
+            // 
+            this.usrCntrlLoadAll.AutoSize = true;
+            this.usrCntrlLoadAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrCntrlLoadAll.Location = new System.Drawing.Point(0, 0);
+            this.usrCntrlLoadAll.Name = "usrCntrlLoadAll";
+            this.usrCntrlLoadAll.Size = new System.Drawing.Size(1395, 568);
+            this.usrCntrlLoadAll.TabIndex = 0;
             // 
             // tabSearchIncident
             // 
@@ -134,6 +147,8 @@ namespace TechSupport.View
             this.tabControl1.ResumeLayout(false);
             this.tabAddIncident.ResumeLayout(false);
             this.tabAddIncident.PerformLayout();
+            this.tabLoadAll.ResumeLayout(false);
+            this.tabLoadAll.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +163,6 @@ namespace TechSupport.View
         private System.Windows.Forms.TabPage tabSearchIncident;
         private System.Windows.Forms.Label lblMainUsername;
         private System.Windows.Forms.LinkLabel lnklblLogout;
+        private UserControls.LoadAll usrCntrlLoadAll;
     }
 }

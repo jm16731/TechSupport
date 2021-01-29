@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using TechSupport.Controller;
 
 namespace TechSupport.View
 {
@@ -28,6 +27,11 @@ namespace TechSupport.View
         {
             this.Hide();
             this.login.Show();
+        }
+
+        private void tabSelectedIndexChanged(object sender, EventArgs e)
+        {
+            usrCntrlLoadAll.RefreshDataGrid();
         }
     }
 }

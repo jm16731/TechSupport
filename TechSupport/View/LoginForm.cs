@@ -35,7 +35,7 @@ namespace TechSupport.View
             else
             {
                 this.Hide();
-                MainDashboard main = new MainDashboard();
+                MainDashboard main = new MainDashboard(this);
                 main.Show();
                 //this.Close();
             }
