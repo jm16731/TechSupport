@@ -36,8 +36,8 @@ namespace TechSupport.UserControls
             this.lblIncidentCustomerID = new System.Windows.Forms.Label();
             this.txtIncidentDescription = new System.Windows.Forms.TextBox();
             this.txtIncidentCustomerID = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,12 +59,12 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.79379F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.20621F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 228F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1124, 906);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.73984F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.26016F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1124, 627);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblIncidentName
@@ -89,7 +89,7 @@ namespace TechSupport.UserControls
             // 
             this.lblIncidentDescription.AutoSize = true;
             this.lblIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncidentDescription.Location = new System.Drawing.Point(3, 180);
+            this.lblIncidentDescription.Location = new System.Drawing.Point(3, 110);
             this.lblIncidentDescription.Name = "lblIncidentDescription";
             this.lblIncidentDescription.Size = new System.Drawing.Size(221, 46);
             this.lblIncidentDescription.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace TechSupport.UserControls
             // 
             this.lblIncidentCustomerID.AutoSize = true;
             this.lblIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncidentCustomerID.Location = new System.Drawing.Point(3, 421);
+            this.lblIncidentCustomerID.Location = new System.Drawing.Point(3, 327);
             this.lblIncidentCustomerID.Name = "lblIncidentCustomerID";
             this.lblIncidentCustomerID.Size = new System.Drawing.Size(243, 46);
             this.lblIncidentCustomerID.TabIndex = 6;
@@ -108,35 +108,24 @@ namespace TechSupport.UserControls
             // txtIncidentDescription
             // 
             this.txtIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentDescription.Location = new System.Drawing.Point(565, 183);
+            this.txtIncidentDescription.Location = new System.Drawing.Point(565, 113);
             this.txtIncidentDescription.Multiline = true;
             this.txtIncidentDescription.Name = "txtIncidentDescription";
-            this.txtIncidentDescription.Size = new System.Drawing.Size(556, 218);
+            this.txtIncidentDescription.Size = new System.Drawing.Size(556, 152);
             this.txtIncidentDescription.TabIndex = 7;
             // 
             // txtIncidentCustomerID
             // 
             this.txtIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentCustomerID.Location = new System.Drawing.Point(565, 424);
+            this.txtIncidentCustomerID.Location = new System.Drawing.Point(565, 330);
             this.txtIncidentCustomerID.Name = "txtIncidentCustomerID";
             this.txtIncidentCustomerID.Size = new System.Drawing.Size(516, 53);
             this.txtIncidentCustomerID.TabIndex = 8;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(3, 680);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(344, 118);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.Add_click);
-            // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(565, 680);
+            this.btnClear.Location = new System.Drawing.Point(565, 469);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(344, 118);
             this.btnClear.TabIndex = 10;
@@ -144,13 +133,24 @@ namespace TechSupport.UserControls
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.Clear_click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(3, 469);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(344, 118);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.Add_click);
+            // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(3, 614);
+            this.lblMessage.Location = new System.Drawing.Point(3, 424);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 46);
+            this.lblMessage.Size = new System.Drawing.Size(0, 42);
             this.lblMessage.TabIndex = 11;
             // 
             // AddIncident
@@ -159,7 +159,7 @@ namespace TechSupport.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddIncident";
-            this.Size = new System.Drawing.Size(1127, 909);
+            this.Size = new System.Drawing.Size(1127, 630);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
