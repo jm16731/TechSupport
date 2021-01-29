@@ -16,5 +16,10 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        private void close_All(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(1);
+        }
     }
 }

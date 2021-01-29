@@ -83,10 +83,10 @@ namespace TechSupport.View
             // usrCntrlAddIncident
             // 
             this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-1, 6);
+            this.usrCntrlAddIncident.Location = new System.Drawing.Point(1, -2);
             this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
             this.usrCntrlAddIncident.Size = new System.Drawing.Size(1414, 607);
-            this.usrCntrlAddIncident.TabIndex = 0;
+            this.usrCntrlAddIncident.TabIndex = 2;
             // 
             // MainDashboard
             // 
@@ -100,6 +100,7 @@ namespace TechSupport.View
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.close_All);
             this.tabControl1.ResumeLayout(false);
             this.tabAddIncident.ResumeLayout(false);
             this.ResumeLayout(false);
