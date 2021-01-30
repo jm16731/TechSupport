@@ -33,13 +33,17 @@ namespace TechSupport.View
             this.tabAddIncident = new System.Windows.Forms.TabPage();
             this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
             this.tabLoadAll = new System.Windows.Forms.TabPage();
-            this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
             this.tabSearchIncident = new System.Windows.Forms.TabPage();
+            this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
+            this.loadAll1 = new TechSupport.UserControls.LoadAll();
+            this.searchIncident1 = new TechSupport.UserControls.SearchIncident();
+            this.usrCntrlSearchIncident = new TechSupport.UserControls.SearchIncident();
             this.tabControl1.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabLoadAll.SuspendLayout();
+            this.tabSearchIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,7 +82,7 @@ namespace TechSupport.View
             // 
             // tabLoadAll
             // 
-            this.tabLoadAll.Controls.Add(this.usrCntrlLoadAll);
+            this.tabLoadAll.Controls.Add(this.loadAll1);
             this.tabLoadAll.Location = new System.Drawing.Point(10, 48);
             this.tabLoadAll.Name = "tabLoadAll";
             this.tabLoadAll.Padding = new System.Windows.Forms.Padding(3);
@@ -86,6 +90,17 @@ namespace TechSupport.View
             this.tabLoadAll.TabIndex = 1;
             this.tabLoadAll.Text = "Load All";
             this.tabLoadAll.UseVisualStyleBackColor = true;
+            // 
+            // tabSearchIncident
+            // 
+            this.tabSearchIncident.Controls.Add(this.usrCntrlSearchIncident);
+            this.tabSearchIncident.Controls.Add(this.searchIncident1);
+            this.tabSearchIncident.Location = new System.Drawing.Point(10, 48);
+            this.tabSearchIncident.Name = "tabSearchIncident";
+            this.tabSearchIncident.Size = new System.Drawing.Size(1416, 667);
+            this.tabSearchIncident.TabIndex = 2;
+            this.tabSearchIncident.Text = "Search Incidents";
+            this.tabSearchIncident.UseVisualStyleBackColor = true;
             // 
             // usrCntrlLoadAll
             // 
@@ -95,15 +110,6 @@ namespace TechSupport.View
             this.usrCntrlLoadAll.Name = "usrCntrlLoadAll";
             this.usrCntrlLoadAll.Size = new System.Drawing.Size(1395, 568);
             this.usrCntrlLoadAll.TabIndex = 0;
-            // 
-            // tabSearchIncident
-            // 
-            this.tabSearchIncident.Location = new System.Drawing.Point(10, 48);
-            this.tabSearchIncident.Name = "tabSearchIncident";
-            this.tabSearchIncident.Size = new System.Drawing.Size(1416, 667);
-            this.tabSearchIncident.TabIndex = 2;
-            this.tabSearchIncident.Text = "Search Incidents";
-            this.tabSearchIncident.UseVisualStyleBackColor = true;
             // 
             // lblMainUsername
             // 
@@ -128,6 +134,27 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_linkClicked);
             // 
+            // loadAll1
+            // 
+            this.loadAll1.Location = new System.Drawing.Point(0, 3);
+            this.loadAll1.Name = "loadAll1";
+            this.loadAll1.Size = new System.Drawing.Size(1416, 658);
+            this.loadAll1.TabIndex = 0;
+            // 
+            // searchIncident1
+            // 
+            this.searchIncident1.Location = new System.Drawing.Point(761, 171);
+            this.searchIncident1.Name = "searchIncident1";
+            this.searchIncident1.Size = new System.Drawing.Size(8, 8);
+            this.searchIncident1.TabIndex = 0;
+            // 
+            // usrCntrlSearchIncident
+            // 
+            this.usrCntrlSearchIncident.Location = new System.Drawing.Point(-10, 3);
+            this.usrCntrlSearchIncident.Name = "usrCntrlSearchIncident";
+            this.usrCntrlSearchIncident.Size = new System.Drawing.Size(1423, 661);
+            this.usrCntrlSearchIncident.TabIndex = 1;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -148,7 +175,7 @@ namespace TechSupport.View
             this.tabAddIncident.ResumeLayout(false);
             this.tabAddIncident.PerformLayout();
             this.tabLoadAll.ResumeLayout(false);
-            this.tabLoadAll.PerformLayout();
+            this.tabSearchIncident.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +191,8 @@ namespace TechSupport.View
         private System.Windows.Forms.Label lblMainUsername;
         private System.Windows.Forms.LinkLabel lnklblLogout;
         private UserControls.LoadAll usrCntrlLoadAll;
+        private UserControls.LoadAll loadAll1;
+        private UserControls.SearchIncident usrCntrlSearchIncident;
+        private UserControls.SearchIncident searchIncident1;
     }
 }

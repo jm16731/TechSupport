@@ -32,6 +32,7 @@ namespace TechSupport.View
         private void tabSelectedIndexChanged(object sender, EventArgs e)
         {
             usrCntrlLoadAll.RefreshDataGrid();
+            usrCntrlSearchIncident.refresh();
         }
     }
 }
