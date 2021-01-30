@@ -7,6 +7,9 @@ namespace TechSupport.UserControls
     public partial class SearchIncident : UserControl
     {
         private readonly IncidentController controller;
+        /// <summary>
+        /// Creates an instance of SearchIncident
+        /// </summary>
         public SearchIncident()
         {
             InitializeComponent();
@@ -23,11 +26,6 @@ namespace TechSupport.UserControls
         {
             this.gridViewSearchIncident.DataSource = null;
             this.gridViewSearchIncident.DataSource = this.controller.getIncidents(customerID);
-        }
-
-        public void refresh()
-        {
-            RefreshDataGrid(int.Parse(txtCustomerID.Text));
         }
     }
 }

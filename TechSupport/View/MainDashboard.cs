@@ -7,6 +7,10 @@ namespace TechSupport.View
     {
         readonly LoginForm login;
 
+        /// <summary>
+        /// Creates an instance of MainDashboard from the given LoginForm
+        /// </summary>
+        /// <param name="login">The LoginForm that loaded this MainDashboard</param>
         public MainDashboard(LoginForm login)
         {
             InitializeComponent();
@@ -29,9 +33,12 @@ namespace TechSupport.View
             this.login.Show();
         }
 
-        private void tabSelectedIndexChanged(object sender, EventArgs e)
+        private void tabSelectedIndex(object sender, TabControlEventArgs e)
         {
-            usrCntrlLoadAll.RefreshDataGrid();
+            if (tabCntrlIncidents.SelectedTab == tabLoadAll)
+            {
+                usrCntrlLoadAll.RefreshDataGrid();
+            }
         }
     }
 }

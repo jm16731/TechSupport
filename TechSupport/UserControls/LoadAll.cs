@@ -6,7 +6,10 @@ namespace TechSupport.UserControls
 {
     public partial class LoadAll : UserControl
     {
-        private readonly IncidentController controller;
+        private IncidentController controller;
+        /// <summary>
+        /// Creates an instance of LoadAll
+        /// </summary>
         public LoadAll()
         {
             InitializeComponent();
@@ -14,6 +17,9 @@ namespace TechSupport.UserControls
             this.RefreshDataGrid();
         }
 
+        /// <summary>
+        /// Refreshes the source data
+        /// </summary>
         public void RefreshDataGrid()
         {
             this.gridViewIncidentViewer.DataSource = null;
