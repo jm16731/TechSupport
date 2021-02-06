@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\IncidentController.cs" />
     <Compile Include="DAL\IncidentDatabase.cs" />
+    <Compile Include="DAL\IncidentSQLServerDatabase.cs" />
     <Compile Include="Model\Incident.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
