@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TechSupport.Model
 {
-    class OpenIncident
+    public class OpenIncident
     {
         public int ProductCode { get; }
         public string DateOpened { get; }

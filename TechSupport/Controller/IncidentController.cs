@@ -51,5 +51,10 @@ namespace TechSupport.Controller
             }
             this.database.Add(incident);
         }
+
+        public List<OpenIncident> getOpenIncidents()
+        {
+            return IncidentSQLServerGetData.getOpenIncidents();
+        }
     }
 }
