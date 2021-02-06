@@ -38,12 +38,22 @@ namespace TechSupport.View
 
         private void tabSelectedIndex(object sender, TabControlEventArgs e)
         {
-            if (tabCntrlIncidents.SelectedTab == tabLoadAll)
+            if (tabCntrlIncidents.SelectedTab == tabAddIncident)
+            {
+                this.AcceptButton = usrCntrlAddIncident.getAddButton();
+            }
+            else if (tabCntrlIncidents.SelectedTab == tabLoadAll)
             {
                 usrCntrlLoadAll.RefreshDataGrid();
+                this.AcceptButton = null;
             }
-            else if (tabCntrlIncidents.SelectedTab == tabDisplayOpenIncidents)
+            else if (tabCntrlIncidents.SelectedTab == tabSearchIncident)
             {
+                this.AcceptButton = usrCntrlSearchIncident.getSearchButton();
+            }
+            else
+            {
+                this.AcceptButton = null;
                 usrCntrlDisplayOpenIncidents.RefreshDataGrid();
             }
         }

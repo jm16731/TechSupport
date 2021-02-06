@@ -13,10 +13,6 @@ namespace TechSupport.DAL
         /// <returns>The SqlConnection to TechSupport DB</returns>
         public static SqlConnection GetConnection()
         {
-            //string connectionString =
-            //     "Data Source=localhost;Initial Catalog=TechSupport;" +
-            //     "Integrated Security=True";
-            //SqlConnection connection = new SqlConnection(connectionString);
             return new SqlConnection("Data Source=localhost;Initial Catalog=TechSupport;Integrated Security=True");
         }
     }

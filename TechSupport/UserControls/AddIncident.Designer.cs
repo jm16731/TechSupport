@@ -29,7 +29,7 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblLayoutPnlAddIncident = new System.Windows.Forms.TableLayoutPanel();
             this.lblIncidentName = new System.Windows.Forms.Label();
             this.txtIncidentName = new System.Windows.Forms.TextBox();
             this.lblIncidentDescription = new System.Windows.Forms.Label();
@@ -39,33 +39,33 @@ namespace TechSupport.UserControls
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tblLayoutPnlAddIncident.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tblLayoutPnlAddIncident
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.lblIncidentName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIncidentName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblIncidentDescription, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblIncidentCustomerID, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIncidentDescription, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtIncidentCustomerID, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnClear, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblMessage, 0, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.73984F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.26016F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1124, 627);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tblLayoutPnlAddIncident.ColumnCount = 2;
+            this.tblLayoutPnlAddIncident.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutPnlAddIncident.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutPnlAddIncident.Controls.Add(this.lblIncidentName, 0, 0);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.txtIncidentName, 1, 0);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.lblIncidentDescription, 0, 1);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.lblIncidentCustomerID, 0, 2);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.txtIncidentDescription, 1, 1);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.txtIncidentCustomerID, 1, 2);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.btnClear, 1, 4);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.btnAdd, 0, 4);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.lblMessage, 0, 3);
+            this.tblLayoutPnlAddIncident.Location = new System.Drawing.Point(3, 3);
+            this.tblLayoutPnlAddIncident.Name = "tblLayoutPnlAddIncident";
+            this.tblLayoutPnlAddIncident.RowCount = 5;
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.73984F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.26016F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tblLayoutPnlAddIncident.Size = new System.Drawing.Size(1124, 627);
+            this.tblLayoutPnlAddIncident.TabIndex = 0;
             // 
             // lblIncidentName
             // 
@@ -157,18 +157,18 @@ namespace TechSupport.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tblLayoutPnlAddIncident);
             this.Name = "AddIncident";
             this.Size = new System.Drawing.Size(1127, 630);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tblLayoutPnlAddIncident.ResumeLayout(false);
+            this.tblLayoutPnlAddIncident.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutPnlAddIncident;
         private System.Windows.Forms.Label lblIncidentName;
         private System.Windows.Forms.TextBox txtIncidentName;
         private System.Windows.Forms.Label lblIncidentDescription;

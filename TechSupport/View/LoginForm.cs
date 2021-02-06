@@ -37,7 +37,6 @@ namespace TechSupport.View
                 this.Hide();
                 MainDashboard main = new MainDashboard(this);
                 main.Show();
-                //this.Close();
             }
         }
 

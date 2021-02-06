@@ -21,6 +21,15 @@ namespace TechSupport.UserControls
             this.controller = new IncidentController();
         }
 
+        /// <summary>
+        /// Returns the Add Button for use by the parent form
+        /// </summary>
+        /// <returns>The Add Button of this user control</returns>
+        public Button getAddButton()
+        {
+            return this.btnAdd;
+        }
+
         private void Add_click(object sender, EventArgs e)
         {
             try

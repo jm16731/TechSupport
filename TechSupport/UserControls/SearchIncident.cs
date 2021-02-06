@@ -20,6 +20,15 @@ namespace TechSupport.UserControls
             this.controller = new IncidentController();
         }
 
+        /// <summary>
+        /// Returns the Search Button for use by parent Form
+        /// </summary>
+        /// <returns>The Search Button of his User Control</returns>
+        public Button getSearchButton()
+        {
+            return this.btnSearch;
+        }
+
         private void Search_Click(object sender, EventArgs e)
         {
             int customerID = int.Parse(txtCustomerID.Text);
