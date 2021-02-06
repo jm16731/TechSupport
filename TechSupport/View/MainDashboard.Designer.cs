@@ -42,7 +42,7 @@ namespace TechSupport.View
             this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
             this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.displayOpenIncidents1 = new TechSupport.UserControls.DisplayOpenIncidents();
+            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabLoadAll.SuspendLayout();
@@ -162,7 +162,7 @@ namespace TechSupport.View
             // 
             // tabDisplayOpenIncidents
             // 
-            this.tabDisplayOpenIncidents.Controls.Add(this.displayOpenIncidents1);
+            this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
             this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
             this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
             this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
@@ -180,12 +180,12 @@ namespace TechSupport.View
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // displayOpenIncidents1
+            // usrCntrlDisplayOpenIncidents
             // 
-            this.displayOpenIncidents1.Location = new System.Drawing.Point(-10, 3);
-            this.displayOpenIncidents1.Name = "displayOpenIncidents1";
-            this.displayOpenIncidents1.Size = new System.Drawing.Size(1436, 664);
-            this.displayOpenIncidents1.TabIndex = 1;
+            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(-10, 3);
+            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
+            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1436, 664);
+            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
             // 
             // MainDashboard
             // 
@@ -229,6 +229,6 @@ namespace TechSupport.View
         private UserControls.SearchIncident searchIncident1;
         private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
         private System.Windows.Forms.ListView listView1;
-        private UserControls.DisplayOpenIncidents displayOpenIncidents1;
+        private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
     }
 }

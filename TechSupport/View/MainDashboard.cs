@@ -39,6 +39,10 @@ namespace TechSupport.View
             {
                 usrCntrlLoadAll.RefreshDataGrid();
             }
+            else if (tabCntrlIncidents.SelectedTab == tabDisplayOpenIncidents)
+            {
+                usrCntrlDisplayOpenIncidents.RefreshDataGrid();
+            }
         }
     }
 }
