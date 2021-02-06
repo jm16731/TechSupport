@@ -31,19 +31,22 @@ namespace TechSupport.View
         {
             this.tabCntrlIncidents = new System.Windows.Forms.TabControl();
             this.tabAddIncident = new System.Windows.Forms.TabPage();
-            this.tabLoadAll = new System.Windows.Forms.TabPage();
-            this.tabSearchIncident = new System.Windows.Forms.TabPage();
-            this.lblMainUsername = new System.Windows.Forms.Label();
-            this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
+            this.tabLoadAll = new System.Windows.Forms.TabPage();
             this.loadAll1 = new TechSupport.UserControls.LoadAll();
+            this.tabSearchIncident = new System.Windows.Forms.TabPage();
             this.usrCntrlSearchIncident = new TechSupport.UserControls.SearchIncident();
             this.searchIncident1 = new TechSupport.UserControls.SearchIncident();
+            this.lblMainUsername = new System.Windows.Forms.Label();
+            this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
+            this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabLoadAll.SuspendLayout();
             this.tabSearchIncident.SuspendLayout();
+            this.tabDisplayOpenIncidents.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCntrlIncidents
@@ -51,6 +54,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.Controls.Add(this.tabAddIncident);
             this.tabCntrlIncidents.Controls.Add(this.tabLoadAll);
             this.tabCntrlIncidents.Controls.Add(this.tabSearchIncident);
+            this.tabCntrlIncidents.Controls.Add(this.tabDisplayOpenIncidents);
             this.tabCntrlIncidents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabCntrlIncidents.Location = new System.Drawing.Point(0, 229);
             this.tabCntrlIncidents.Name = "tabCntrlIncidents";
@@ -70,6 +74,16 @@ namespace TechSupport.View
             this.tabAddIncident.Text = "Add Incident";
             this.tabAddIncident.UseVisualStyleBackColor = true;
             // 
+            // usrCntrlAddIncident
+            // 
+            this.usrCntrlAddIncident.AutoScroll = true;
+            this.usrCntrlAddIncident.AutoSize = true;
+            this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 0);
+            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
+            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1130, 633);
+            this.usrCntrlAddIncident.TabIndex = 2;
+            // 
             // tabLoadAll
             // 
             this.tabLoadAll.Controls.Add(this.loadAll1);
@@ -81,6 +95,13 @@ namespace TechSupport.View
             this.tabLoadAll.Text = "Load All";
             this.tabLoadAll.UseVisualStyleBackColor = true;
             // 
+            // loadAll1
+            // 
+            this.loadAll1.Location = new System.Drawing.Point(0, 3);
+            this.loadAll1.Name = "loadAll1";
+            this.loadAll1.Size = new System.Drawing.Size(1416, 658);
+            this.loadAll1.TabIndex = 0;
+            // 
             // tabSearchIncident
             // 
             this.tabSearchIncident.Controls.Add(this.usrCntrlSearchIncident);
@@ -91,6 +112,20 @@ namespace TechSupport.View
             this.tabSearchIncident.TabIndex = 2;
             this.tabSearchIncident.Text = "Search Incidents";
             this.tabSearchIncident.UseVisualStyleBackColor = true;
+            // 
+            // usrCntrlSearchIncident
+            // 
+            this.usrCntrlSearchIncident.Location = new System.Drawing.Point(-10, 3);
+            this.usrCntrlSearchIncident.Name = "usrCntrlSearchIncident";
+            this.usrCntrlSearchIncident.Size = new System.Drawing.Size(1423, 661);
+            this.usrCntrlSearchIncident.TabIndex = 1;
+            // 
+            // searchIncident1
+            // 
+            this.searchIncident1.Location = new System.Drawing.Point(761, 171);
+            this.searchIncident1.Name = "searchIncident1";
+            this.searchIncident1.Size = new System.Drawing.Size(8, 8);
+            this.searchIncident1.TabIndex = 0;
             // 
             // lblMainUsername
             // 
@@ -115,37 +150,6 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_linkClicked);
             // 
-            // usrCntrlAddIncident
-            // 
-            this.usrCntrlAddIncident.AutoScroll = true;
-            this.usrCntrlAddIncident.AutoSize = true;
-            this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 0);
-            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
-            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1130, 633);
-            this.usrCntrlAddIncident.TabIndex = 2;
-            // 
-            // loadAll1
-            // 
-            this.loadAll1.Location = new System.Drawing.Point(0, 3);
-            this.loadAll1.Name = "loadAll1";
-            this.loadAll1.Size = new System.Drawing.Size(1416, 658);
-            this.loadAll1.TabIndex = 0;
-            // 
-            // usrCntrlSearchIncident
-            // 
-            this.usrCntrlSearchIncident.Location = new System.Drawing.Point(-10, 3);
-            this.usrCntrlSearchIncident.Name = "usrCntrlSearchIncident";
-            this.usrCntrlSearchIncident.Size = new System.Drawing.Size(1423, 661);
-            this.usrCntrlSearchIncident.TabIndex = 1;
-            // 
-            // searchIncident1
-            // 
-            this.searchIncident1.Location = new System.Drawing.Point(761, 171);
-            this.searchIncident1.Name = "searchIncident1";
-            this.searchIncident1.Size = new System.Drawing.Size(8, 8);
-            this.searchIncident1.TabIndex = 0;
-            // 
             // usrCntrlLoadAll
             // 
             this.usrCntrlLoadAll.AutoSize = true;
@@ -154,6 +158,25 @@ namespace TechSupport.View
             this.usrCntrlLoadAll.Name = "usrCntrlLoadAll";
             this.usrCntrlLoadAll.Size = new System.Drawing.Size(1395, 568);
             this.usrCntrlLoadAll.TabIndex = 0;
+            // 
+            // tabDisplayOpenIncidents
+            // 
+            this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
+            this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
+            this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
+            this.tabDisplayOpenIncidents.Size = new System.Drawing.Size(1416, 667);
+            this.tabDisplayOpenIncidents.TabIndex = 3;
+            this.tabDisplayOpenIncidents.Text = "Display Open Incidents";
+            this.tabDisplayOpenIncidents.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(-10, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1426, 664);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // MainDashboard
             // 
@@ -176,6 +199,7 @@ namespace TechSupport.View
             this.tabAddIncident.PerformLayout();
             this.tabLoadAll.ResumeLayout(false);
             this.tabSearchIncident.ResumeLayout(false);
+            this.tabDisplayOpenIncidents.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +218,7 @@ namespace TechSupport.View
         private UserControls.LoadAll loadAll1;
         private UserControls.SearchIncident usrCntrlSearchIncident;
         private UserControls.SearchIncident searchIncident1;
+        private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
+        private System.Windows.Forms.ListView listView1;
     }
 }
