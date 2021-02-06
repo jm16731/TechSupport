@@ -8,7 +8,7 @@ namespace TechSupport.Model
 {
     public class OpenIncident
     {
-        public int ProductCode { get; }
+        public String ProductCode { get; }
         public string DateOpened { get; }
         public string CustomerName { get; }
         public string TechnicianName { get; }
@@ -20,17 +20,14 @@ namespace TechSupport.Model
         /// <param name="title">Meaningful name for the Incident</param>
         /// <param name="description">Explanation of the Incident</param>
         /// <param name="customerID">ID the of the customer whose is the Incident</param>
-        public OpenIncident(int ProductCode, string DateOpened, string CustomerName, string TechnicianName, string Title)
+        public OpenIncident(string ProductCode, string DateOpened, string CustomerName, string TechnicianName, string Title)
         {
             if (string.IsNullOrEmpty(DateOpened) || string.IsNullOrEmpty(CustomerName)
-                || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title))
+                || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title) 
+                || string.IsNullOrEmpty(ProductCode))
             {
-                throw new ArgumentException("title " + "customer name" + "technician name" + "date opened", 
-                      "Title, Date Opened, Customer Name, and Technician Name cannot be empty or null");
-            }
-            if (ProductCode < 0)
-            {
-                throw new ArgumentOutOfRangeException("product code", "Product Code must be greater than 0");
+                throw new ArgumentException("title " + "customer name" + "technician name" + "date opened" + "product code", 
+                      "Product Code, Date Opened, Customer Name, Technician Name, and Title cannot be null or empty");
             }
 
             this.ProductCode = ProductCode;

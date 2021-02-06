@@ -34,7 +34,7 @@ namespace TechSupport.DAL
                 int ordTitle = reader.GetOrdinal("Title");
                 while (reader.Read())
                 {
-                    OpenIncident incident = new OpenIncident(reader.GetInt32(ordProductCode),
+                    OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
                         reader.GetString(ordDateOpened), reader.GetString(ordCustomer),
                         reader.GetString(ordTechnician), reader.GetString(ordTitle));
                     incidents.Add(incident);
