@@ -10,14 +10,14 @@ namespace TechSupport.DAL
 {
     class IncidentSQLServerGetData
     {
-        public static List<Incident> getOpenIncidents()
+        public static List<OpenIncident> getOpenIncidents()
         {
-            List<Incident> incidents = new List<Incident>();
+            List<OpenIncident> incidents = new List<OpenIncident>();
             SqlConnection connection = IncidentSQLServerConnection.GetConnection();
             String selectStatement = "SELECT Incidents.ProductCode AS [Product Code], " +
                     "CONVERT(date, Incidents.DateOpened) AS[Date Opened], " +
-	                "Customers.Name, " +
-	                "Technicians.Name, " +
+	                "Customers.Name AS Customer, " +
+	                "Technicians.Name AS Technician, " +
 	                "Incidents.Title " +
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
@@ -27,9 +27,17 @@ namespace TechSupport.DAL
             {
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
+                int ordProductCode = reader.GetOrdinal("Product Code");
+                int ordDateOpened = reader.GetOrdinal("Date Opened");
+                int ordCustomer = reader.GetOrdinal("Customer");
+                int ordTechnician = reader.GetOrdinal("Technician");
+                int ordTitle = reader.GetOrdinal("Title");
                 while (reader.Read())
                 {
-                    Incident incident = new Incident();
+                    OpenIncident incident = new OpenIncident(reader.GetInt32(ordProductCode),
+                        reader.GetString(ordDateOpened), reader.GetString(ordCustomer),
+                        reader.GetString(ordTechnician), reader.GetString(ordTitle));
+                    incidents.Add(incident);
                 }
                 reader.Close();
             }
@@ -42,23 +50,6 @@ namespace TechSupport.DAL
                 connection.Close();
             }
             return incidents;
-        }
-        public static List<Invoice> GetInvoicesDue()
-        {
-            try
-            {
-                while (reader.Read())
-                {
-                    Invoice invoice = new Invoice();
-                    invoice.InvoiceNumber = reader["InvoiceNumber"].ToString();
-                    invoice.InvoiceDate = (DateTime)reader["InvoiceDate"];
-                    invoice.InvoiceTotal = (decimal)reader["InvoiceTotal"];
-                    invoice.PaymentTotal = (decimal)reader["PaymentTotal"];
-                    invoice.CreditTotal = (decimal)reader["CreditTotal"];
-                    invoice.DueDate = (DateTime)reader["DueDate"];
-                    invoiceList.Add(invoice);
-                }
-            }
         }
     }
 }
