@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TechSupport.DAL
 {
-    class IncidentSQLServerDatabase
+    class IncidentSQLServerConnection
     {
         public static SqlConnection GetConnection()
         {

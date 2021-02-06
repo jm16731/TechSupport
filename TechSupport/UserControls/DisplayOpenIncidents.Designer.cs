@@ -40,7 +40,7 @@ namespace TechSupport.UserControls
             this.gridViewIncidentViewer.Name = "gridViewIncidentViewer";
             this.gridViewIncidentViewer.RowHeadersWidth = 102;
             this.gridViewIncidentViewer.RowTemplate.Height = 40;
-            this.gridViewIncidentViewer.Size = new System.Drawing.Size(1038, 746);
+            this.gridViewIncidentViewer.Size = new System.Drawing.Size(1423, 661);
             this.gridViewIncidentViewer.TabIndex = 0;
             // 
             // DisplayOpenIncidents
@@ -49,7 +49,7 @@ namespace TechSupport.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridViewIncidentViewer);
             this.Name = "DisplayOpenIncidents";
-            this.Size = new System.Drawing.Size(1041, 752);
+            this.Size = new System.Drawing.Size(1423, 661);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewIncidentViewer)).EndInit();
             this.ResumeLayout(false);
 
