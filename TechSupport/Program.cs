@@ -4,6 +4,9 @@ using TechSupport.View;
 
 namespace TechSupport
 {
+    /// <summary>
+    /// Contains the main entry point for the TechSupport application
+    /// </summary>
     static class Program
     {
         /// <summary>

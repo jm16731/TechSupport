@@ -5,6 +5,9 @@ using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// User Control for adding an Add Incident "form" to a Form
+    /// </summary>
     public partial class AddIncident : UserControl
     {
         private readonly IncidentController controller;

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TechSupport.Model
 {
+    /// <summary>
+    /// Models an OpenIncident being managed by TechSupport
+    /// </summary>
     public class OpenIncident
     {
         public string ProductCode { get; }
@@ -15,18 +14,20 @@ namespace TechSupport.Model
         public string Title { get; }
 
         /// <summary>
-        /// Creates an Incident according to the given parameters
+        /// Creates an OpenIncident according to the given parameters
         /// </summary>
-        /// <param name="title">Meaningful name for the Incident</param>
-        /// <param name="description">Explanation of the Incident</param>
-        /// <param name="customerID">ID the of the customer whose is the Incident</param>
+        /// <param name="ProductCode">The product code in the OpenIncident</param>
+        /// <param name="DateOpened">The date the OpenIncident was opened</param>
+        /// <param name="CustomerName">The name of the customer whose is the OpenIncident</param>
+        /// <param name="TechnicianName">The name of the technician managing the OpenIncident</param>
+        /// <param name="Title">The title of the OpenIncident</param>
         public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName, string Title)
         {
             if (string.IsNullOrEmpty(CustomerName)
-                || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title) 
+                || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title)
                 || string.IsNullOrEmpty(ProductCode))
             {
-                throw new ArgumentException("title " + "customer name" + "technician name" + "date opened" + "product code", 
+                throw new ArgumentException("title " + "customer name" + "technician name" + "date opened" + "product code",
                       "Product Code, Customer Name, Technician Name, and Title cannot be null or empty");
             }
             if (DateOpened == null)

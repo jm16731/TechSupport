@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using TechSupport.Controller;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// User Control for adding a Display Open Incidents "form" to a Form
+    /// </summary>
     public partial class DisplayOpenIncidents : UserControl
     {
         private IncidentController controller;
+
+        /// <summary>
+        /// Creates the DisplayOpenIncidents
+        /// </summary>
         public DisplayOpenIncidents()
         {
             InitializeComponent();

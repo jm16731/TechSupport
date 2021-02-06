@@ -4,9 +4,13 @@ using TechSupport.Controller;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// User Control for adding a Search Incident "form" to a Form
+    /// </summary>
     public partial class SearchIncident : UserControl
     {
         private readonly IncidentController controller;
+
         /// <summary>
         /// Creates an instance of SearchIncident
         /// </summary>

@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
-    class IncidentSQLServerGetData
+    /// <summary>
+    /// This class manages various SQL Queries to the IncidentSQLServerConnection
+    /// </summary>
+    public class IncidentSQLServerGetData
     {
+        /// <summary>
+        /// Sends a SQL Query to get a List of Open Incidents from the TechSupport DB
+        /// </summary>
+        /// <returns>The List of Open Incidents from TechSupport DB</returns>
         public static List<OpenIncident> getOpenIncidents()
         {
             List<OpenIncident> incidents = new List<OpenIncident>();
             SqlConnection connection = IncidentSQLServerConnection.GetConnection();
             String selectStatement = "SELECT Incidents.ProductCode AS [Product Code], " +
                     "CONVERT(date, Incidents.DateOpened) AS[Date Opened], " +
-	                "Customers.Name AS Customer, " +
-	                "Technicians.Name AS Technician, " +
-	                "Incidents.Title " +
+                    "Customers.Name AS Customer, " +
+                    "Technicians.Name AS Technician, " +
+                    "Incidents.Title " +
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
                     "JOIN Technicians ON Incidents.TechID = Technicians.TechID";

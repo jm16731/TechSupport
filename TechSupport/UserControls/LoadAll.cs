@@ -1,12 +1,15 @@
 ﻿using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.View;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// User Control for adding a Load All "form" to a Form
+    /// </summary>
     public partial class LoadAll : UserControl
     {
         private IncidentController controller;
+
         /// <summary>
         /// Creates an instance of LoadAll
         /// </summary>

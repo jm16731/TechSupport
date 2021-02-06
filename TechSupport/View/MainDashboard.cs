@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// The main form for TechSupport
+    /// </summary>
     public partial class MainDashboard : Form
     {
         readonly LoginForm login;

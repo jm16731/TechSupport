@@ -52,6 +52,10 @@ namespace TechSupport.Controller
             this.database.Add(incident);
         }
 
+        /// <summary>
+        /// Gets the open incidents in the SQL Server Database as a List of OpenIncidents
+        /// </summary>
+        /// <returns>The List of OpenIncidents</returns>
         public List<OpenIncident> getOpenIncidents()
         {
             return IncidentSQLServerGetData.getOpenIncidents();
