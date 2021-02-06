@@ -8,8 +8,8 @@ namespace TechSupport.Model
 {
     public class OpenIncident
     {
-        public String ProductCode { get; }
-        public string DateOpened { get; }
+        public string ProductCode { get; }
+        public DateTime DateOpened { get; }
         public string CustomerName { get; }
         public string TechnicianName { get; }
         public string Title { get; }
@@ -20,14 +20,18 @@ namespace TechSupport.Model
         /// <param name="title">Meaningful name for the Incident</param>
         /// <param name="description">Explanation of the Incident</param>
         /// <param name="customerID">ID the of the customer whose is the Incident</param>
-        public OpenIncident(string ProductCode, string DateOpened, string CustomerName, string TechnicianName, string Title)
+        public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName, string Title)
         {
-            if (string.IsNullOrEmpty(DateOpened) || string.IsNullOrEmpty(CustomerName)
+            if (string.IsNullOrEmpty(CustomerName)
                 || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title) 
                 || string.IsNullOrEmpty(ProductCode))
             {
                 throw new ArgumentException("title " + "customer name" + "technician name" + "date opened" + "product code", 
-                      "Product Code, Date Opened, Customer Name, Technician Name, and Title cannot be null or empty");
+                      "Product Code, Customer Name, Technician Name, and Title cannot be null or empty");
+            }
+            if (DateOpened == null)
+            {
+                throw new ArgumentException("date opened", "Date Opened cannot be null");
             }
 
             this.ProductCode = ProductCode;

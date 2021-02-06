@@ -35,7 +35,7 @@ namespace TechSupport.DAL
                 while (reader.Read())
                 {
                     OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
-                        reader.GetString(ordDateOpened), reader.GetString(ordCustomer),
+                        reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
                         reader.GetString(ordTechnician), reader.GetString(ordTitle));
                     incidents.Add(incident);
                 }
