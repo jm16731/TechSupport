@@ -29,8 +29,8 @@ namespace TechSupport.View
         {
             if (txtUsername.Text != "Jane" || txtPassword.Text != "test1234")
             {
-                txtError.Text = "invalid username/password";
-                txtError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "invalid username/password";
+                lblError.ForeColor = System.Drawing.Color.Red;
             }
             else
             {
@@ -42,12 +42,12 @@ namespace TechSupport.View
 
         private void TxtUsername_TextChanged(object sender, EventArgs e)
         {
-            txtError.Text = "";
+            lblError.Text = "";
         }
 
         private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
-            txtError.Text = "";
+            lblError.Text = "";
         }
 
         private void CloseAll(object sender, FormClosedEventArgs e)
