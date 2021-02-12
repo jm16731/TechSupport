@@ -25,26 +25,38 @@ namespace TechSupport.DAL
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
                     "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID";
-            using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
+            try
             {
-                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
                 {
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    int ordProductCode = reader.GetOrdinal("Product Code");
-                    int ordDateOpened = reader.GetOrdinal("Date Opened");
-                    int ordCustomer = reader.GetOrdinal("Customer");
-                    int ordTechnician = reader.GetOrdinal("Technician");
-                    int ordTitle = reader.GetOrdinal("Title");
-                    while (reader.Read())
+                    using (SqlCommand command = new SqlCommand(selectStatement, connection))
                     {
-                        OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
-                            reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
-                            reader.GetString(ordTechnician), reader.GetString(ordTitle));
-                        incidents.Add(incident);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            int ordProductCode = reader.GetOrdinal("Product Code");
+                            int ordDateOpened = reader.GetOrdinal("Date Opened");
+                            int ordCustomer = reader.GetOrdinal("Customer");
+                            int ordTechnician = reader.GetOrdinal("Technician");
+                            int ordTitle = reader.GetOrdinal("Title");
+                            while (reader.Read())
+                            {
+                                OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
+                                    reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
+                                    reader.GetString(ordTechnician), reader.GetString(ordTitle));
+                                incidents.Add(incident);
+                            }
+                        }
                     }
-                    reader.Close();
                 }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return incidents;
         }
