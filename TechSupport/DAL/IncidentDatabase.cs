@@ -31,15 +31,7 @@ namespace TechSupport.DAL
         /// <returns>List of Incidents only for the given customer ID</returns>
         public List<Incident> GetIncidents(int customerID)
         {
-            List<Incident> incidentsByCusomterID = new List<Incident>();
-            foreach (Incident incident in _incidents)
-            {
-                if (incident.CustomerID == customerID)
-                {
-                    incidentsByCusomterID.Add(incident);
-                }
-            }
-            return incidentsByCusomterID;
+            return _incidents.FindAll(e => e.CustomerID == customerID);
         }
 
         /// <summary>
