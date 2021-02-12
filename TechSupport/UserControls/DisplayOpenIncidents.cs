@@ -25,8 +25,8 @@ namespace TechSupport.UserControls
         /// </summary>
         public void RefreshDataGrid()
         {
-            this.gridViewIncidentViewer.DataSource = null;
-            this.gridViewIncidentViewer.DataSource = this.controller.GetOpenIncidents();
+            this.listViewIncidentViewer.DataSource = null;
+            this.listViewIncidentViewer.DataSource = this.controller.GetOpenIncidents();
         }
     }
 }

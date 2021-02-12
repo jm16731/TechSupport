@@ -29,34 +29,31 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridViewIncidentViewer = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewIncidentViewer)).BeginInit();
+            this.listViewIncidentViewer = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // gridViewIncidentViewer
+            // listViewIncidentViewer
             // 
-            this.gridViewIncidentViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridViewIncidentViewer.Location = new System.Drawing.Point(0, 3);
-            this.gridViewIncidentViewer.Name = "gridViewIncidentViewer";
-            this.gridViewIncidentViewer.RowHeadersWidth = 102;
-            this.gridViewIncidentViewer.RowTemplate.Height = 40;
-            this.gridViewIncidentViewer.Size = new System.Drawing.Size(1423, 661);
-            this.gridViewIncidentViewer.TabIndex = 0;
+            this.listViewIncidentViewer.HideSelection = false;
+            this.listViewIncidentViewer.Location = new System.Drawing.Point(0, 0);
+            this.listViewIncidentViewer.Name = "listViewIncidentViewer";
+            this.listViewIncidentViewer.Size = new System.Drawing.Size(1423, 658);
+            this.listViewIncidentViewer.TabIndex = 0;
+            this.listViewIncidentViewer.UseCompatibleStateImageBehavior = false;
             // 
             // DisplayOpenIncidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridViewIncidentViewer);
+            this.Controls.Add(this.listViewIncidentViewer);
             this.Name = "DisplayOpenIncidents";
             this.Size = new System.Drawing.Size(1423, 661);
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewIncidentViewer)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridViewIncidentViewer;
+        private System.Windows.Forms.ListView listViewIncidentViewer;
     }
 }
