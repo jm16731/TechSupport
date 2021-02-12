@@ -22,7 +22,7 @@ namespace TechSupport.View
 
         private void Close_All(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(1);
+            this.login.Show();
         }
 
         private void MainDashboard_Load(object sender, EventArgs e)
@@ -32,8 +32,7 @@ namespace TechSupport.View
 
         private void LinklblLogout_linkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            this.login.Show();
+            this.Close();
         }
 
         private void TabSelectedIndex(object sender, TabControlEventArgs e)
