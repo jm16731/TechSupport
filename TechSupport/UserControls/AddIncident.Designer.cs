@@ -38,6 +38,7 @@ namespace TechSupport.UserControls
             this.txtIncidentCustomerID = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lblIDError = new System.Windows.Forms.Label();
             this.lblMessage = new System.Windows.Forms.Label();
             this.tblLayoutPnlAddIncident.SuspendLayout();
             this.SuspendLayout();
@@ -55,15 +56,16 @@ namespace TechSupport.UserControls
             this.tblLayoutPnlAddIncident.Controls.Add(this.txtIncidentCustomerID, 1, 2);
             this.tblLayoutPnlAddIncident.Controls.Add(this.btnClear, 1, 4);
             this.tblLayoutPnlAddIncident.Controls.Add(this.btnAdd, 0, 4);
+            this.tblLayoutPnlAddIncident.Controls.Add(this.lblIDError, 1, 3);
             this.tblLayoutPnlAddIncident.Controls.Add(this.lblMessage, 0, 3);
             this.tblLayoutPnlAddIncident.Location = new System.Drawing.Point(3, 3);
             this.tblLayoutPnlAddIncident.Name = "tblLayoutPnlAddIncident";
             this.tblLayoutPnlAddIncident.RowCount = 5;
-            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.73984F));
-            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.26016F));
-            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 195F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tblLayoutPnlAddIncident.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tblLayoutPnlAddIncident.Size = new System.Drawing.Size(1124, 627);
             this.tblLayoutPnlAddIncident.TabIndex = 0;
             // 
@@ -84,6 +86,7 @@ namespace TechSupport.UserControls
             this.txtIncidentName.Name = "txtIncidentName";
             this.txtIncidentName.Size = new System.Drawing.Size(516, 53);
             this.txtIncidentName.TabIndex = 4;
+            this.txtIncidentName.TextChanged += new System.EventHandler(this.LblName_TextChanged);
             // 
             // lblIncidentDescription
             // 
@@ -99,7 +102,7 @@ namespace TechSupport.UserControls
             // 
             this.lblIncidentCustomerID.AutoSize = true;
             this.lblIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIncidentCustomerID.Location = new System.Drawing.Point(3, 327);
+            this.lblIncidentCustomerID.Location = new System.Drawing.Point(3, 305);
             this.lblIncidentCustomerID.Name = "lblIncidentCustomerID";
             this.lblIncidentCustomerID.Size = new System.Drawing.Size(243, 46);
             this.lblIncidentCustomerID.TabIndex = 6;
@@ -113,19 +116,21 @@ namespace TechSupport.UserControls
             this.txtIncidentDescription.Name = "txtIncidentDescription";
             this.txtIncidentDescription.Size = new System.Drawing.Size(556, 152);
             this.txtIncidentDescription.TabIndex = 7;
+            this.txtIncidentDescription.TextChanged += new System.EventHandler(this.LblDescription_TextChanged);
             // 
             // txtIncidentCustomerID
             // 
             this.txtIncidentCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentCustomerID.Location = new System.Drawing.Point(565, 330);
+            this.txtIncidentCustomerID.Location = new System.Drawing.Point(565, 308);
             this.txtIncidentCustomerID.Name = "txtIncidentCustomerID";
             this.txtIncidentCustomerID.Size = new System.Drawing.Size(516, 53);
             this.txtIncidentCustomerID.TabIndex = 8;
+            this.txtIncidentCustomerID.TextChanged += new System.EventHandler(this.LblCustomerID_TextChanged);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(565, 469);
+            this.btnClear.Location = new System.Drawing.Point(565, 499);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(344, 118);
             this.btnClear.TabIndex = 10;
@@ -136,7 +141,7 @@ namespace TechSupport.UserControls
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(3, 469);
+            this.btnAdd.Location = new System.Drawing.Point(3, 499);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(344, 118);
             this.btnAdd.TabIndex = 9;
@@ -144,14 +149,23 @@ namespace TechSupport.UserControls
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.Add_click);
             // 
+            // lblIDError
+            // 
+            this.lblIDError.AutoSize = true;
+            this.lblIDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDError.Location = new System.Drawing.Point(565, 404);
+            this.lblIDError.Name = "lblIDError";
+            this.lblIDError.Size = new System.Drawing.Size(0, 46);
+            this.lblIDError.TabIndex = 11;
+            // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(3, 424);
+            this.lblMessage.Location = new System.Drawing.Point(3, 404);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 42);
-            this.lblMessage.TabIndex = 11;
+            this.lblMessage.Size = new System.Drawing.Size(0, 46);
+            this.lblMessage.TabIndex = 12;
             // 
             // AddIncident
             // 
@@ -175,8 +189,9 @@ namespace TechSupport.UserControls
         private System.Windows.Forms.Label lblIncidentCustomerID;
         private System.Windows.Forms.TextBox txtIncidentDescription;
         private System.Windows.Forms.TextBox txtIncidentCustomerID;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblIDError;
         private System.Windows.Forms.Label lblMessage;
     }
 }

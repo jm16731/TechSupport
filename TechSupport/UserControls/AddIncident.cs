@@ -32,20 +32,29 @@ namespace TechSupport.UserControls
 
         private void Add_click(object sender, EventArgs e)
         {
-            try
+            int customerID;
+            if (int.TryParse(txtIncidentCustomerID.Text, out customerID))
             {
-                string title = txtIncidentName.Text;
-                string description = txtIncidentDescription.Text;
-                int customerID = int.Parse(txtIncidentCustomerID.Text);
+                try
+                {
+                    string title = txtIncidentName.Text;
+                    string description = txtIncidentDescription.Text;
 
-                this.controller.Add(new Incident(title, description, customerID));
+                    this.controller.Add(new Incident(title, description, customerID));
 
-                lblMessage.Text = "Incident added";
+                    lblMessage.Text = "Incident added";
+                    lblIDError.ForeColor = System.Drawing.Color.Blue;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else {
+                lblIDError.Text = "ID must be a number";
+                lblIDError.ForeColor = System.Drawing.Color.Red;
             }
+
         }
 
         private void Clear_click(object sender, EventArgs e)
@@ -53,6 +62,24 @@ namespace TechSupport.UserControls
             txtIncidentName.Text = "";
             txtIncidentDescription.Text = "";
             txtIncidentCustomerID.Text = "";
+            lblMessage.Text = "";
+            lblIDError.Text = "";
+        }
+
+        private void LblCustomerID_TextChanged(object sender, EventArgs e)
+        {
+            lblMessage.Text = "";
+            lblIDError.Text = "";
+        }
+
+        private void LblDescription_TextChanged(object sender, EventArgs e)
+        {
+            lblMessage.Text = "";
+        }
+
+        private void LblName_TextChanged(object sender, EventArgs e)
+        {
+            lblMessage.Text = "";
         }
     }
 }
