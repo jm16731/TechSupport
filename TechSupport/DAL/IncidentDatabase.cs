@@ -31,6 +31,10 @@ namespace TechSupport.DAL
         /// <returns>List of Incidents only for the given customer ID</returns>
         public List<Incident> GetIncidents(int customerID)
         {
+            if (customerID < 0)
+            {
+                throw new ArgumentException("customerID cannot be negative");
+            }
             return _incidents.FindAll(e => e.CustomerID == customerID);
         }
 

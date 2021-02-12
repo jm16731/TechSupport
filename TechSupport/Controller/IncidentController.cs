@@ -36,7 +36,14 @@ namespace TechSupport.Controller
         /// <returns>The List of Incidents for this customer ID</returns>
         public List<Incident> GetIncidents(int customerID)
         {
-            return this.database.GetIncidents(customerID);
+            try
+            {
+                return this.database.GetIncidents(customerID);
+            }
+            catch (ArgumentException ex)
+            {
+                throw ex;
+            }
         }
 
         /// <summary>

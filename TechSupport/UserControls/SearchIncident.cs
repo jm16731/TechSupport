@@ -45,8 +45,15 @@ namespace TechSupport.UserControls
 
         private void RefreshDataGrid(int customerID)
         {
-            this.gridViewSearchIncident.DataSource = null;
-            this.gridViewSearchIncident.DataSource = this.controller.GetIncidents(customerID);
+            try {
+                this.gridViewSearchIncident.DataSource = null;
+                this.gridViewSearchIncident.DataSource = this.controller.GetIncidents(customerID);
+            }
+            catch (ArgumentException ex)
+            {
+                lblIDError.Text = ex.Message;
+                lblIDError.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void TxtSearchCustomerID_TextChanged(object sender, EventArgs e)
