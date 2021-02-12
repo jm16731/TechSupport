@@ -62,7 +62,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.SelectedIndex = 0;
             this.tabCntrlIncidents.Size = new System.Drawing.Size(1436, 725);
             this.tabCntrlIncidents.TabIndex = 1;
-            this.tabCntrlIncidents.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabSelectedIndex);
+            this.tabCntrlIncidents.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabSelectedIndex);
             // 
             // tabAddIncident
             // 
@@ -149,7 +149,7 @@ namespace TechSupport.View
             this.lnklblLogout.TabIndex = 3;
             this.lnklblLogout.TabStop = true;
             this.lnklblLogout.Text = "Logout";
-            this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogout_linkClicked);
+            this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
             // usrCntrlLoadAll
             // 
@@ -201,7 +201,7 @@ namespace TechSupport.View
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.close_All);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Close_All);
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.tabCntrlIncidents.ResumeLayout(false);
             this.tabAddIncident.ResumeLayout(false);

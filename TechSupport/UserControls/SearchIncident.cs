@@ -24,7 +24,7 @@ namespace TechSupport.UserControls
         /// Returns the Search Button for use by parent Form
         /// </summary>
         /// <returns>The Search Button of his User Control</returns>
-        public Button getSearchButton()
+        public Button GetSearchButton()
         {
             return this.btnSearch;
         }
@@ -38,7 +38,7 @@ namespace TechSupport.UserControls
         private void RefreshDataGrid(int customerID)
         {
             this.gridViewSearchIncident.DataSource = null;
-            this.gridViewSearchIncident.DataSource = this.controller.getIncidents(customerID);
+            this.gridViewSearchIncident.DataSource = this.controller.GetIncidents(customerID);
         }
     }
 }

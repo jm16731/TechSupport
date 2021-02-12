@@ -24,9 +24,9 @@ namespace TechSupport.Controller
         /// Gets the incidents in the database as a List of Incidents
         /// </summary>
         /// <returns>The List Of Incidents</returns>
-        public List<Incident> getIncidents()
+        public List<Incident> GetIncidents()
         {
-            return this.database.getIncidents();
+            return this.database.GetIncidents();
         }
 
         /// <summary>
@@ -34,9 +34,9 @@ namespace TechSupport.Controller
         /// </summary>
         /// <param name="customerID">Customer ID whose incidents are desired</param>
         /// <returns>The List of Incidents for this customer ID</returns>
-        public List<Incident> getIncidents(int customerID)
+        public List<Incident> GetIncidents(int customerID)
         {
-            return this.database.getIncidents(customerID);
+            return this.database.GetIncidents(customerID);
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace TechSupport.Controller
         /// Gets the open incidents in the SQL Server Database as a List of OpenIncidents
         /// </summary>
         /// <returns>The List of OpenIncidents</returns>
-        public List<OpenIncident> getOpenIncidents()
+        public List<OpenIncident> GetOpenIncidents()
         {
-            return IncidentSQLServerGetData.getOpenIncidents();
+            return IncidentSQLServerGetData.GetOpenIncidents();
         }
     }
 }

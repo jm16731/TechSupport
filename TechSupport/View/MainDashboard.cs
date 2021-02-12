@@ -20,27 +20,27 @@ namespace TechSupport.View
             this.login = login;
         }
 
-        private void close_All(object sender, FormClosedEventArgs e)
+        private void Close_All(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(1);
         }
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            lblMainUsername.Text = login.getUsername();
+            lblMainUsername.Text = login.GetUsername();
         }
 
-        private void linklblLogout_linkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinklblLogout_linkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
             this.login.Show();
         }
 
-        private void tabSelectedIndex(object sender, TabControlEventArgs e)
+        private void TabSelectedIndex(object sender, TabControlEventArgs e)
         {
             if (tabCntrlIncidents.SelectedTab == tabAddIncident)
             {
-                this.AcceptButton = usrCntrlAddIncident.getAddButton();
+                this.AcceptButton = usrCntrlAddIncident.GetAddButton();
             }
             else if (tabCntrlIncidents.SelectedTab == tabLoadAll)
             {
@@ -49,7 +49,7 @@ namespace TechSupport.View
             }
             else if (tabCntrlIncidents.SelectedTab == tabSearchIncident)
             {
-                this.AcceptButton = usrCntrlSearchIncident.getSearchButton();
+                this.AcceptButton = usrCntrlSearchIncident.GetSearchButton();
             }
             else
             {

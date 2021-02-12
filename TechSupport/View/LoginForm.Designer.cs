@@ -46,7 +46,7 @@ namespace TechSupport.View
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(513, 38);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.TextChanged += new System.EventHandler(this.TxtUsername_TextChanged);
             // 
             // txtPassword
             // 
@@ -56,7 +56,7 @@ namespace TechSupport.View
             this.txtPassword.Size = new System.Drawing.Size(513, 38);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
             // lblUsername
             // 
@@ -103,7 +103,7 @@ namespace TechSupport.View
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // tblLayoutPnlLoginForm
             // 
@@ -139,7 +139,7 @@ namespace TechSupport.View
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.closeAll);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CloseAll);
             this.tblLayoutPnlLoginForm.ResumeLayout(false);
             this.tblLayoutPnlLoginForm.PerformLayout();
             this.ResumeLayout(false);

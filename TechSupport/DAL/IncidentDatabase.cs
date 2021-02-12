@@ -19,7 +19,7 @@ namespace TechSupport.DAL
         /// Gets the List of Incidents
         /// </summary>
         /// <returns>List of Incidents</returns>
-        public List<Incident> getIncidents()
+        public List<Incident> GetIncidents()
         {
             return _incidents;
         }
@@ -29,7 +29,7 @@ namespace TechSupport.DAL
         /// </summary>
         /// <param name="customerID">The customer ID of the customer's whose Incidents you wish to return</param>
         /// <returns>List of Incidents only for the given customer ID</returns>
-        public List<Incident> getIncidents(int customerID)
+        public List<Incident> GetIncidents(int customerID)
         {
             List<Incident> incidentsByCusomterID = new List<Incident>();
             foreach (Incident incident in _incidents)

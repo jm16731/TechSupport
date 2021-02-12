@@ -14,7 +14,7 @@ namespace TechSupport.DAL
         /// Sends a SQL Query to get a List of Open Incidents from the TechSupport DB
         /// </summary>
         /// <returns>The List of Open Incidents from TechSupport DB</returns>
-        public static List<OpenIncident> getOpenIncidents()
+        public static List<OpenIncident> GetOpenIncidents()
         {
             List<OpenIncident> incidents = new List<OpenIncident>();
             String selectStatement = "SELECT Incidents.ProductCode AS [Product Code], " +

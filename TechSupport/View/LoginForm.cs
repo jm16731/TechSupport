@@ -20,12 +20,12 @@ namespace TechSupport.View
         /// Returns the Username as a String
         /// </summary>
         /// <returns></returns>
-        public String getUsername()
+        public String GetUsername()
         {
             return txtUsername.Text;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text != "Jane" || txtPassword.Text != "test1234")
             {
@@ -40,17 +40,17 @@ namespace TechSupport.View
             }
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        private void TxtUsername_TextChanged(object sender, EventArgs e)
         {
             txtError.Text = "";
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
             txtError.Text = "";
         }
 
-        private void closeAll(object sender, FormClosedEventArgs e)
+        private void CloseAll(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(1);
         }

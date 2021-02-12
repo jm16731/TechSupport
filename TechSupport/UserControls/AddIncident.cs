@@ -25,7 +25,7 @@ namespace TechSupport.UserControls
         /// Returns the Add Button for use by the parent form
         /// </summary>
         /// <returns>The Add Button of this user control</returns>
-        public Button getAddButton()
+        public Button GetAddButton()
         {
             return this.btnAdd;
         }
