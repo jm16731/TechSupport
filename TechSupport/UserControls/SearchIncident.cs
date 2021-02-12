@@ -31,14 +31,27 @@ namespace TechSupport.UserControls
 
         private void Search_Click(object sender, EventArgs e)
         {
-            int customerID = int.Parse(txtCustomerID.Text);
-            RefreshDataGrid(customerID);
+            int customerID;
+            if (int.TryParse(txtCustomerID.Text, out customerID))
+            {
+                RefreshDataGrid(customerID);
+            }
+            else
+            {
+                lblIDError.Text = "ID must be a number";
+                lblIDError.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void RefreshDataGrid(int customerID)
         {
             this.gridViewSearchIncident.DataSource = null;
             this.gridViewSearchIncident.DataSource = this.controller.GetIncidents(customerID);
+        }
+
+        private void TxtSearchCustomerID_TextChanged(object sender, EventArgs e)
+        {
+            lblIDError.Text = "";
         }
     }
 }

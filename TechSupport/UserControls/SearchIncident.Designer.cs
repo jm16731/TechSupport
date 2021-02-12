@@ -33,6 +33,7 @@ namespace TechSupport.UserControls
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
+            this.lblIDError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearchIncident)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +78,22 @@ namespace TechSupport.UserControls
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(342, 53);
             this.txtCustomerID.TabIndex = 6;
+            this.txtCustomerID.TextAlignChanged += new System.EventHandler(this.TxtSearchCustomerID_TextChanged);
+            // 
+            // lblIDError
+            // 
+            this.lblIDError.AutoSize = true;
+            this.lblIDError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDError.Location = new System.Drawing.Point(515, 19);
+            this.lblIDError.Name = "lblIDError";
+            this.lblIDError.Size = new System.Drawing.Size(0, 46);
+            this.lblIDError.TabIndex = 7;
             // 
             // SearchIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblIDError);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.lblCustomerID);
             this.Controls.Add(this.btnSearch);
@@ -100,5 +112,6 @@ namespace TechSupport.UserControls
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.TextBox txtCustomerID;
+        private System.Windows.Forms.Label lblIDError;
     }
 }
