@@ -24,7 +24,7 @@ namespace TechSupport.DAL
                     "Incidents.Title " +
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
-                    "JOIN Technicians ON Incidents.TechID = Technicians.TechID";
+                    "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID";
             using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
