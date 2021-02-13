@@ -67,5 +67,23 @@ namespace TechSupport.Controller
         {
             return IncidentSQLServerGetData.GetOpenIncidents();
         }
+
+        /// <summary>
+        /// Gets the list of customers in the SQL Server Database as a List of Strings
+        /// </summary>
+        /// <returns>The List of Customers</returns>
+        public List<String> GetCustomers()
+        {
+            return IncidentSQLServerGetData.GetCustomers();
+        }
+
+        /// <summary>
+        /// Gets the list of products in the SQL Server Database as a List of Strings
+        /// </summary>
+        /// <returns>The List of Products</returns>
+        public List<String> GetProducts()
+        {
+            return IncidentSQLServerGetData.GetProducts();
+        }
     }
 }
