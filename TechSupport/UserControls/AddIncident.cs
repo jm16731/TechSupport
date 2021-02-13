@@ -46,6 +46,7 @@ namespace TechSupport.UserControls
 
         private void Clear_click(object sender, EventArgs e)
         {
+            txtIncidentTitle.Text = "";
             txtIncidentDescription.Text = "";
             lblIDError.Text = "";
         }

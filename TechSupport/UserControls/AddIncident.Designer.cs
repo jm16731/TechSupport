@@ -162,6 +162,7 @@ namespace TechSupport.UserControls
             // 
             // comboIncidentCustomer
             // 
+            this.comboIncidentCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIncidentCustomer.FormattingEnabled = true;
             this.comboIncidentCustomer.Location = new System.Drawing.Point(709, 3);
             this.comboIncidentCustomer.Name = "comboIncidentCustomer";
@@ -170,6 +171,7 @@ namespace TechSupport.UserControls
             // 
             // comboIncidentProduct
             // 
+            this.comboIncidentProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboIncidentProduct.FormattingEnabled = true;
             this.comboIncidentProduct.Location = new System.Drawing.Point(709, 96);
             this.comboIncidentProduct.Name = "comboIncidentProduct";
