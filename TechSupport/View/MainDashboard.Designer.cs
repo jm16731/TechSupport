@@ -37,12 +37,12 @@ namespace TechSupport.View
             this.tabSearchIncident = new System.Windows.Forms.TabPage();
             this.usrCntrlSearchIncident = new TechSupport.UserControls.SearchIncident();
             this.searchIncident1 = new TechSupport.UserControls.SearchIncident();
+            this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
+            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
             this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
-            this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabLoadAll.SuspendLayout();
@@ -128,6 +128,33 @@ namespace TechSupport.View
             this.searchIncident1.Size = new System.Drawing.Size(8, 8);
             this.searchIncident1.TabIndex = 0;
             // 
+            // tabDisplayOpenIncidents
+            // 
+            this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
+            this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
+            this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
+            this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
+            this.tabDisplayOpenIncidents.Size = new System.Drawing.Size(1416, 667);
+            this.tabDisplayOpenIncidents.TabIndex = 3;
+            this.tabDisplayOpenIncidents.Text = "Display Open Incidents";
+            this.tabDisplayOpenIncidents.UseVisualStyleBackColor = true;
+            // 
+            // usrCntrlDisplayOpenIncidents
+            // 
+            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(-10, 3);
+            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
+            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1436, 664);
+            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(-10, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1426, 664);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // lblMainUsername
             // 
             this.lblMainUsername.AutoSize = true;
@@ -160,33 +187,6 @@ namespace TechSupport.View
             this.usrCntrlLoadAll.Size = new System.Drawing.Size(1395, 568);
             this.usrCntrlLoadAll.TabIndex = 0;
             // 
-            // tabDisplayOpenIncidents
-            // 
-            this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
-            this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
-            this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
-            this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
-            this.tabDisplayOpenIncidents.Size = new System.Drawing.Size(1416, 667);
-            this.tabDisplayOpenIncidents.TabIndex = 3;
-            this.tabDisplayOpenIncidents.Text = "Display Open Incidents";
-            this.tabDisplayOpenIncidents.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(-10, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1426, 664);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // usrCntrlDisplayOpenIncidents
-            // 
-            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(-10, 3);
-            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
-            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1436, 664);
-            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -196,6 +196,7 @@ namespace TechSupport.View
             this.Controls.Add(this.lblMainUsername);
             this.Controls.Add(this.tabCntrlIncidents);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainDashboard";
