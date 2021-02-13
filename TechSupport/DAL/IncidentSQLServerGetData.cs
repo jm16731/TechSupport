@@ -6,7 +6,7 @@ using TechSupport.Model;
 namespace TechSupport.DAL
 {
     /// <summary>
-    /// This class manages various SQL Queries to the IncidentSQLServerConnection
+    /// This class manages various select SQL Queries to the IncidentSQLServerConnection
     /// </summary>
     public class IncidentSQLServerGetData
     {

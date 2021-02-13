@@ -50,6 +50,7 @@
     <Compile Include="DAL\IncidentDatabase.cs" />
     <Compile Include="DAL\IncidentSQLServerConnection.cs" />
     <Compile Include="DAL\IncidentSQLServerGetData.cs" />
+    <Compile Include="DAL\IncidentSQLServerModifyData.cs" />
     <Compile Include="Model\Incident.cs" />
     <Compile Include="Model\OpenIncident.cs" />
     <Compile Include="Program.cs" />

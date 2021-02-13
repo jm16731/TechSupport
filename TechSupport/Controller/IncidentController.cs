@@ -59,31 +59,28 @@ namespace TechSupport.Controller
             this.database.Add(incident);
         }
 
-        /// <summary>
-        /// Gets the open incidents in the SQL Server Database as a List of OpenIncidents
-        /// </summary>
-        /// <returns>The List of OpenIncidents</returns>
+        /// <see cref="IncidentSQLServerGetData.GetOpenIncidents"/>
         public List<OpenIncident> GetOpenIncidents()
         {
             return IncidentSQLServerGetData.GetOpenIncidents();
         }
 
-        /// <summary>
-        /// Gets the list of customers in the SQL Server Database as a List of Strings
-        /// </summary>
-        /// <returns>The List of Customers</returns>
+        /// <see cref="IncidentSQLServerGetData.GetCustomers"/>
         public List<String> GetCustomers()
         {
             return IncidentSQLServerGetData.GetCustomers();
         }
 
-        /// <summary>
-        /// Gets the list of products in the SQL Server Database as a List of Strings
-        /// </summary>
-        /// <returns>The List of Products</returns>
+        /// <see cref="IncidentSQLServerGetData.GetProducts"/>
         public List<String> GetProducts()
         {
             return IncidentSQLServerGetData.GetProducts();
+        }
+
+        /// <see cref="IncidentSQLServerModifyData.CreateIncident"/>
+        public void CreateIncident(String customerName, String productName, String title, String description)
+        {
+            IncidentSQLServerModifyData.CreateIncident(customerName, productName, title, description);
         }
     }
 }
