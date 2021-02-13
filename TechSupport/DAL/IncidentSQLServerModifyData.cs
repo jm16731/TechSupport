@@ -16,8 +16,10 @@ namespace TechSupport.DAL
         /// <param name="productName">The product of the incident</param>
         /// <param name="title">Title describing the incident</param>
         /// <param name="description">Explanation of the incident</param>
-        public static void CreateIncident(String customerName, String productName, String title, String description)
+        /// <returns>A string message stating if the operation was successful or what went wrong</returns>
+        public static String CreateIncident(String customerName, String productName, String title, String description)
         {
+            SqlParameter message;
             using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand("createIncident", connection))
@@ -28,9 +30,15 @@ namespace TechSupport.DAL
                     command.Parameters.AddWithValue("@ProductName", productName);
                     command.Parameters.AddWithValue("@Title", title);
                     command.Parameters.AddWithValue("@Description", description);
+
+                    message = new SqlParameter("@message", System.Data.SqlDbType.VarChar, 100);
+                    message.Direction = System.Data.ParameterDirection.Output;
+                    command.Parameters.Add(message);
+
                     command.ExecuteNonQuery();
                 }
             }
+            return message.Value.ToString();
         }
     }
 }

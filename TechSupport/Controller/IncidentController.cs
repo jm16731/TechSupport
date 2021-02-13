@@ -78,9 +78,9 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="IncidentSQLServerModifyData.CreateIncident"/>
-        public void CreateIncident(String customerName, String productName, String title, String description)
+        public String CreateIncident(String customerName, String productName, String title, String description)
         {
-            IncidentSQLServerModifyData.CreateIncident(customerName, productName, title, description);
+            return IncidentSQLServerModifyData.CreateIncident(customerName, productName, title, description);
         }
     }
 }

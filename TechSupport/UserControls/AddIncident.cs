@@ -64,8 +64,8 @@ namespace TechSupport.UserControls
             }
             try
             {
-                this.controller.CreateIncident(customerName, productName, title, description);
-                MessageBox.Show("Incident created");
+                String message = this.controller.CreateIncident(customerName, productName, title, description);
+                MessageBox.Show(message, "", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {

@@ -31,22 +31,22 @@ namespace TechSupport.UserControls
         {
             this.tblLayoutPnlAddIncident = new System.Windows.Forms.TableLayoutPanel();
             this.lblIncidentCustomerName = new System.Windows.Forms.Label();
-            this.txtIncidentDescription = new System.Windows.Forms.TextBox();
             this.lblIncidentDescription = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtIncidentTitle = new System.Windows.Forms.TextBox();
-            this.comboIncidentCustomer = new System.Windows.Forms.ComboBox();
-            this.comboIncidentProduct = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboIncidentCustomer = new System.Windows.Forms.ComboBox();
             this.lblCustomerNameError = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboIncidentProduct = new System.Windows.Forms.ComboBox();
             this.lblProductNameError = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtIncidentTitle = new System.Windows.Forms.TextBox();
             this.lblTitleError = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtIncidentDescription = new System.Windows.Forms.TextBox();
             this.lblDescriptionError = new System.Windows.Forms.Label();
             this.tblLayoutPnlAddIncident.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -91,16 +91,6 @@ namespace TechSupport.UserControls
             this.lblIncidentCustomerName.Size = new System.Drawing.Size(193, 46);
             this.lblIncidentCustomerName.TabIndex = 3;
             this.lblIncidentCustomerName.Text = "Customer";
-            // 
-            // txtIncidentDescription
-            // 
-            this.txtIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIncidentDescription.Location = new System.Drawing.Point(3, 3);
-            this.txtIncidentDescription.Multiline = true;
-            this.txtIncidentDescription.Name = "txtIncidentDescription";
-            this.txtIncidentDescription.Size = new System.Drawing.Size(516, 186);
-            this.txtIncidentDescription.TabIndex = 7;
-            this.txtIncidentDescription.TextChanged += new System.EventHandler(this.LblDescription_TextChanged);
             // 
             // lblIncidentDescription
             // 
@@ -156,34 +146,6 @@ namespace TechSupport.UserControls
             this.lblTitle.TabIndex = 13;
             this.lblTitle.Text = "Title";
             // 
-            // txtIncidentTitle
-            // 
-            this.txtIncidentTitle.Location = new System.Drawing.Point(3, 3);
-            this.txtIncidentTitle.Name = "txtIncidentTitle";
-            this.txtIncidentTitle.Size = new System.Drawing.Size(516, 38);
-            this.txtIncidentTitle.TabIndex = 15;
-            this.txtIncidentTitle.TextChanged += new System.EventHandler(this.TextTitle_TextChanged);
-            // 
-            // comboIncidentCustomer
-            // 
-            this.comboIncidentCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboIncidentCustomer.FormattingEnabled = true;
-            this.comboIncidentCustomer.Location = new System.Drawing.Point(3, 3);
-            this.comboIncidentCustomer.Name = "comboIncidentCustomer";
-            this.comboIncidentCustomer.Size = new System.Drawing.Size(516, 39);
-            this.comboIncidentCustomer.TabIndex = 16;
-            this.comboIncidentCustomer.SelectedIndexChanged += new System.EventHandler(this.ComboCustomer_IndexChanged);
-            // 
-            // comboIncidentProduct
-            // 
-            this.comboIncidentProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboIncidentProduct.FormattingEnabled = true;
-            this.comboIncidentProduct.Location = new System.Drawing.Point(3, 3);
-            this.comboIncidentProduct.Name = "comboIncidentProduct";
-            this.comboIncidentProduct.Size = new System.Drawing.Size(516, 39);
-            this.comboIncidentProduct.TabIndex = 17;
-            this.comboIncidentProduct.SelectedIndexChanged += new System.EventHandler(this.ComboProduct_IndexChanged);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -197,6 +159,16 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(701, 87);
             this.tableLayoutPanel1.TabIndex = 18;
+            // 
+            // comboIncidentCustomer
+            // 
+            this.comboIncidentCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboIncidentCustomer.FormattingEnabled = true;
+            this.comboIncidentCustomer.Location = new System.Drawing.Point(3, 3);
+            this.comboIncidentCustomer.Name = "comboIncidentCustomer";
+            this.comboIncidentCustomer.Size = new System.Drawing.Size(516, 39);
+            this.comboIncidentCustomer.TabIndex = 16;
+            this.comboIncidentCustomer.SelectedIndexChanged += new System.EventHandler(this.ComboCustomer_IndexChanged);
             // 
             // lblCustomerNameError
             // 
@@ -221,6 +193,16 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel2.Size = new System.Drawing.Size(701, 85);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
+            // comboIncidentProduct
+            // 
+            this.comboIncidentProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboIncidentProduct.FormattingEnabled = true;
+            this.comboIncidentProduct.Location = new System.Drawing.Point(3, 3);
+            this.comboIncidentProduct.Name = "comboIncidentProduct";
+            this.comboIncidentProduct.Size = new System.Drawing.Size(516, 39);
+            this.comboIncidentProduct.TabIndex = 17;
+            this.comboIncidentProduct.SelectedIndexChanged += new System.EventHandler(this.ComboProduct_IndexChanged);
+            // 
             // lblProductNameError
             // 
             this.lblProductNameError.AutoSize = true;
@@ -243,6 +225,14 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(701, 74);
             this.tableLayoutPanel3.TabIndex = 20;
+            // 
+            // txtIncidentTitle
+            // 
+            this.txtIncidentTitle.Location = new System.Drawing.Point(3, 3);
+            this.txtIncidentTitle.Name = "txtIncidentTitle";
+            this.txtIncidentTitle.Size = new System.Drawing.Size(516, 38);
+            this.txtIncidentTitle.TabIndex = 15;
+            this.txtIncidentTitle.TextChanged += new System.EventHandler(this.TextTitle_TextChanged);
             // 
             // lblTitleError
             // 
@@ -267,11 +257,21 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel4.Size = new System.Drawing.Size(701, 232);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
+            // txtIncidentDescription
+            // 
+            this.txtIncidentDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIncidentDescription.Location = new System.Drawing.Point(3, 3);
+            this.txtIncidentDescription.Multiline = true;
+            this.txtIncidentDescription.Name = "txtIncidentDescription";
+            this.txtIncidentDescription.Size = new System.Drawing.Size(516, 186);
+            this.txtIncidentDescription.TabIndex = 7;
+            this.txtIncidentDescription.TextChanged += new System.EventHandler(this.LblDescription_TextChanged);
+            // 
             // lblDescriptionError
             // 
             this.lblDescriptionError.AutoSize = true;
             this.lblDescriptionError.ForeColor = System.Drawing.Color.Red;
-            this.lblDescriptionError.Location = new System.Drawing.Point(3, 192);
+            this.lblDescriptionError.Location = new System.Drawing.Point(3, 193);
             this.lblDescriptionError.Name = "lblDescriptionError";
             this.lblDescriptionError.Size = new System.Drawing.Size(0, 32);
             this.lblDescriptionError.TabIndex = 8;
