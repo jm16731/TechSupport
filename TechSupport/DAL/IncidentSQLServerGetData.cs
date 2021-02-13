@@ -58,7 +58,7 @@ namespace TechSupport.DAL
         public static List<String> GetCustomers()
         {
             List<String> customers = new List<String>();
-            String selectStatement = "SELECT Name FROM Products";
+            String selectStatement = "SELECT Name FROM Customers";
             using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -84,7 +84,7 @@ namespace TechSupport.DAL
         public static List<String> GetProducts()
         {
             List<String> products = new List<String>();
-            String selectStatement = "SELECT Name FROM Customers";
+            String selectStatement = "SELECT Name FROM Products";
             using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
