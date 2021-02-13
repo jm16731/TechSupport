@@ -162,6 +162,7 @@ namespace TechSupport.UserControls
             this.txtIncidentTitle.Name = "txtIncidentTitle";
             this.txtIncidentTitle.Size = new System.Drawing.Size(516, 38);
             this.txtIncidentTitle.TabIndex = 15;
+            this.txtIncidentTitle.TextChanged += new System.EventHandler(this.TextTitle_TextChanged);
             // 
             // comboIncidentCustomer
             // 
@@ -171,6 +172,7 @@ namespace TechSupport.UserControls
             this.comboIncidentCustomer.Name = "comboIncidentCustomer";
             this.comboIncidentCustomer.Size = new System.Drawing.Size(516, 39);
             this.comboIncidentCustomer.TabIndex = 16;
+            this.comboIncidentCustomer.SelectedIndexChanged += new System.EventHandler(this.ComboCustomer_IndexChanged);
             // 
             // comboIncidentProduct
             // 
@@ -180,6 +182,7 @@ namespace TechSupport.UserControls
             this.comboIncidentProduct.Name = "comboIncidentProduct";
             this.comboIncidentProduct.Size = new System.Drawing.Size(516, 39);
             this.comboIncidentProduct.TabIndex = 17;
+            this.comboIncidentProduct.SelectedIndexChanged += new System.EventHandler(this.ComboProduct_IndexChanged);
             // 
             // tableLayoutPanel1
             // 

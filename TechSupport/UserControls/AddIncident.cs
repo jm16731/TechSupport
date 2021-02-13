@@ -65,6 +65,7 @@ namespace TechSupport.UserControls
             try
             {
                 this.controller.CreateIncident(customerName, productName, title, description);
+                MessageBox.Show("Incident created");
             }
             catch (Exception ex)
             {
@@ -78,12 +79,31 @@ namespace TechSupport.UserControls
             comboIncidentProduct.SelectedIndex = -1;
             txtIncidentTitle.Text = "";
             txtIncidentDescription.Text = "";
-            lblIDError.Text = "";
+
+            lblDescriptionError.Text = "";
+            lblTitleError.Text = "";
+            lblProductNameError.Text = "";
+            lblCustomerNameError.Text = "";
         }
 
         private void LblDescription_TextChanged(object sender, EventArgs e)
         {
-            
+            lblDescriptionError.Text = "";
+        }
+
+        private void TextTitle_TextChanged(object sender, EventArgs e)
+        {
+            lblTitleError.Text = "";
+        }
+
+        private void ComboProduct_IndexChanged(object sender, EventArgs e)
+        {
+            lblProductNameError.Text = "";
+        }
+
+        private void ComboCustomer_IndexChanged(object sender, EventArgs e)
+        {
+            lblCustomerNameError.Text = "";
         }
     }
 }
