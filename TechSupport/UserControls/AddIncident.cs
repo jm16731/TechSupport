@@ -34,18 +34,48 @@ namespace TechSupport.UserControls
 
         private void Add_click(object sender, EventArgs e)
         {
-                //   lblMessage.Text = "Incident added";
-                //    lblIDError.ForeColor = System.Drawing.Color.Blue;
-
-                 //   MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //lblIDError.Text = "ID must be a number";
-                //lblIDError.ForeColor = System.Drawing.Color.Red;
-
+            String customerName = comboIncidentCustomer.Text;
+            String productName = comboIncidentProduct.Text;
+            String title = txtIncidentTitle.Text;
+            String description = txtIncidentDescription.Text;
+            Boolean passesVerification = true;
+            if (String.IsNullOrEmpty(customerName))
+            {
+                lblCustomerNameError.Text = "Please choose a customer";
+                passesVerification = false;
+            }
+            if (String.IsNullOrEmpty(productName))
+            {
+                lblProductNameError.Text = "Please choose a product";
+                passesVerification = false;
+            }
+            if (String.IsNullOrEmpty(title))
+            {
+                lblTitleError.Text = "Please give a title";
+                passesVerification = false;
+            } if (String.IsNullOrEmpty(description))
+            {
+                lblDescriptionError.Text = "Please describe incident";
+                passesVerification = false;
+            }
+            if(!passesVerification)
+            {
+                return;
+            }
+            try
+            {
+                this.controller.CreateIncident(customerName, productName, title, description);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Clear_click(object sender, EventArgs e)
         {
+            comboIncidentCustomer.SelectedIndex = -1;
+            comboIncidentProduct.SelectedIndex = -1;
             txtIncidentTitle.Text = "";
             txtIncidentDescription.Text = "";
             lblIDError.Text = "";
