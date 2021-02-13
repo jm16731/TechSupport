@@ -62,7 +62,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.SelectedIndex = 0;
             this.tabCntrlIncidents.Size = new System.Drawing.Size(1436, 725);
             this.tabCntrlIncidents.TabIndex = 1;
-            this.tabCntrlIncidents.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabSelectedIndex);
+            this.tabCntrlIncidents.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabSelectedIndex);
             // 
             // tabAddIncident
             // 
