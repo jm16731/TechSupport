@@ -25,40 +25,82 @@ namespace TechSupport.DAL
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
                     "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID";
-            try
+
+            using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
             {
-                using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        int ordProductCode = reader.GetOrdinal("Product Code");
+                        int ordDateOpened = reader.GetOrdinal("Date Opened");
+                        int ordCustomer = reader.GetOrdinal("Customer");
+                        int ordTechnician = reader.GetOrdinal("Technician");
+                        int ordTitle = reader.GetOrdinal("Title");
+                        while (reader.Read())
                         {
-                            int ordProductCode = reader.GetOrdinal("Product Code");
-                            int ordDateOpened = reader.GetOrdinal("Date Opened");
-                            int ordCustomer = reader.GetOrdinal("Customer");
-                            int ordTechnician = reader.GetOrdinal("Technician");
-                            int ordTitle = reader.GetOrdinal("Title");
-                            while (reader.Read())
-                            {
-                                OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
-                                    reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
-                                    reader.GetString(ordTechnician), reader.GetString(ordTitle));
-                                incidents.Add(incident);
-                            }
+                            OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
+                                reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
+                                reader.GetString(ordTechnician), reader.GetString(ordTitle));
+                            incidents.Add(incident);
                         }
                     }
                 }
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
             return incidents;
+        }
+
+        /// <summary>
+        /// Sends a SQL Query to get a List of Customer Names from the TechSupport DB
+        /// </summary>
+        /// <returns>The List of Customer Names from TechSupport DB</returns>
+        public static List<String> GetCustomers()
+        {
+            List<String> customers = new List<String>();
+            String selectStatement = "SELECT Name FROM Products";
+            using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int ordName = reader.GetOrdinal("Name");
+                        while (reader.Read())
+                        {
+                            customers.Add(reader.GetString(ordName));
+                        }
+                    }
+                }
+            }
+            return customers;
+        }
+
+        /// <summary>
+        /// Sends a SQL Query to get a List of Product Names from the TechSupport DB
+        /// </summary>
+        /// <returns>The List of Product Names from TechSupport DB</returns>
+        public static List<String> GetProducts()
+        {
+            List<String> products = new List<String>();
+            String selectStatement = "SELECT Name FROM Customers";
+            using (SqlConnection connection = IncidentSQLServerConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int ordName = reader.GetOrdinal("Name");
+                        while (reader.Read())
+                        {
+                            products.Add(reader.GetString(ordName));
+                        }
+                    }
+                }
+            }
+            return products;
         }
     }
 }
