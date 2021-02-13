@@ -62,7 +62,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.SelectedIndex = 0;
             this.tabCntrlIncidents.Size = new System.Drawing.Size(1436, 725);
             this.tabCntrlIncidents.TabIndex = 1;
-            this.tabCntrlIncidents.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabSelectedIndex);
+            this.tabCntrlIncidents.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TabSelecting);
             // 
             // tabAddIncident
             // 
@@ -82,7 +82,7 @@ namespace TechSupport.View
             this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 0);
             this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
-            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1130, 633);
+            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1419, 670);
             this.usrCntrlAddIncident.TabIndex = 2;
             // 
             // tabLoadAll

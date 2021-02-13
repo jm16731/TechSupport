@@ -69,11 +69,14 @@ namespace TechSupport.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something went wrong." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void Clear_click(object sender, EventArgs e)
+        /// <summary>
+        /// Clears the data on the form
+        /// </summary>
+        public void Clear()
         {
             comboIncidentCustomer.SelectedIndex = -1;
             comboIncidentProduct.SelectedIndex = -1;
@@ -84,6 +87,11 @@ namespace TechSupport.UserControls
             lblTitleError.Text = "";
             lblProductNameError.Text = "";
             lblCustomerNameError.Text = "";
+        }
+
+        private void Clear_click(object sender, EventArgs e)
+        {
+            this.Clear();
         }
 
         private void LblDescription_TextChanged(object sender, EventArgs e)

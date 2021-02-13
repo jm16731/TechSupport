@@ -35,10 +35,11 @@ namespace TechSupport.View
             this.Close();
         }
 
-        private void TabSelectedIndex(object sender, TabControlEventArgs e)
+        private void TabSelecting(object sender, TabControlCancelEventArgs e)
         {
             if (tabCntrlIncidents.SelectedTab == tabAddIncident)
             {
+                usrCntrlAddIncident.Clear();
                 this.AcceptButton = usrCntrlAddIncident.GetAddButton();
             }
             else if (tabCntrlIncidents.SelectedTab == tabLoadAll)
