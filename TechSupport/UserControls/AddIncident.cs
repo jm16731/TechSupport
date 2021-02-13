@@ -19,6 +19,8 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             this.controller = new IncidentController();
+            this.comboIncidentCustomer.DataSource = this.controller.GetCustomers();
+            this.comboIncidentProduct.DataSource = this.controller.GetProducts();
         }
 
         /// <summary>
@@ -32,54 +34,25 @@ namespace TechSupport.UserControls
 
         private void Add_click(object sender, EventArgs e)
         {
-            int customerID;
-            if (int.TryParse(txtIncidentCustomerID.Text, out customerID))
-            {
-                try
-                {
-                    string title = txtIncidentName.Text;
-                    string description = txtIncidentDescription.Text;
+                //   lblMessage.Text = "Incident added";
+                //    lblIDError.ForeColor = System.Drawing.Color.Blue;
 
-                    this.controller.Add(new Incident(title, description, customerID));
+                 //   MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    lblMessage.Text = "Incident added";
-                    lblIDError.ForeColor = System.Drawing.Color.Blue;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Bad input." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else {
-                lblIDError.Text = "ID must be a number";
-                lblIDError.ForeColor = System.Drawing.Color.Red;
-            }
+                //lblIDError.Text = "ID must be a number";
+                //lblIDError.ForeColor = System.Drawing.Color.Red;
 
         }
 
         private void Clear_click(object sender, EventArgs e)
         {
-            txtIncidentName.Text = "";
             txtIncidentDescription.Text = "";
-            txtIncidentCustomerID.Text = "";
-            lblMessage.Text = "";
-            lblIDError.Text = "";
-        }
-
-        private void LblCustomerID_TextChanged(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
             lblIDError.Text = "";
         }
 
         private void LblDescription_TextChanged(object sender, EventArgs e)
         {
-            lblMessage.Text = "";
-        }
-
-        private void LblName_TextChanged(object sender, EventArgs e)
-        {
-            lblMessage.Text = "";
+            
         }
     }
 }
