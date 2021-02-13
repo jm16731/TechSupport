@@ -31,8 +31,10 @@ namespace TechSupport.DAL
                     command.Parameters.AddWithValue("@Title", title);
                     command.Parameters.AddWithValue("@Description", description);
 
-                    message = new SqlParameter("@message", System.Data.SqlDbType.VarChar, 100);
-                    message.Direction = System.Data.ParameterDirection.Output;
+                    message = new SqlParameter("@message", System.Data.SqlDbType.VarChar, 100)
+                    {
+                        Direction = System.Data.ParameterDirection.Output
+                    };
                     command.Parameters.Add(message);
 
                     command.ExecuteNonQuery();
