@@ -37,6 +37,7 @@ namespace TechSupport.View
             this.listView1 = new System.Windows.Forms.ListView();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
+            this.tabUpdateIncident = new System.Windows.Forms.TabPage();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
@@ -46,6 +47,7 @@ namespace TechSupport.View
             // 
             this.tabCntrlIncidents.Controls.Add(this.tabAddIncident);
             this.tabCntrlIncidents.Controls.Add(this.tabDisplayOpenIncidents);
+            this.tabCntrlIncidents.Controls.Add(this.tabUpdateIncident);
             this.tabCntrlIncidents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabCntrlIncidents.Location = new System.Drawing.Point(0, 229);
             this.tabCntrlIncidents.Name = "tabCntrlIncidents";
@@ -125,6 +127,15 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
+            // tabUpdateIncident
+            // 
+            this.tabUpdateIncident.Location = new System.Drawing.Point(10, 48);
+            this.tabUpdateIncident.Name = "tabUpdateIncident";
+            this.tabUpdateIncident.Size = new System.Drawing.Size(1416, 667);
+            this.tabUpdateIncident.TabIndex = 4;
+            this.tabUpdateIncident.Text = "Update Incident";
+            this.tabUpdateIncident.UseVisualStyleBackColor = true;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -161,5 +172,6 @@ namespace TechSupport.View
         private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
         private System.Windows.Forms.ListView listView1;
         private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
+        private System.Windows.Forms.TabPage tabUpdateIncident;
     }
 }
