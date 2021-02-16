@@ -34,14 +34,16 @@ namespace TechSupport.UserControls
             // 
             // listViewIncidentViewer
             // 
+            this.listViewIncidentViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listViewIncidentViewer.FullRowSelect = true;
             this.listViewIncidentViewer.HideSelection = false;
             this.listViewIncidentViewer.Location = new System.Drawing.Point(0, 0);
             this.listViewIncidentViewer.Name = "listViewIncidentViewer";
-            this.listViewIncidentViewer.Size = new System.Drawing.Size(1423, 658);
+            this.listViewIncidentViewer.Size = new System.Drawing.Size(1436, 664);
+            this.listViewIncidentViewer.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listViewIncidentViewer.TabIndex = 0;
             this.listViewIncidentViewer.UseCompatibleStateImageBehavior = false;
-            this.listViewIncidentViewer.View = System.Windows.Forms.View.List;
+            this.listViewIncidentViewer.View = System.Windows.Forms.View.Details;
             // 
             // DisplayOpenIncidents
             // 
