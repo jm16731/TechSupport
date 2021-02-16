@@ -158,7 +158,6 @@ namespace TechSupport.View
         private UserControls.AddIncident usrCntrlAddIncident;
         private System.Windows.Forms.Label lblMainUsername;
         private System.Windows.Forms.LinkLabel lnklblLogout;
-        private UserControls.LoadAll usrCntrlLoadAll;
         private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
         private System.Windows.Forms.ListView listView1;
         private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
