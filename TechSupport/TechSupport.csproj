@@ -47,11 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IncidentController.cs" />
-    <Compile Include="DAL\IncidentDatabase.cs" />
     <Compile Include="DAL\IncidentSQLServerConnection.cs" />
     <Compile Include="DAL\IncidentSQLServerGetData.cs" />
     <Compile Include="DAL\IncidentSQLServerModifyData.cs" />
-    <Compile Include="Model\Incident.cs" />
     <Compile Include="Model\OpenIncident.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,18 +64,6 @@
     </Compile>
     <Compile Include="UserControls\DisplayOpenIncidents.Designer.cs">
       <DependentUpon>DisplayOpenIncidents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\LoadAll.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\LoadAll.Designer.cs">
-      <DependentUpon>LoadAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\SearchIncident.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\SearchIncident.Designer.cs">
-      <DependentUpon>SearchIncident.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -105,12 +91,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DisplayOpenIncidents.resx">
       <DependentUpon>DisplayOpenIncidents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\LoadAll.resx">
-      <DependentUpon>LoadAll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SearchIncident.resx">
-      <DependentUpon>SearchIncident.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

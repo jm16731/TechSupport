@@ -32,29 +32,19 @@ namespace TechSupport.View
             this.tabCntrlIncidents = new System.Windows.Forms.TabControl();
             this.tabAddIncident = new System.Windows.Forms.TabPage();
             this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
-            this.tabLoadAll = new System.Windows.Forms.TabPage();
-            this.loadAll1 = new TechSupport.UserControls.LoadAll();
-            this.tabSearchIncident = new System.Windows.Forms.TabPage();
-            this.usrCntrlSearchIncident = new TechSupport.UserControls.SearchIncident();
-            this.searchIncident1 = new TechSupport.UserControls.SearchIncident();
             this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
             this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.listView1 = new System.Windows.Forms.ListView();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
-            this.usrCntrlLoadAll = new TechSupport.UserControls.LoadAll();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
-            this.tabLoadAll.SuspendLayout();
-            this.tabSearchIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCntrlIncidents
             // 
             this.tabCntrlIncidents.Controls.Add(this.tabAddIncident);
-            this.tabCntrlIncidents.Controls.Add(this.tabLoadAll);
-            this.tabCntrlIncidents.Controls.Add(this.tabSearchIncident);
             this.tabCntrlIncidents.Controls.Add(this.tabDisplayOpenIncidents);
             this.tabCntrlIncidents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabCntrlIncidents.Location = new System.Drawing.Point(0, 229);
@@ -84,49 +74,6 @@ namespace TechSupport.View
             this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
             this.usrCntrlAddIncident.Size = new System.Drawing.Size(1419, 670);
             this.usrCntrlAddIncident.TabIndex = 2;
-            // 
-            // tabLoadAll
-            // 
-            this.tabLoadAll.Controls.Add(this.loadAll1);
-            this.tabLoadAll.Location = new System.Drawing.Point(10, 48);
-            this.tabLoadAll.Name = "tabLoadAll";
-            this.tabLoadAll.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLoadAll.Size = new System.Drawing.Size(1416, 667);
-            this.tabLoadAll.TabIndex = 1;
-            this.tabLoadAll.Text = "Load All";
-            this.tabLoadAll.UseVisualStyleBackColor = true;
-            // 
-            // loadAll1
-            // 
-            this.loadAll1.Location = new System.Drawing.Point(0, 3);
-            this.loadAll1.Name = "loadAll1";
-            this.loadAll1.Size = new System.Drawing.Size(1416, 658);
-            this.loadAll1.TabIndex = 0;
-            // 
-            // tabSearchIncident
-            // 
-            this.tabSearchIncident.Controls.Add(this.usrCntrlSearchIncident);
-            this.tabSearchIncident.Controls.Add(this.searchIncident1);
-            this.tabSearchIncident.Location = new System.Drawing.Point(10, 48);
-            this.tabSearchIncident.Name = "tabSearchIncident";
-            this.tabSearchIncident.Size = new System.Drawing.Size(1416, 667);
-            this.tabSearchIncident.TabIndex = 2;
-            this.tabSearchIncident.Text = "Search Incidents";
-            this.tabSearchIncident.UseVisualStyleBackColor = true;
-            // 
-            // usrCntrlSearchIncident
-            // 
-            this.usrCntrlSearchIncident.Location = new System.Drawing.Point(-10, 3);
-            this.usrCntrlSearchIncident.Name = "usrCntrlSearchIncident";
-            this.usrCntrlSearchIncident.Size = new System.Drawing.Size(1423, 661);
-            this.usrCntrlSearchIncident.TabIndex = 1;
-            // 
-            // searchIncident1
-            // 
-            this.searchIncident1.Location = new System.Drawing.Point(761, 171);
-            this.searchIncident1.Name = "searchIncident1";
-            this.searchIncident1.Size = new System.Drawing.Size(8, 8);
-            this.searchIncident1.TabIndex = 0;
             // 
             // tabDisplayOpenIncidents
             // 
@@ -178,15 +125,6 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
-            // usrCntrlLoadAll
-            // 
-            this.usrCntrlLoadAll.AutoSize = true;
-            this.usrCntrlLoadAll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrCntrlLoadAll.Location = new System.Drawing.Point(0, 0);
-            this.usrCntrlLoadAll.Name = "usrCntrlLoadAll";
-            this.usrCntrlLoadAll.Size = new System.Drawing.Size(1395, 568);
-            this.usrCntrlLoadAll.TabIndex = 0;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -207,8 +145,6 @@ namespace TechSupport.View
             this.tabCntrlIncidents.ResumeLayout(false);
             this.tabAddIncident.ResumeLayout(false);
             this.tabAddIncident.PerformLayout();
-            this.tabLoadAll.ResumeLayout(false);
-            this.tabSearchIncident.ResumeLayout(false);
             this.tabDisplayOpenIncidents.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,14 +156,9 @@ namespace TechSupport.View
         private System.Windows.Forms.TabControl tabCntrlIncidents;
         private System.Windows.Forms.TabPage tabAddIncident;
         private UserControls.AddIncident usrCntrlAddIncident;
-        private System.Windows.Forms.TabPage tabLoadAll;
-        private System.Windows.Forms.TabPage tabSearchIncident;
         private System.Windows.Forms.Label lblMainUsername;
         private System.Windows.Forms.LinkLabel lnklblLogout;
         private UserControls.LoadAll usrCntrlLoadAll;
-        private UserControls.LoadAll loadAll1;
-        private UserControls.SearchIncident usrCntrlSearchIncident;
-        private UserControls.SearchIncident searchIncident1;
         private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
         private System.Windows.Forms.ListView listView1;
         private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;

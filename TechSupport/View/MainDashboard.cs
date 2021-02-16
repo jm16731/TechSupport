@@ -42,15 +42,6 @@ namespace TechSupport.View
                 usrCntrlAddIncident.Clear();
                 this.AcceptButton = usrCntrlAddIncident.GetAddButton();
             }
-            else if (tabCntrlIncidents.SelectedTab == tabLoadAll)
-            {
-                usrCntrlLoadAll.RefreshDataGrid();
-                this.AcceptButton = null;
-            }
-            else if (tabCntrlIncidents.SelectedTab == tabSearchIncident)
-            {
-                this.AcceptButton = usrCntrlSearchIncident.GetSearchButton();
-            }
             else
             {
                 this.AcceptButton = null;
