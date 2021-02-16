@@ -11,7 +11,7 @@ namespace TechSupport.UserControls
     /// </summary>
     public partial class DisplayOpenIncidents : UserControl
     {
-        private IncidentController controller;
+        private readonly IncidentController controller;
 
         /// <summary>
         /// Creates the DisplayOpenIncidents
@@ -20,6 +20,11 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             this.controller = new IncidentController();
+            //listViewIncidentViewer.Columns.Add("Product Code");
+            //listViewIncidentViewer.Columns.Add("Title");
+            //listViewIncidentViewer.Columns.Add("Customer");
+            //listViewIncidentViewer.Columns.Add("Date Opened");
+            //listViewIncidentViewer.Columns.Add("Technician");
             this.RefreshDataGrid();
         }
 
@@ -28,6 +33,7 @@ namespace TechSupport.UserControls
         /// </summary>
         public void RefreshDataGrid()
         {
+            listViewIncidentViewer.Items.Clear();
             List<OpenIncident> incidentList;
             try
             {
@@ -38,11 +44,14 @@ namespace TechSupport.UserControls
                     for (int i = 0; i < incidentList.Count; i++)
                     {
                         incident = incidentList[i];
-                        listViewIncidentViewer.Items.Add(incident.Title);
-                        listViewIncidentViewer.Items[i].SubItems.Add(incident.ProductCode.ToString());
-                        listViewIncidentViewer.Items[i].SubItems.Add(incident.DateOpened.ToShortDateString());
-                        listViewIncidentViewer.Items[i].SubItems.Add(incident.CustomerName.ToString());
-                        listViewIncidentViewer.Items[i].SubItems.Add(incident.TechnicianName.ToString());
+                        listViewIncidentViewer.Items.Add(new ListViewItem(new string[]{
+                            incident.ProductCode, incident.Title, 
+                            incident.DateOpened.ToShortDateString(),
+                            incident.CustomerName, incident.TechnicianName}));
+                        //listViewIncidentViewer.Items[i].SubItems.Add(incident.Title);
+                        //listViewIncidentViewer.Items[i].SubItems.Add(incident.DateOpened.ToShortDateString());
+                        //listViewIncidentViewer.Items[i].SubItems.Add(incident.CustomerName);
+                        //listViewIncidentViewer.Items[i].SubItems.Add(incident.TechnicianName);
                     }
                 }
                 else

@@ -34,12 +34,14 @@ namespace TechSupport.UserControls
             // 
             // listViewIncidentViewer
             // 
+            this.listViewIncidentViewer.FullRowSelect = true;
             this.listViewIncidentViewer.HideSelection = false;
             this.listViewIncidentViewer.Location = new System.Drawing.Point(0, 0);
             this.listViewIncidentViewer.Name = "listViewIncidentViewer";
             this.listViewIncidentViewer.Size = new System.Drawing.Size(1423, 658);
             this.listViewIncidentViewer.TabIndex = 0;
             this.listViewIncidentViewer.UseCompatibleStateImageBehavior = false;
+            this.listViewIncidentViewer.View = System.Windows.Forms.View.List;
             // 
             // DisplayOpenIncidents
             // 
