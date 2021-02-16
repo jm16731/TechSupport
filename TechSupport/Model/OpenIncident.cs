@@ -24,7 +24,7 @@ namespace TechSupport.Model
         public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName, string Title)
         {
             if (string.IsNullOrEmpty(CustomerName)
-                || string.IsNullOrEmpty(TechnicianName) || string.IsNullOrEmpty(Title)
+                || string.IsNullOrEmpty(Title)
                 || string.IsNullOrEmpty(ProductCode))
             {
                 throw new ArgumentException("title " + "customer name" + "technician name" + "date opened" + "product code",
@@ -33,6 +33,10 @@ namespace TechSupport.Model
             if (DateOpened == null)
             {
                 throw new ArgumentException("date opened", "Date Opened cannot be null");
+            }
+            if (TechnicianName == null)
+            {
+                TechnicianName = "";
             }
 
             this.ProductCode = ProductCode;
