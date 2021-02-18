@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
@@ -13,10 +14,10 @@ namespace TechSupport.DAL
         /// Sends a SQL Query to get a List of Customer Names from the TechSupport DB
         /// </summary>
         /// <returns>The List of Customer Names from TechSupport DB</returns>
-        public static List<String> GetCustomers()
+        public static List<Customer> GetCustomers()
         {
-            List<String> customers = new List<String>();
-            String selectStatement = "SELECT Name FROM Customers";
+            List<Customer> customers = new List<Customer>();
+            String selectStatement = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Customers";
             using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -24,10 +25,29 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        int ordID = reader.GetOrdinal("CustomerID");
                         int ordName = reader.GetOrdinal("Name");
+                        int ordAddress = reader.GetOrdinal("Address");
+                        int ordCity = reader.GetOrdinal("City");
+                        int ordState = reader.GetOrdinal("State");
+                        int ordZip = reader.GetOrdinal("ZipCode");
+                        int ordPhone = reader.GetOrdinal("Phone");
+                        int ordEmail = reader.GetOrdinal("Email");
                         while (reader.Read())
                         {
-                            customers.Add(reader.GetString(ordName));
+                            string phone = null;
+                            string email = null;
+                            if (!reader.IsDBNull(ordPhone))
+                            {
+                                phone = reader.GetString(ordPhone);
+                            }
+                            if (!reader.IsDBNull(ordEmail))
+                            {
+                                email = reader.GetString(ordEmail);
+                            }
+                            customers.Add(new Customer(reader.GetInt32(ordID), reader.GetString(ordName),
+                                reader.GetString(ordAddress), reader.GetString(ordCity), reader.GetString(ordState),
+                                reader.GetString(ordZip), phone, email));
                         }
                     }
                 }
