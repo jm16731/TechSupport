@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
@@ -13,10 +14,10 @@ namespace TechSupport.DAL
         /// Sends a SQL Query to get a List of Product Names from the TechSupport DB
         /// </summary>
         /// <returns>The List of Product Names from TechSupport DB</returns>
-        public static List<String> GetProducts()
+        public static List<Product> GetProducts()
         {
-            List<String> products = new List<String>();
-            String selectStatement = "SELECT Name FROM Products";
+            List<Product> products = new List<Product>();
+            String selectStatement = "SELECT ProductCode, Name, Version, ReleaseDate FROM Products";
             using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -24,10 +25,14 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        int ordCode = reader.GetOrdinal("Product Code");
                         int ordName = reader.GetOrdinal("Name");
+                        int ordVersion = reader.GetOrdinal("Version");
+                        int ordRelease = reader.GetOrdinal("Release Date");
                         while (reader.Read())
                         {
-                            products.Add(reader.GetString(ordName));
+                            products.Add(new Product(reader.GetString(ordCode), reader.GetString(ordName),
+                                reader.GetDecimal(ordVersion), reader.GetDateTime(ordRelease)));
                         }
                     }
                 }
