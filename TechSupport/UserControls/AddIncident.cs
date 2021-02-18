@@ -48,37 +48,39 @@ namespace TechSupport.UserControls
 
         private void Add_click(object sender, EventArgs e)
         {
-            String customerName = comboIncidentCustomer.Text;
-            String productName = comboIncidentProduct.Text;
-            String title = txtIncidentTitle.Text;
-            String description = txtIncidentDescription.Text;
             Boolean passesVerification = true;
-            if (String.IsNullOrEmpty(customerName))
+            if (comboIncidentCustomer.SelectedIndex == -1)
             {
                 lblCustomerNameError.Text = "Please choose a customer";
                 passesVerification = false;
             }
-            if (String.IsNullOrEmpty(productName))
+            if (comboIncidentProduct.SelectedIndex == -1)
             {
                 lblProductNameError.Text = "Please choose a product";
                 passesVerification = false;
             }
-            if (String.IsNullOrEmpty(title))
+            if (String.IsNullOrEmpty(txtIncidentTitle.Text))
             {
                 lblTitleError.Text = "Please give a title";
                 passesVerification = false;
-            } if (String.IsNullOrEmpty(description))
+            }
+            if (String.IsNullOrEmpty(txtIncidentDescription.Text))
             {
                 lblDescriptionError.Text = "Please describe incident";
                 passesVerification = false;
             }
-            if(!passesVerification)
+            if (!passesVerification)
             {
                 return;
             }
+
+            int customerID = int.Parse(comboIncidentCustomer.ValueMember);
+            String productCode = comboIncidentProduct.ValueMember;
+            String title = txtIncidentTitle.Text;
+            String description = txtIncidentDescription.Text;
             try
             {
-                String message = this.controller.CreateIncident(customerName, productName, title, description);
+                String message = this.controller.CreateIncident(customerID, productCode, title, description);
                 MessageBox.Show(message, "", MessageBoxButtons.OK);
             }
             catch (Exception ex)
