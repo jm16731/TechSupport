@@ -30,9 +30,9 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident"/>
-        public String CreateIncident(String customerName, String productName, String title, String description)
+        public String CreateIncident(int customerID, String productCode, String title, String description)
         {
-            return TechSupportSQLServerTableIncidents.CreateIncident(customerName, productName, title, description);
+            return TechSupportSQLServerTableIncidents.CreateIncident(customerID, productCode, title, description);
         }
     }
 }
