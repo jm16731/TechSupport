@@ -5,7 +5,7 @@ namespace TechSupport.Model
     /// <summary>
     /// Models a Customer of TechSupport
     /// </summary>
-    class Customer
+    public class Customer
     {
         public int ID { get; }
         public string Name { get; }

@@ -5,7 +5,7 @@ namespace TechSupport.Model
     /// <summary>
     /// Models a Product of TechSupport
     /// </summary>
-    class Product
+    public class Product
     {
         public string ProductCode { get; }
         public string Name { get; }
