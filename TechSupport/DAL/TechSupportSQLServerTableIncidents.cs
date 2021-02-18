@@ -65,30 +65,30 @@ namespace TechSupport.DAL
         /// <param name="title">Title describing the incident</param>
         /// <param name="description">Explanation of the incident</param>
         /// <returns>A string message stating if the operation was successful or what went wrong</returns>
-        public static String CreateIncident(int customerID, String productCode, String title, String description)
+        public static bool CreateIncident(int customerID, String productCode, String title, String description)
         {
-            SqlParameter message;
+            int rowsUpdated;
             using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand("createIncident", connection))
                 {
                     connection.Open();
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@CustomerName", customerID);
-                    command.Parameters.AddWithValue("@ProductName", productCode);
+                    command.Parameters.AddWithValue("@CustomerID", customerID);
+                    command.Parameters.AddWithValue("@ProductCode", productCode);
                     command.Parameters.AddWithValue("@Title", title);
                     command.Parameters.AddWithValue("@Description", description);
 
-                    message = new SqlParameter("@message", System.Data.SqlDbType.VarChar, 100)
-                    {
-                        Direction = System.Data.ParameterDirection.Output
-                    };
-                    command.Parameters.Add(message);
-
-                    command.ExecuteNonQuery();
+                    rowsUpdated = command.ExecuteNonQuery();
                 }
             }
-            return message.Value.ToString();
+            if (rowsUpdated < 1)
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
         }
     }
 }
