@@ -30,9 +30,15 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident"/>
-        public String CreateIncident(int customerID, String productCode, String title, String description)
+        public bool CreateIncident(int customerID, String productCode, String title, String description)
         {
             return TechSupportSQLServerTableIncidents.CreateIncident(customerID, productCode, title, description);
+        }
+
+        /// see cref="TechSupportSQLServerTableRegistrations.isCustomerRegisteredToProduct"/>
+        public bool IsCustomerRegisteredToProduct(int customerID, string productCode)
+        {
+            return TechSupportSQLServerTableRegistrations.IsCustomerRegisteredToProduct(customerID, productCode);
         }
     }
 }
