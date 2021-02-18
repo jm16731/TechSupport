@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
@@ -19,8 +18,23 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             this.controller = new IncidentController();
+            this.RefreshData();
+        }
+
+        /// <summary>
+        /// Refreshes the customer and product data for this user control
+        /// </summary>
+        public void RefreshData()
+        {
+            this.comboIncidentCustomer.DataSource = null;
             this.comboIncidentCustomer.DataSource = this.controller.GetCustomers();
+            this.comboIncidentCustomer.DisplayMember = "Name";
+            this.comboIncidentCustomer.ValueMember = "ID";
+
+            this.comboIncidentProduct.DataSource = null;
             this.comboIncidentProduct.DataSource = this.controller.GetProducts();
+            this.comboIncidentProduct.DisplayMember = "Name";
+            this.comboIncidentProduct.ValueMember = "ProductCode";
         }
 
         /// <summary>
