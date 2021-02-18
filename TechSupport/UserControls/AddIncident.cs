@@ -74,15 +74,29 @@ namespace TechSupport.UserControls
                 return;
             }
 
-            int customerID = int.Parse(comboIncidentCustomer.ValueMember);
-            String productCode = comboIncidentProduct.ValueMember;
-            String title = txtIncidentTitle.Text;
-            String description = txtIncidentDescription.Text;
             try
             {
-                String message = this.controller.CreateIncident(customerID, productCode, title, description);
-                MessageBox.Show(message, "", MessageBoxButtons.OK);
+                int customerID = int.Parse(comboIncidentCustomer.ValueMember);
+                String productCode = comboIncidentProduct.ValueMember;
+                if (!this.controller.IsCustomerRegisteredToProduct(customerID, productCode))
+                {
+                    MessageBox.Show("Customer not registered to product. Cannot created incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                String title = txtIncidentTitle.Text;
+                String description = txtIncidentDescription.Text;
+                bool ret = this.controller.CreateIncident(customerID, productCode, title, description);
+                if (ret == false)
+                {
+                    MessageBox.Show("Something went wrong with adding the incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } else
+                {
+                    MessageBox.Show("Incident successfully created", "Success!!", MessageBoxButtons.OK);
+                }
+                
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
