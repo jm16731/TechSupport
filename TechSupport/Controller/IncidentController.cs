@@ -11,28 +11,28 @@ namespace TechSupport.Controller
     public class IncidentController
     {
 
-        /// <see cref="IncidentSQLServerGetData.GetOpenIncidents"/>
+        /// <see cref="TechSupportSQLServerTableIncidents.GetOpenIncidents"/>
         public List<OpenIncident> GetOpenIncidents()
         {
-            return IncidentSQLServerGetData.GetOpenIncidents();
+            return TechSupportSQLServerTableIncidents.GetOpenIncidents();
         }
 
-        /// <see cref="IncidentSQLServerGetData.GetCustomers"/>
+        /// <see cref="TechSupportSQLServerTableCustomers.GetCustomers"/>
         public List<String> GetCustomers()
         {
-            return IncidentSQLServerGetData.GetCustomers();
+            return TechSupportSQLServerTableCustomers.GetCustomers();
         }
 
-        /// <see cref="IncidentSQLServerGetData.GetProducts"/>
+        /// <see cref="TechSupportSQLServerTableProducts.GetProducts"/>
         public List<String> GetProducts()
         {
-            return IncidentSQLServerGetData.GetProducts();
+            return TechSupportSQLServerTableProducts.GetProducts();
         }
 
-        /// <see cref="IncidentSQLServerModifyData.CreateIncident"/>
+        /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident"/>
         public String CreateIncident(String customerName, String productName, String title, String description)
         {
-            return IncidentSQLServerModifyData.CreateIncident(customerName, productName, title, description);
+            return TechSupportSQLServerTableIncidents.CreateIncident(customerName, productName, title, description);
         }
     }
 }
