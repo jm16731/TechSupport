@@ -18,13 +18,13 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="TechSupportSQLServerTableCustomers.GetCustomers"/>
-        public List<String> GetCustomers()
+        public List<Customer> GetCustomers()
         {
             return TechSupportSQLServerTableCustomers.GetCustomers();
         }
 
         /// <see cref="TechSupportSQLServerTableProducts.GetProducts"/>
-        public List<String> GetProducts()
+        public List<Product> GetProducts()
         {
             return TechSupportSQLServerTableProducts.GetProducts();
         }
