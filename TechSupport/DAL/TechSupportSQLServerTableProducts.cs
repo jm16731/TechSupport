@@ -17,7 +17,7 @@ namespace TechSupport.DAL
         public static List<Product> GetProducts()
         {
             List<Product> products = new List<Product>();
-            String selectStatement = "SELECT ProductCode, Name, Version, ReleaseDate FROM Products";
+            String selectStatement = "SELECT ProductCode AS [Product Code], Name, Version, ReleaseDate AS [Release Date] FROM Products";
             using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))

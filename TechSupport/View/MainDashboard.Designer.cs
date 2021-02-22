@@ -31,16 +31,18 @@ namespace TechSupport.View
         {
             this.tabCntrlIncidents = new System.Windows.Forms.TabControl();
             this.tabAddIncident = new System.Windows.Forms.TabPage();
-            this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
             this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
             this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.tabUpdateIncident = new System.Windows.Forms.TabPage();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
-            this.tabUpdateIncident = new System.Windows.Forms.TabPage();
+            this.addIncident1 = new TechSupport.UserControls.AddIncident();
+            this.updateIncident1 = new TechSupport.UserControls.UpdateIncident();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
+            this.tabUpdateIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCntrlIncidents
@@ -58,24 +60,13 @@ namespace TechSupport.View
             // 
             // tabAddIncident
             // 
-            this.tabAddIncident.Controls.Add(this.usrCntrlAddIncident);
+            this.tabAddIncident.Controls.Add(this.addIncident1);
             this.tabAddIncident.Location = new System.Drawing.Point(10, 48);
             this.tabAddIncident.Name = "tabAddIncident";
-            this.tabAddIncident.Padding = new System.Windows.Forms.Padding(3);
             this.tabAddIncident.Size = new System.Drawing.Size(1416, 667);
-            this.tabAddIncident.TabIndex = 0;
+            this.tabAddIncident.TabIndex = 5;
             this.tabAddIncident.Text = "Add Incident";
             this.tabAddIncident.UseVisualStyleBackColor = true;
-            // 
-            // usrCntrlAddIncident
-            // 
-            this.usrCntrlAddIncident.AutoScroll = true;
-            this.usrCntrlAddIncident.AutoSize = true;
-            this.usrCntrlAddIncident.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 0);
-            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
-            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1419, 670);
-            this.usrCntrlAddIncident.TabIndex = 2;
             // 
             // tabDisplayOpenIncidents
             // 
@@ -104,6 +95,16 @@ namespace TechSupport.View
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // tabUpdateIncident
+            // 
+            this.tabUpdateIncident.Controls.Add(this.updateIncident1);
+            this.tabUpdateIncident.Location = new System.Drawing.Point(10, 48);
+            this.tabUpdateIncident.Name = "tabUpdateIncident";
+            this.tabUpdateIncident.Size = new System.Drawing.Size(1416, 667);
+            this.tabUpdateIncident.TabIndex = 4;
+            this.tabUpdateIncident.Text = "Update Incident";
+            this.tabUpdateIncident.UseVisualStyleBackColor = true;
+            // 
             // lblMainUsername
             // 
             this.lblMainUsername.AutoSize = true;
@@ -127,14 +128,19 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
-            // tabUpdateIncident
+            // addIncident1
             // 
-            this.tabUpdateIncident.Location = new System.Drawing.Point(10, 48);
-            this.tabUpdateIncident.Name = "tabUpdateIncident";
-            this.tabUpdateIncident.Size = new System.Drawing.Size(1416, 667);
-            this.tabUpdateIncident.TabIndex = 4;
-            this.tabUpdateIncident.Text = "Update Incident";
-            this.tabUpdateIncident.UseVisualStyleBackColor = true;
+            this.addIncident1.Location = new System.Drawing.Point(0, 0);
+            this.addIncident1.Name = "addIncident1";
+            this.addIncident1.Size = new System.Drawing.Size(1416, 667);
+            this.addIncident1.TabIndex = 0;
+            // 
+            // updateIncident1
+            // 
+            this.updateIncident1.Location = new System.Drawing.Point(-3, 0);
+            this.updateIncident1.Name = "updateIncident1";
+            this.updateIncident1.Size = new System.Drawing.Size(1416, 667);
+            this.updateIncident1.TabIndex = 0;
             // 
             // MainDashboard
             // 
@@ -155,8 +161,8 @@ namespace TechSupport.View
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.tabCntrlIncidents.ResumeLayout(false);
             this.tabAddIncident.ResumeLayout(false);
-            this.tabAddIncident.PerformLayout();
             this.tabDisplayOpenIncidents.ResumeLayout(false);
+            this.tabUpdateIncident.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,7 +171,6 @@ namespace TechSupport.View
         #endregion
 
         private System.Windows.Forms.TabControl tabCntrlIncidents;
-        private System.Windows.Forms.TabPage tabAddIncident;
         private UserControls.AddIncident usrCntrlAddIncident;
         private System.Windows.Forms.Label lblMainUsername;
         private System.Windows.Forms.LinkLabel lnklblLogout;
@@ -173,5 +178,8 @@ namespace TechSupport.View
         private System.Windows.Forms.ListView listView1;
         private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
         private System.Windows.Forms.TabPage tabUpdateIncident;
+        private System.Windows.Forms.TabPage tabAddIncident;
+        private UserControls.AddIncident addIncident1;
+        private UserControls.UpdateIncident updateIncident1;
     }
 }

@@ -29,7 +29,7 @@ namespace TechSupport.DAL
                         while (reader.Read())
                         {
                             technicians.Add(new Technician(reader.GetInt32(ordID), reader.GetString(ordName),
-                                reader.GetString(ordPhone), reader.GetString(ordEmail));
+                                reader.GetString(ordPhone), reader.GetString(ordEmail)));
                         }
                     }
                 }

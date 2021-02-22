@@ -48,5 +48,6 @@ namespace TechSupport.View
                 usrCntrlDisplayOpenIncidents.RefreshDataGrid();
             }
         }
+
     }
 }
