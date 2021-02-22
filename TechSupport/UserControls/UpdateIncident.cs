@@ -8,6 +8,7 @@ namespace TechSupport.UserControls
     public partial class UpdateIncident : UserControl
     {
         private readonly IncidentController controller;
+        int incidentID;
         public UpdateIncident()
         {
             InitializeComponent();
@@ -16,6 +17,7 @@ namespace TechSupport.UserControls
             this.btnUpdate.Enabled = false;
             this.btnClose.Enabled = false;
             this.txtTextToAdd.Enabled = false;
+            incidentID = -1;
 
             this.RefreshData();
         }
@@ -36,16 +38,18 @@ namespace TechSupport.UserControls
             try
             {
                 int incidentID = Int32.Parse(this.txtIncidentID.Text);
+                OpenIncident incident = this.controller.GetIncident(incidentID);
+
+                this.txtTitle.Text = incident.Title;
+                this.txtCustomer.Text = incident.CustomerName;
+                this.txtProductCode.Text = incident.ProductCode;
+                this.txtDateOpened.Text = incident.DateOpened.ToString();
+                this.txtDescription.Text = incident.Description;
+                this.comboTechnician.SelectedIndex = this.comboTechnician.FindStringExact(incident.TechnicianName);
+                this.incidentID = incidentID;
+
                 if (this.controller.IsIncidentOpen(incidentID))
                 {
-                    OpenIncident incident = this.controller.GetIncident(incidentID);
-                    this.txtTitle.Text = incident.Title;
-                    this.txtCustomer.Text = incident.CustomerName;
-                    this.txtProductCode.Text = incident.ProductCode;
-                    this.txtDateOpened.Text = incident.DateOpened.ToString();
-                    this.txtDescription.Text = incident.Description;
-                    this.comboTechnician.SelectedIndex = this.comboTechnician.FindStringExact(incident.TechnicianName);
-
                     this.btnUpdate.Enabled = true;
                     this.btnClose.Enabled = true;
                     this.txtTextToAdd.Enabled = true;
@@ -60,10 +64,12 @@ namespace TechSupport.UserControls
             catch (FormatException)
             {
                 MessageBox.Show("Incident ID must be a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.incidentID = -1;
             }
             catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.incidentID = -1;
             }
         }
 
@@ -80,12 +86,33 @@ namespace TechSupport.UserControls
 
         private void UpdateButton_Update(object sender, EventArgs e)
         {
-
+            if (this.HasIncidentBeenUpdatedSinceRetrieval())
+            {
+                MessageBox.Show("Incident updated since you retrieved it. Cannot update incident",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void CloseIncidentButton_CloseIncident(object sender, EventArgs e)
         {
+            if (this.HasIncidentBeenUpdatedSinceRetrieval())
+            {
+                MessageBox.Show("Incident updated since you retrieved it. Cannot close incident",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult result = MessageBox.Show("Incident cannot be changed further once closed. Are you sure?", "", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.controller.CloseIncident(this.incidentID);
+                MessageBox.Show("Incident closed", "", MessageBoxButtons.OK);
+            }
+        }
 
+        private bool HasIncidentBeenUpdatedSinceRetrieval()
+        {
+            return this.controller.HasIncidentBeenUpdatedSinceRetrieval(this.txtDescription.Text);
         }
     }
 }
