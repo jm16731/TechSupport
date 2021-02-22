@@ -179,7 +179,7 @@ namespace TechSupport.DAL
             bool changed = true;
             String selectStatement = "SELECT Description, DateClosed" +
                                     "FROM Incidents" +
-                                    "WHERE Description = @description;"
+                                    "WHERE Description = @description;";
             using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -199,6 +199,30 @@ namespace TechSupport.DAL
                 }
             }
             return changed;
+        }
+
+        public static bool CloseIncident(int incidentID)
+        {
+            int rowsUpdated;
+            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand("closeIncident", connection))
+                {
+                    connection.Open();
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IncidentID", incidentID);
+
+                    rowsUpdated = command.ExecuteNonQuery();
+                }
+            }
+            if (rowsUpdated < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
