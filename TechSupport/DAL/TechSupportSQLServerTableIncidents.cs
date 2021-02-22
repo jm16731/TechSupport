@@ -21,7 +21,7 @@ namespace TechSupport.DAL
                     "CONVERT(date, Incidents.DateOpened) AS[Date Opened], " +
                     "Customers.Name AS Customer, " +
                     "Technicians.Name AS Technician, " +
-                    "Incidents.Title " +
+                    "Incidents.Title, Incidents.Description " +
                 "FROM Incidents " +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
                     "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
@@ -38,6 +38,7 @@ namespace TechSupport.DAL
                         int ordCustomer = reader.GetOrdinal("Customer");
                         int ordTechnician = reader.GetOrdinal("Technician");
                         int ordTitle = reader.GetOrdinal("Title");
+                        int ordDescription = reader.GetOrdinal("Description");
                         while (reader.Read())
                         {
                             string tech = "";
@@ -47,7 +48,7 @@ namespace TechSupport.DAL
                             }
                             OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
                                 reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
-                                tech, reader.GetString(ordTitle));
+                                tech, reader.GetString(ordTitle), reader.GetString(ordDescription));
                             incidents.Add(incident);
                         }
                     }
@@ -89,6 +90,83 @@ namespace TechSupport.DAL
             {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Returns the incident corresponding to the incidentID as an OpenIncident
+        /// </summary>
+        /// <param name="incidentID">id of the incident to retrieve</param>
+        /// <returns>The desired incident as an OpenIncident</returns>
+        public static OpenIncident GetIncident(int incidentID)
+        {
+            OpenIncident incident = null;
+            String selectStatement = "SELECT Incidents.ProductCode AS[Product Code], CONVERT(date, Incidents.DateOpened) AS[Date Opened]," +
+                    "Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.Title, Incidents.Description" +
+                "FROM Incidents" +
+                    "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID" +
+                    "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
+                    "WHERE Incidents.IncidentID = @incidentID";
+            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    command.Parameters.AddWithValue("@incidentID", incidentID);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int ordProductCode = reader.GetOrdinal("Product Code");
+                        int ordDateOpened = reader.GetOrdinal("Date Opened");
+                        int ordCustomer = reader.GetOrdinal("Customer");
+                        int ordTechnician = reader.GetOrdinal("Technician");
+                        int ordTitle = reader.GetOrdinal("Title");
+                        int ordDescription = reader.GetOrdinal("Description");
+                        while (reader.Read())
+                        {
+                            string tech = "";
+                            if (!reader.IsDBNull(ordTechnician))
+                            {
+                                tech = reader.GetString(ordTechnician);
+                            }
+                            incident = new OpenIncident(reader.GetString(ordProductCode),
+                                reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
+                                tech, reader.GetString(ordTitle), reader.GetString(ordDescription));
+                        }
+                    }
+                }
+            }
+            return incident;
+        }
+
+        /// <summary>
+        /// Returns whether or not an incident is truly open
+        /// </summary>
+        /// <param name="incidentID">The id of the incident to check</param>
+        /// <returns>Whether or not said incident is open</returns>
+        public static bool IsIncidentOpen(int incidentID)
+        {
+            bool open = false;
+            String selectStatement = "SELECT CAST (CASE" +
+                                        "WHEN DateClosed = null THEN 1" +
+                                        "ELSE 0" +
+                                        "END AS BIT) AS isOpen" +
+                                    "FROM Incidents" +
+                                    "WHERE Incidents.IncidentID = @incidentID;";
+            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    command.Parameters.AddWithValue("@incidentID", incidentID);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            open = reader.GetBoolean(reader.GetOrdinal("isOpen"));
+                        }
+                    }
+                }
+            }
+            return open;
         }
     }
 }
