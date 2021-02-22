@@ -2,7 +2,7 @@
 
 namespace TechSupport.Model
 {
-    class Technician
+    public class Technician
     {
         public int ID { get; }
         public string Name { get; }

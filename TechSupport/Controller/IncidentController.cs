@@ -60,5 +60,11 @@ namespace TechSupport.Controller
             }
             return TechSupportSQLServerTableIncidents.IsIncidentOpen(incidentID);
         }
+
+        /// <see cref="TechSupportSQLServerTableTechnicians.GetTechnicians"/>
+        public List<Technician> GetTechnicians()
+        {
+            return TechSupportSQLServerTableTechnicians.GetTechnicians();
+        }
     }
 }
