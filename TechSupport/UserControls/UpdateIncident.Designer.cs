@@ -146,6 +146,7 @@ namespace TechSupport.UserControls
             this.btnSearchIncidentID.TabIndex = 2;
             this.btnSearchIncidentID.Text = "Search";
             this.btnSearchIncidentID.UseVisualStyleBackColor = true;
+            this.btnSearchIncidentID.Click += new System.EventHandler(this.SearchButton_Search);
             // 
             // tableLayoutPanel3
             // 
@@ -436,6 +437,7 @@ namespace TechSupport.UserControls
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.ClearButton_Clear);
             // 
             // btnUpdate
             // 
@@ -447,6 +449,7 @@ namespace TechSupport.UserControls
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.UpdateButton_Update);
             // 
             // btnClose
             // 
@@ -458,6 +461,7 @@ namespace TechSupport.UserControls
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close Incident";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.CloseIncidentButton_CloseIncident);
             // 
             // UpdateIncident
             // 
