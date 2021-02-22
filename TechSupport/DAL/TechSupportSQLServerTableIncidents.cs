@@ -168,5 +168,37 @@ namespace TechSupport.DAL
             }
             return open;
         }
+
+        /// <summary>
+        /// Checks to see if an incident record has been changed since it was retrieved
+        /// </summary>
+        /// <param name="description">Description of the incident to check</param>
+        /// <returns>If incident has been changed since retrieval</returns>
+        public static bool HasIncidentBeenUpdatedSinceRetrieval(string description)
+        {
+            bool changed = true;
+            String selectStatement = "SELECT Description, DateClosed" +
+                                    "FROM Incidents" +
+                                    "WHERE Description = @description;"
+            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    command.Parameters.AddWithValue("@description", description);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader.IsDBNull(reader.GetOrdinal("DateClosed")))
+                            {
+                                changed = false;
+                            }
+                        }
+                    }
+                }
+            }
+            return changed;
+        }
     }
 }

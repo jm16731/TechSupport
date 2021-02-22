@@ -66,5 +66,11 @@ namespace TechSupport.Controller
         {
             return TechSupportSQLServerTableTechnicians.GetTechnicians();
         }
+
+        /// <see cref="TechSupportSQLServerTableIncidents.HasIncidentBeenUpdatedSinceRetrieval(string)"/>
+        public bool HasIncidentBeenUpdatedSinceRetrieval(string description)
+        {
+            return TechSupportSQLServerTableIncidents.HasIncidentBeenUpdatedSinceRetrieval(description);
+        }
     }
 }
