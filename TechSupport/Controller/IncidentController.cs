@@ -29,16 +29,36 @@ namespace TechSupport.Controller
             return TechSupportSQLServerTableProducts.GetProducts();
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident"/>
+        /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident(int, string, string, string)"/>
         public bool CreateIncident(int customerID, String productCode, String title, String description)
         {
             return TechSupportSQLServerTableIncidents.CreateIncident(customerID, productCode, title, description);
         }
 
-        /// see cref="TechSupportSQLServerTableRegistrations.isCustomerRegisteredToProduct"/>
+        /// <see cref="TechSupportSQLServerTableRegistrations.IsCustomerRegisteredToProduct(int, string)"/>
         public bool IsCustomerRegisteredToProduct(int customerID, string productCode)
         {
             return TechSupportSQLServerTableRegistrations.IsCustomerRegisteredToProduct(customerID, productCode);
+        }
+
+        /// <see cref="TechSupportSQLServerTableIncidents.GetIncident(int)"/>
+        public OpenIncident GetIncident(int incidentID)
+        {
+            if (incidentID < 1)
+            {
+                throw new ArgumentException("IncidentID must be greater than 0");
+            }
+            return TechSupportSQLServerTableIncidents.GetIncident(incidentID);
+        }
+
+        /// <see cref="TechSupportSQLServerTableIncidents.IsIncidentOpen(int)"/>
+        public bool IsIncidentOpen(int incidentID)
+        {
+            if (incidentID < 1)
+            {
+                throw new ArgumentException("IncidentID must be greater than 0");
+            }
+            return TechSupportSQLServerTableIncidents.IsIncidentOpen(incidentID);
         }
     }
 }
