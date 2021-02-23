@@ -161,7 +161,7 @@ namespace TechSupport.DAL
                     {
                         while (reader.Read())
                         {
-                            open = reader.GetBoolean(reader.GetOrdinal("isOpen"));
+                            open = (bool)reader["isOpen"];
                         }
                     }
                 }
