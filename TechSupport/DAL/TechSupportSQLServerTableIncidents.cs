@@ -224,5 +224,30 @@ namespace TechSupport.DAL
                 return true;
             }
         }
+
+        public static bool UpdateIncident(int incidentID, string description, int technicianID)
+        {
+            int rowsUpdated;
+            String selectStatement = "UPDATE Incidents SET Description = @description, TechID = @technicianID WHERE IncidentID = @incidentID";
+            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    command.Parameters.AddWithValue("@description", description);
+                    command.Parameters.AddWithValue("@incidentID", incidentID);
+                    command.Parameters.AddWithValue("@technicianID", technicianID);
+                    connection.Open();
+                    rowsUpdated = command.ExecuteNonQuery();
+                }
+            }
+            if (rowsUpdated < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

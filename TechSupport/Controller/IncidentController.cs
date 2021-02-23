@@ -78,5 +78,11 @@ namespace TechSupport.Controller
         {
             return TechSupportSQLServerTableIncidents.CloseIncident(incidentID);
         }
+
+        /// <see cref="TechSupportSQLServerTableIncidents.UpdateIncident(int, string, int)"/>
+        public bool UpdateIncident(int incidentID, string description, int technicianID)
+        {
+            return TechSupportSQLServerTableIncidents.UpdateIncident(incidentID, description, technicianID);
+        }
     }
 }
