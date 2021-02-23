@@ -92,6 +92,38 @@ namespace TechSupport.UserControls
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (this.txtDescription.Text.Length > 200 && !string.IsNullOrEmpty(this.txtTextToAdd.Text))
+            {
+                MessageBox.Show("Description all ready exceeds 200 characters. Cannot update description. Please delete your text to add", 
+                    "", MessageBoxButtons.OK);
+                return;
+            }
+            if ((this.txtDescription.Text.Length + this.txtTextToAdd.Text.Length) > 200)
+            {
+                DialogResult truncate = MessageBox.Show("Text to add will cause description to exceed 200 characters. Text will be truncated. Is this all right?",
+                    "", MessageBoxButtons.YesNo);
+                if (truncate == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            this.TrueUpdate();
+        }
+
+        private void TrueUpdate()
+        {
+            string update = this.txtDescription.Text + "\n" + DateTime.Now.ToString("MM/dd/yyyy") + " " + this.txtTextToAdd.Text;
+            try
+            {
+                this.controller.UpdateIncident(this.incidentID, update.Substring(0, 200), (int)this.comboTechnician.SelectedValue);
+                this.txtTextToAdd.Text = "";
+                this.txtDescription.Text = update.Substring(0, 200);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void CloseIncidentButton_CloseIncident(object sender, EventArgs e)
@@ -105,8 +137,16 @@ namespace TechSupport.UserControls
             DialogResult result = MessageBox.Show("Incident cannot be changed further once closed. Are you sure?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                this.controller.CloseIncident(this.incidentID);
-                MessageBox.Show("Incident closed", "", MessageBoxButtons.OK);
+                this.TrueUpdate();
+                try
+                {
+                    this.controller.CloseIncident(this.incidentID);
+                    MessageBox.Show("Incident closed", "", MessageBoxButtons.OK);
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("Something went wrong with closing the incident", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -114,5 +154,6 @@ namespace TechSupport.UserControls
         {
             return this.controller.HasIncidentBeenUpdatedSinceRetrieval(this.txtDescription.Text);
         }
+
     }
 }
