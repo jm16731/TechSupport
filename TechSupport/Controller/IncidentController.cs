@@ -76,12 +76,20 @@ namespace TechSupport.Controller
         /// <see cref="TechSupportSQLServerTableIncidents.CloseIncident(int)"/>
         public bool CloseIncident(int incidentID)
         {
+            if (incidentID < 1)
+            {
+                throw new ArgumentException("IncidentID must be greater than 0");
+            }
             return TechSupportSQLServerTableIncidents.CloseIncident(incidentID);
         }
 
         /// <see cref="TechSupportSQLServerTableIncidents.UpdateIncident(int, string, int)"/>
         public bool UpdateIncident(int incidentID, string description, int technicianID)
         {
+            if (incidentID < 1 || technicianID < 1)
+            {
+                throw new ArgumentException("IncidentID and TechnicianID must be greater than 0");
+            }
             return TechSupportSQLServerTableIncidents.UpdateIncident(incidentID, description, technicianID);
         }
     }
