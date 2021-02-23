@@ -46,7 +46,7 @@ namespace TechSupport.UserControls
                     {
                         string[] row = { incident.ProductCode, incident.Title, 
                             incident.DateOpened.ToShortDateString(),
-                            incident.CustomerName, incident.TechnicianName};
+                            incident.CustomerName, incident.TechnicianName };
                         ListViewItem lvi = new ListViewItem(row);
                         listViewIncidentViewer.Items.Add(lvi);
                     }

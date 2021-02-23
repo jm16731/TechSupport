@@ -115,7 +115,7 @@ namespace TechSupport.UserControls
             string update = this.txtDescription.Text + "\n" + DateTime.Now.ToString("MM/dd/yyyy") + " " + this.txtTextToAdd.Text;
             try
             {
-                this.controller.UpdateIncident(this.incidentID, update.Substring(0, 200), (int)this.comboTechnician.SelectedValue);
+                this.controller.UpdateIncident(this.incidentID, update.Substring(0, 200), int.Parse(this.comboTechnician.ValueMember));
                 this.txtTextToAdd.Text = "";
                 this.txtDescription.Text = update.Substring(0, 200);
             }
