@@ -22,7 +22,7 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        int ordID = reader.GetOrdinal("CustomerID");
+                        int ordID = reader.GetOrdinal("TechID");
                         int ordName = reader.GetOrdinal("Name");
                         int ordPhone = reader.GetOrdinal("Phone");
                         int ordEmail = reader.GetOrdinal("Email");
