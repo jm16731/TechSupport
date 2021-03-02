@@ -5,7 +5,7 @@ namespace TechSupport.Model
     /// <summary>
     /// Models the creation of a New Incident
     /// </summary>
-    class NewIncident
+    public class NewIncident
     {
         public int CustomerID { get; }
         public string ProductCode { get; }

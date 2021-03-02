@@ -30,9 +30,13 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="IncidentDAL.CreateIncident(int, string, string, string)"/>
-        public bool CreateIncident(int customerID, String productCode, String title, String description)
+        public bool CreateIncident(NewIncident incident)
         {
-            return IncidentDAL.CreateIncident(customerID, productCode, title, description);
+            if (incident == null)
+            {
+                throw new ArgumentException("incident", "incident cannot be null");
+            }
+            return IncidentDAL.CreateIncident(incident.CustomerID, incident.ProductCode, incident.Title, incident.Description);
         }
 
         /// <see cref="RegistrationDAL.IsCustomerRegisteredToProduct(int, string)"/>

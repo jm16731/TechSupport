@@ -86,7 +86,8 @@ namespace TechSupport.UserControls
 
                 String title = txtIncidentTitle.Text;
                 String description = txtIncidentDescription.Text;
-                bool ret = this.controller.CreateIncident(customerID, productCode, title, description);
+                Model.NewIncident incident = new Model.NewIncident(customerID, productCode, title, description);
+                bool ret = this.controller.CreateIncident(incident);
                 if (ret == false)
                 {
                     MessageBox.Show("Something went wrong with adding the incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +97,10 @@ namespace TechSupport.UserControls
                 }
                 
             }
-
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Error with new incident." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
