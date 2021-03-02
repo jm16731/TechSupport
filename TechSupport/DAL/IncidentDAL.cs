@@ -100,7 +100,7 @@ namespace TechSupport.DAL
         public static OpenIncident GetIncident(int incidentID)
         {
             OpenIncident incident = null;
-            String selectStatement = "SELECT Incidents.ProductCode AS[Product Code], CONVERT(date, Incidents.DateOpened) AS[Date Opened]," +
+            String selectStatement = "SELECT Incidents.ProductCode, CONVERT(date, Incidents.DateOpened) AS [DateOpened]," +
                     "Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.Title, Incidents.Description" +
                 "FROM Incidents" +
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID" +
@@ -114,15 +114,15 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        int ordProductCode = reader.GetOrdinal("Product Code");
-                        int ordDateOpened = reader.GetOrdinal("Date Opened");
+                        int ordProductCode = reader.GetOrdinal("ProductCode");
+                        int ordDateOpened = reader.GetOrdinal("DateOpened");
                         int ordCustomer = reader.GetOrdinal("Customer");
                         int ordTechnician = reader.GetOrdinal("Technician");
                         int ordTitle = reader.GetOrdinal("Title");
                         int ordDescription = reader.GetOrdinal("Description");
                         while (reader.Read())
                         {
-                            string tech = "";
+                            string tech = null;
                             if (!reader.IsDBNull(ordTechnician))
                             {
                                 tech = reader.GetString(ordTechnician);
@@ -190,7 +190,7 @@ namespace TechSupport.DAL
                     {
                         while (reader.Read())
                         {
-                            if (reader.IsDBNull(reader.GetOrdinal("DateClosed")))
+                            if (reader.IsDBNull(reader.["DateClosed"]))
                             {
                                 changed = false;
                             }
@@ -201,6 +201,11 @@ namespace TechSupport.DAL
             return changed;
         }
 
+        /// <summary>
+        /// Closes an incident by setting a DateClosed value
+        /// </summary>
+        /// <param name="incidentID">The incident to close</param>
+        /// <returns>Whether or not the operation succeeded</returns>
         public static bool CloseIncident(int incidentID)
         {
             int rowsUpdated;
@@ -225,6 +230,13 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Updates an incidents by updating the given parameters
+        /// </summary>
+        /// <param name="incidentID">The id of the incident to update</param>
+        /// <param name="description">The new description of the incident</param>
+        /// <param name="technicianID">The id of the new technician of the incident</param>
+        /// <returns>Whether or not the operation succeeded</returns>
         public static bool UpdateIncident(int incidentID, string description, int technicianID)
         {
             int rowsUpdated;

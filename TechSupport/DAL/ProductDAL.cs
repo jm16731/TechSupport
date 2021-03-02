@@ -17,7 +17,7 @@ namespace TechSupport.DAL
         public static List<Product> GetProducts()
         {
             List<Product> products = new List<Product>();
-            String selectStatement = "SELECT ProductCode AS [Product Code], Name, Version, ReleaseDate AS [Release Date] FROM Products";
+            String selectStatement = "SELECT ProductCode, Name, Version, ReleaseDate FROM Products";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -25,10 +25,10 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        int ordCode = reader.GetOrdinal("Product Code");
+                        int ordCode = reader.GetOrdinal("ProductCode");
                         int ordName = reader.GetOrdinal("Name");
                         int ordVersion = reader.GetOrdinal("Version");
-                        int ordRelease = reader.GetOrdinal("Release Date");
+                        int ordRelease = reader.GetOrdinal("ReleaseDate");
                         while (reader.Read())
                         {
                             products.Add(new Product(reader.GetString(ordCode), reader.GetString(ordName),
