@@ -42,6 +42,7 @@ namespace TechSupport.UserControls
                 incidentList = this.controller.GetOpenIncidents();
                 if (incidentList.Count > 0)
                 {
+                    this.lblNoOpenIncidents.Text = "";
                     foreach (OpenIncident incident in incidentList)
                     {
                         string[] row = { incident.ProductCode, incident.Title, 
@@ -53,7 +54,7 @@ namespace TechSupport.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("No open incidents.");
+                    this.lblNoOpenIncidents.Text = "No Open Incidents";
                 }
             }
             catch (Exception ex)
