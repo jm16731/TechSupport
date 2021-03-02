@@ -45,7 +45,7 @@ namespace TechSupport.View
             else
             {
                 this.AcceptButton = null;
-                usrCntrlDisplayOpenIncidents.RefreshDataGrid();
+                //usrCntrlDisplayOpenIncidents.RefreshDataGrid();
             }
         }
 

@@ -190,7 +190,7 @@ namespace TechSupport.DAL
                     {
                         while (reader.Read())
                         {
-                            if (reader.IsDBNull(reader.["DateClosed"]))
+                            if (reader.IsDBNull(reader.GetOrdinal("DateClosed")))
                             {
                                 changed = false;
                             }
