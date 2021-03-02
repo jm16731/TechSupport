@@ -5,7 +5,7 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
-    class TechSupportSQLServerTableTechnicians
+    class TechnicianDAL
     {
         /// <summary>
         /// Returns a list of all technicians in the TechSupport db
@@ -15,7 +15,7 @@ namespace TechSupport.DAL
         {
             List<Technician> technicians = new List<Technician>();
             String selectStatement = "SELECT TechID, Name, Phone, Email FROM Technicians";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {

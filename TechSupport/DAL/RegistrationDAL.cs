@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace TechSupport.DAL
 {
-    class TechSupportSQLServerTableRegistrations
+    class RegistrationDAL
     {
 
         /// <summary>
@@ -15,7 +15,7 @@ namespace TechSupport.DAL
         public static bool IsCustomerRegisteredToProduct(int customerID, string productCode)
         {
             SqlParameter registered;
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand("isCustomerRegisteredToProduct", connection))
                 {

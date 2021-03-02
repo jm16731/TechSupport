@@ -11,86 +11,86 @@ namespace TechSupport.Controller
     public class IncidentController
     {
 
-        /// <see cref="TechSupportSQLServerTableIncidents.GetOpenIncidents"/>
+        /// <see cref="IncidentDAL.GetOpenIncidents"/>
         public List<OpenIncident> GetOpenIncidents()
         {
-            return TechSupportSQLServerTableIncidents.GetOpenIncidents();
+            return IncidentDAL.GetOpenIncidents();
         }
 
-        /// <see cref="TechSupportSQLServerTableCustomers.GetCustomers"/>
+        /// <see cref="CustomerDAL.GetCustomers"/>
         public List<Customer> GetCustomers()
         {
-            return TechSupportSQLServerTableCustomers.GetCustomers();
+            return CustomerDAL.GetCustomers();
         }
 
-        /// <see cref="TechSupportSQLServerTableProducts.GetProducts"/>
+        /// <see cref="ProductDAL.GetProducts"/>
         public List<Product> GetProducts()
         {
-            return TechSupportSQLServerTableProducts.GetProducts();
+            return ProductDAL.GetProducts();
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.CreateIncident(int, string, string, string)"/>
+        /// <see cref="IncidentDAL.CreateIncident(int, string, string, string)"/>
         public bool CreateIncident(int customerID, String productCode, String title, String description)
         {
-            return TechSupportSQLServerTableIncidents.CreateIncident(customerID, productCode, title, description);
+            return IncidentDAL.CreateIncident(customerID, productCode, title, description);
         }
 
-        /// <see cref="TechSupportSQLServerTableRegistrations.IsCustomerRegisteredToProduct(int, string)"/>
+        /// <see cref="RegistrationDAL.IsCustomerRegisteredToProduct(int, string)"/>
         public bool IsCustomerRegisteredToProduct(int customerID, string productCode)
         {
-            return TechSupportSQLServerTableRegistrations.IsCustomerRegisteredToProduct(customerID, productCode);
+            return RegistrationDAL.IsCustomerRegisteredToProduct(customerID, productCode);
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.GetIncident(int)"/>
+        /// <see cref="IncidentDAL.GetIncident(int)"/>
         public OpenIncident GetIncident(int incidentID)
         {
             if (incidentID < 1)
             {
                 throw new ArgumentException("IncidentID must be greater than 0");
             }
-            return TechSupportSQLServerTableIncidents.GetIncident(incidentID);
+            return IncidentDAL.GetIncident(incidentID);
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.IsIncidentOpen(int)"/>
+        /// <see cref="IncidentDAL.IsIncidentOpen(int)"/>
         public bool IsIncidentOpen(int incidentID)
         {
             if (incidentID < 1)
             {
                 throw new ArgumentException("IncidentID must be greater than 0");
             }
-            return TechSupportSQLServerTableIncidents.IsIncidentOpen(incidentID);
+            return IncidentDAL.IsIncidentOpen(incidentID);
         }
 
-        /// <see cref="TechSupportSQLServerTableTechnicians.GetTechnicians"/>
+        /// <see cref="TechnicianDAL.GetTechnicians"/>
         public List<Technician> GetTechnicians()
         {
-            return TechSupportSQLServerTableTechnicians.GetTechnicians();
+            return TechnicianDAL.GetTechnicians();
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.HasIncidentBeenUpdatedSinceRetrieval(string)"/>
+        /// <see cref="IncidentDAL.HasIncidentBeenUpdatedSinceRetrieval(string)"/>
         public bool HasIncidentBeenUpdatedSinceRetrieval(string description)
         {
-            return TechSupportSQLServerTableIncidents.HasIncidentBeenUpdatedSinceRetrieval(description);
+            return IncidentDAL.HasIncidentBeenUpdatedSinceRetrieval(description);
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.CloseIncident(int)"/>
+        /// <see cref="IncidentDAL.CloseIncident(int)"/>
         public bool CloseIncident(int incidentID)
         {
             if (incidentID < 1)
             {
                 throw new ArgumentException("IncidentID must be greater than 0");
             }
-            return TechSupportSQLServerTableIncidents.CloseIncident(incidentID);
+            return IncidentDAL.CloseIncident(incidentID);
         }
 
-        /// <see cref="TechSupportSQLServerTableIncidents.UpdateIncident(int, string, int)"/>
+        /// <see cref="IncidentDAL.UpdateIncident(int, string, int)"/>
         public bool UpdateIncident(int incidentID, string description, int technicianID)
         {
             if (incidentID < 1 || technicianID < 1)
             {
                 throw new ArgumentException("IncidentID and TechnicianID must be greater than 0");
             }
-            return TechSupportSQLServerTableIncidents.UpdateIncident(incidentID, description, technicianID);
+            return IncidentDAL.UpdateIncident(incidentID, description, technicianID);
         }
     }
 }

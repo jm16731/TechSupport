@@ -8,7 +8,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// This class manages SQL queries to the Products table of the TechSupport db
     /// </summary>
-    class TechSupportSQLServerTableProducts
+    class ProductDAL
     {
         /// <summary>
         /// Sends a SQL Query to get a List of Product Names from the TechSupport DB
@@ -18,7 +18,7 @@ namespace TechSupport.DAL
         {
             List<Product> products = new List<Product>();
             String selectStatement = "SELECT ProductCode AS [Product Code], Name, Version, ReleaseDate AS [Release Date] FROM Products";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {

@@ -5,7 +5,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// The class that manages the connection to a TechSupport Database on SQL Server
     /// </summary>
-    public class TechSupportSQLServerGetConnection
+    public class GetSQLConnection
     {
         /// <summary>
         /// Returns the connection to SQL Server's TechSupport database

@@ -32,17 +32,12 @@ namespace TechSupport.View
             this.tabCntrlIncidents = new System.Windows.Forms.TabControl();
             this.tabAddIncident = new System.Windows.Forms.TabPage();
             this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
-            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabUpdateIncident = new System.Windows.Forms.TabPage();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
-            this.addIncident1 = new TechSupport.UserControls.AddIncident();
-            this.updateIncident1 = new TechSupport.UserControls.UpdateIncident();
             this.tabCntrlIncidents.SuspendLayout();
-            this.tabAddIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
-            this.tabUpdateIncident.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCntrlIncidents
@@ -60,7 +55,6 @@ namespace TechSupport.View
             // 
             // tabAddIncident
             // 
-            this.tabAddIncident.Controls.Add(this.addIncident1);
             this.tabAddIncident.Location = new System.Drawing.Point(10, 48);
             this.tabAddIncident.Name = "tabAddIncident";
             this.tabAddIncident.Size = new System.Drawing.Size(1416, 667);
@@ -70,7 +64,6 @@ namespace TechSupport.View
             // 
             // tabDisplayOpenIncidents
             // 
-            this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
             this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
             this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
             this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
@@ -78,13 +71,6 @@ namespace TechSupport.View
             this.tabDisplayOpenIncidents.TabIndex = 3;
             this.tabDisplayOpenIncidents.Text = "Display Open Incidents";
             this.tabDisplayOpenIncidents.UseVisualStyleBackColor = true;
-            // 
-            // usrCntrlDisplayOpenIncidents
-            // 
-            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(-10, 3);
-            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
-            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1436, 664);
-            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
             // 
             // listView1
             // 
@@ -97,7 +83,6 @@ namespace TechSupport.View
             // 
             // tabUpdateIncident
             // 
-            this.tabUpdateIncident.Controls.Add(this.updateIncident1);
             this.tabUpdateIncident.Location = new System.Drawing.Point(10, 48);
             this.tabUpdateIncident.Name = "tabUpdateIncident";
             this.tabUpdateIncident.Size = new System.Drawing.Size(1416, 667);
@@ -128,20 +113,6 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
-            // addIncident1
-            // 
-            this.addIncident1.Location = new System.Drawing.Point(0, 0);
-            this.addIncident1.Name = "addIncident1";
-            this.addIncident1.Size = new System.Drawing.Size(1416, 667);
-            this.addIncident1.TabIndex = 0;
-            // 
-            // updateIncident1
-            // 
-            this.updateIncident1.Location = new System.Drawing.Point(-3, 0);
-            this.updateIncident1.Name = "updateIncident1";
-            this.updateIncident1.Size = new System.Drawing.Size(1416, 667);
-            this.updateIncident1.TabIndex = 0;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -160,9 +131,7 @@ namespace TechSupport.View
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Close_All);
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.tabCntrlIncidents.ResumeLayout(false);
-            this.tabAddIncident.ResumeLayout(false);
             this.tabDisplayOpenIncidents.ResumeLayout(false);
-            this.tabUpdateIncident.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,10 +145,7 @@ namespace TechSupport.View
         private System.Windows.Forms.LinkLabel lnklblLogout;
         private System.Windows.Forms.TabPage tabDisplayOpenIncidents;
         private System.Windows.Forms.ListView listView1;
-        private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
         private System.Windows.Forms.TabPage tabUpdateIncident;
         private System.Windows.Forms.TabPage tabAddIncident;
-        private UserControls.AddIncident addIncident1;
-        private UserControls.UpdateIncident updateIncident1;
     }
 }

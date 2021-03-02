@@ -8,7 +8,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// This class manages SQL Queries to the Customers table of the TechSupport db
     /// </summary>
-    public class TechSupportSQLServerTableCustomers
+    public class CustomerDAL
     {
         /// <summary>
         /// Sends a SQL Query to get a List of Customer Names from the TechSupport DB
@@ -18,7 +18,7 @@ namespace TechSupport.DAL
         {
             List<Customer> customers = new List<Customer>();
             String selectStatement = "SELECT CustomerID, Name, Address, City, State, ZipCode, Phone, Email FROM Customers";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {

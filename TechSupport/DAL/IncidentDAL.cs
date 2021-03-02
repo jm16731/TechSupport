@@ -8,7 +8,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// This class manages SQL queries to the Incidents table of the TechSupport db
     /// </summary>
-    class TechSupportSQLServerTableIncidents
+    class IncidentDAL
     {
         /// <summary>
         /// Sends a SQL Query to get a List of Open Incidents from the TechSupport DB
@@ -26,7 +26,7 @@ namespace TechSupport.DAL
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
                     "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
                     "WHERE Incidents.DateClosed IS NULL";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
@@ -69,7 +69,7 @@ namespace TechSupport.DAL
         public static bool CreateIncident(int customerID, String productCode, String title, String description)
         {
             int rowsUpdated;
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand("createIncident", connection))
                 {
@@ -106,7 +106,7 @@ namespace TechSupport.DAL
                     "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID" +
                     "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
                     "WHERE Incidents.IncidentID = @incidentID";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
@@ -151,7 +151,7 @@ namespace TechSupport.DAL
                                         "END AS BIT) AS isOpen" +
                                     "FROM Incidents" +
                                     "WHERE Incidents.IncidentID = @incidentID;";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
@@ -180,7 +180,7 @@ namespace TechSupport.DAL
             String selectStatement = "SELECT Description, DateClosed" +
                                     "FROM Incidents" +
                                     "WHERE Description = @description;";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
@@ -204,7 +204,7 @@ namespace TechSupport.DAL
         public static bool CloseIncident(int incidentID)
         {
             int rowsUpdated;
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand("closeIncident", connection))
                 {
@@ -229,7 +229,7 @@ namespace TechSupport.DAL
         {
             int rowsUpdated;
             String selectStatement = "UPDATE Incidents SET Description = @description, TechID = @technicianID WHERE IncidentID = @incidentID";
-            using (SqlConnection connection = TechSupportSQLServerGetConnection.GetConnection())
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
