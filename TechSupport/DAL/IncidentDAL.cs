@@ -99,12 +99,12 @@ namespace TechSupport.DAL
         public static OpenIncident GetIncident(int incidentID)
         {
             OpenIncident incident = null;
-            String selectStatement = "SELECT Incidents.ProductCode, CONVERT(date, Incidents.DateOpened) AS [DateOpened]," +
-                    "Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.Title, Incidents.Description" +
-                "FROM Incidents" +
-                    "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID" +
-                    "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
-                    "WHERE Incidents.IncidentID = @incidentID";
+            String selectStatement = @"SELECT Incidents.ProductCode, CONVERT(date, Incidents.DateOpened) AS [DateOpened],
+                    Customers.Name AS Customer, Technicians.Name AS Technician, Incidents.Title, Incidents.Description
+                FROM Incidents
+                    JOIN Customers ON Incidents.CustomerID = Customers.CustomerID
+                    LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID
+                    WHERE Incidents.IncidentID = @incidentID";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -144,12 +144,12 @@ namespace TechSupport.DAL
         public static bool IsIncidentOpen(int incidentID)
         {
             bool open = false;
-            String selectStatement = "SELECT CAST (CASE" +
-                                        "WHEN DateClosed = null THEN 1" +
-                                        "ELSE 0" +
-                                        "END AS BIT) AS isOpen" +
-                                    "FROM Incidents" +
-                                    "WHERE Incidents.IncidentID = @incidentID;";
+            String selectStatement = @"SELECT CAST (CASE
+                                        WHEN DateClosed = null THEN 1
+                                        ELSE 0
+                                        END AS BIT) AS isOpen
+                                    FROM Incidents
+                                    WHERE Incidents.IncidentID = @incidentID;";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -176,9 +176,9 @@ namespace TechSupport.DAL
         public static bool HasIncidentBeenUpdatedSinceRetrieval(string description)
         {
             bool changed = true;
-            String selectStatement = "SELECT Description, DateClosed" +
-                                    "FROM Incidents" +
-                                    "WHERE Description = @description;";
+            String selectStatement = @"SELECT Description, DateClosed
+                                    FROM Incidents
+                                    WHERE Description = @description;";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
