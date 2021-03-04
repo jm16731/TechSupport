@@ -106,5 +106,14 @@ namespace TechSupport.Controller
             }
             return IncidentDAL.GetIncidentsByTechnician(techID);
         }
+        /// <see cref="TechnicianDAL.GetTechnician(int)"/>
+        public Technician GetTechnician(int techID)
+        {
+            if (techID < 1)
+            {
+                throw new ArgumentException("TechID must be greater than 0");
+            }
+            return TechnicianDAL.GetTechnician(techID);
+        }
     }
 }
