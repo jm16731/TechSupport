@@ -115,5 +115,11 @@ namespace TechSupport.Controller
             }
             return TechnicianDAL.GetTechnician(techID);
         }
+
+        /// <see cref="TechnicianDAL.GetTechniciansWhoHaveHandledOrAreHandlingIncidents" />
+        public List<Technician> GetTechniciansWhoHaveHandledOrAreHandlingIncidents()
+        {
+            return TechnicianDAL.GetTechniciansWhoHaveHandledOrAreHandlingIncidents();
+        }
     }
 }

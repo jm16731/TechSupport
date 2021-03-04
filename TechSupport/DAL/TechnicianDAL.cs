@@ -68,5 +68,37 @@ namespace TechSupport.DAL
             }
             return tech;
         }
+
+        /// <summary>
+        /// Returns a list of technicians who are managing or have managed an incident
+        /// </summary>
+        /// <returns>A List of Technicians involved with past or present incidents</returns>
+        public static List<Technician> GetTechniciansWhoHaveHandledOrAreHandlingIncidents()
+        {
+            List<Technician> technicians = new List<Technician>();
+            String selectStatement = @"SELECT DISTINCT i.TechID, Name, Email, Phone
+                FROM Technicians AS t
+	                JOIN Incidents AS i ON t.TechID = i.TechID";
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int ordID = reader.GetOrdinal("TechID");
+                        int ordName = reader.GetOrdinal("Name");
+                        int ordPhone = reader.GetOrdinal("Phone");
+                        int ordEmail = reader.GetOrdinal("Email");
+                        while (reader.Read())
+                        {
+                            technicians.Add(new Technician(reader.GetInt32(ordID), reader.GetString(ordName),
+                                reader.GetString(ordPhone), reader.GetString(ordEmail)));
+                        }
+                    }
+                }
+            }
+            return technicians;
+        }
     }
 }
