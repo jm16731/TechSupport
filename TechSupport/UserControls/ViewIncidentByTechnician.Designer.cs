@@ -112,6 +112,7 @@ namespace TechSupport.UserControls
             this.comboTechnicians.Name = "comboTechnicians";
             this.comboTechnicians.Size = new System.Drawing.Size(872, 39);
             this.comboTechnicians.TabIndex = 1;
+            this.comboTechnicians.SelectedIndexChanged += new System.EventHandler(this.PopulateData);
             // 
             // txtEmail
             // 
