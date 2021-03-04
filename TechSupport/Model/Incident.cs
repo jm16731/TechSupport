@@ -8,23 +8,24 @@ namespace TechSupport.Model
     public class Incident
     {
         public int IncidentID { get; }
-        public int CustomerID { get; }
-        public string ProductCode { get; }
-        public int TechID { get; }
+        public string CustomerName { get; }
+        public string ProductName { get; }
+        public string TechName { get; }
         public DateTime DateOpened { get; }
-        public DateTime DateClosed { get; }
+        public DateTime? DateClosed { get; }
         public string Title { get; }
         public string Description { get; }
 
-        public Incident(int incidentID, int customerID, string productCode, int techID, DateTime dateOpened,
-            DateTime dateClosed, string title, string description)
+        public Incident(int incidentID, string customerName, string productName, string techName, DateTime dateOpened,
+            DateTime? dateClosed, string title, string description)
         {
-            if (string.IsNullOrEmpty(productCode) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))
+            if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(title) 
+                || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(customerName))
             {
-                throw new ArgumentException("productCode " + "title " + "description", "Title, Description, " +
-                    "and ProductCode cannot be null or empty");
+                throw new ArgumentException("productName " + "title " + "description " + "customer name", "Title, Description, " +
+                    "ProductCode and CustomerName cannot be null or empty");
             }
-            if (incidentID < 1 || customerID < 1 || techID < 1)
+            if (incidentID < 1)
             {
                 throw new ArgumentException("incidentID " + "customerID " + "techID", "IDs cannot be less than 1");
             }
@@ -34,9 +35,9 @@ namespace TechSupport.Model
             }
 
             this.IncidentID = incidentID;
-            this.CustomerID = customerID;
-            this.ProductCode = productCode;
-            this.TechID = techID;
+            this.CustomerName = customerName;
+            this.ProductName = productName;
+            this.TechName = techName;
             this.DateOpened = dateOpened;
             this.DateClosed = dateClosed;
             this.Title = title;

@@ -263,5 +263,53 @@ namespace TechSupport.DAL
                 return true;
             }
         }
+
+        /// <summary>
+        /// Retrieves a list of incidents associated with a technician
+        /// </summary>
+        /// <param name="techID">ID of the technician whose incidents are desired</param>
+        /// <returns>List of Incidents handled by said technician</returns>
+        public static List<Incident> GetIncidentsByTechnician(int techID)
+        {
+            List<Incident> incidents = new List<Incident>();
+            String selectStatement = @"SELECT i.IncidentID, c.Name AS CustomerName, p.Name AS ProductName, t.Name AS TechnicianName, 
+                    i.DateOpened, i.DateClosed, i.Title, i.Description
+                FROM Incidents AS i
+	                JOIN Customers AS c ON i.CustomerID = c.CustomerID
+	                JOIN Technicians AS t on i.TechID = t.TechID
+	                JOIN Products AS p ON i.ProductCode = p.ProductCode
+                WHERE i.techID = 11";
+            using (SqlConnection connection = GetSQLConnection.GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                {
+                    command.Parameters.AddWithValue("@techID", techID);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int ordIncidentID = reader.GetOrdinal("IncidentID");
+                        int ordCustomerName = reader.GetOrdinal("CustomerName");
+                        int ordProductName = reader.GetOrdinal("ProductName");
+                        int ordTechnicianName = reader.GetOrdinal("TechnicianName");
+                        int ordDateOpened = reader.GetOrdinal("DateOpened");
+                        int ordDateClosed = reader.GetOrdinal("DateClosed");
+                        int ordTitle = reader.GetOrdinal("Title");
+                        int ordDescription = reader.GetOrdinal("Description");
+                        while (reader.Read())
+                        {
+                            DateTime? dateClosed = null;
+                            if (!reader.IsDBNull(ordDateClosed))
+                            {
+                                dateClosed = reader.GetDateTime(ordDateClosed);
+                            }
+                            incidents.Add(new Incident(reader.GetInt32(ordIncidentID), reader.GetString(ordCustomerName),
+                                reader.GetString(ordProductName), reader.GetString(ordTechnicianName), reader.GetDateTime(ordDateOpened),
+                                dateClosed, reader.GetString(ordTitle), reader.GetString(ordDescription)));
+                        }
+                    }
+                }
+            }
+            return incidents;
+        }
     }
 }
