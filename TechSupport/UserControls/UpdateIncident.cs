@@ -68,7 +68,7 @@ namespace TechSupport.UserControls
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.incidentID = -1;
             }
         }
@@ -113,15 +113,17 @@ namespace TechSupport.UserControls
         private void TrueUpdate()
         {
             string update = this.txtDescription.Text + "\n" + DateTime.Now.ToString("MM/dd/yyyy") + " " + this.txtTextToAdd.Text;
+
+            int length = (update.Length <= 200) ? update.Length : 200;
             try
             {
-                this.controller.UpdateIncident(this.incidentID, update.Substring(0, 200), int.Parse(this.comboTechnician.ValueMember));
+                this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), (int)comboTechnician.SelectedValue);
                 this.txtTextToAdd.Text = "";
-                this.txtDescription.Text = update.Substring(0, 200);
+                this.txtDescription.Text = update.Substring(0, length);
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }

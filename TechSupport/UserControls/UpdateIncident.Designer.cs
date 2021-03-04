@@ -38,14 +38,14 @@ namespace TechSupport.UserControls
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblProductCode = new System.Windows.Forms.Label();
-            this.lblDateOpened = new System.Windows.Forms.Label();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
             this.txtProductCode = new System.Windows.Forms.TextBox();
+            this.lblProductCode = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.txtDateOpened = new System.Windows.Forms.TextBox();
+            this.lblDateOpened = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTechnician = new System.Windows.Forms.Label();
             this.comboTechnician = new System.Windows.Forms.ComboBox();
@@ -53,13 +53,13 @@ namespace TechSupport.UserControls
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTextToAdd = new System.Windows.Forms.Label();
             this.txtTextToAdd = new System.Windows.Forms.TextBox();
+            this.lblTextToAdd = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -197,6 +197,15 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel4.Size = new System.Drawing.Size(660, 89);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCustomer.Location = new System.Drawing.Point(13, 47);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.ReadOnly = true;
+            this.txtCustomer.Size = new System.Drawing.Size(633, 38);
+            this.txtCustomer.TabIndex = 4;
+            // 
             // lblCustomer
             // 
             this.lblCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -223,6 +232,27 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel5.Size = new System.Drawing.Size(660, 114);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
+            // txtProductCode
+            // 
+            this.txtProductCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtProductCode.Location = new System.Drawing.Point(13, 66);
+            this.txtProductCode.Name = "txtProductCode";
+            this.txtProductCode.ReadOnly = true;
+            this.txtProductCode.Size = new System.Drawing.Size(633, 38);
+            this.txtProductCode.TabIndex = 5;
+            // 
+            // lblProductCode
+            // 
+            this.lblProductCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblProductCode.AutoSize = true;
+            this.lblProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCode.Location = new System.Drawing.Point(217, 9);
+            this.lblProductCode.Name = "lblProductCode";
+            this.lblProductCode.Size = new System.Drawing.Size(225, 39);
+            this.lblProductCode.TabIndex = 1;
+            this.lblProductCode.Tag = "label";
+            this.lblProductCode.Text = "Product Code";
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
@@ -237,17 +267,14 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel6.Size = new System.Drawing.Size(660, 115);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
-            // lblProductCode
+            // txtDateOpened
             // 
-            this.lblProductCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblProductCode.AutoSize = true;
-            this.lblProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductCode.Location = new System.Drawing.Point(217, 9);
-            this.lblProductCode.Name = "lblProductCode";
-            this.lblProductCode.Size = new System.Drawing.Size(225, 39);
-            this.lblProductCode.TabIndex = 1;
-            this.lblProductCode.Tag = "label";
-            this.lblProductCode.Text = "Product Code";
+            this.txtDateOpened.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDateOpened.Location = new System.Drawing.Point(13, 67);
+            this.txtDateOpened.Name = "txtDateOpened";
+            this.txtDateOpened.ReadOnly = true;
+            this.txtDateOpened.Size = new System.Drawing.Size(633, 38);
+            this.txtDateOpened.TabIndex = 6;
             // 
             // lblDateOpened
             // 
@@ -260,33 +287,6 @@ namespace TechSupport.UserControls
             this.lblDateOpened.TabIndex = 2;
             this.lblDateOpened.Tag = "label";
             this.lblDateOpened.Text = "Date Opened";
-            // 
-            // txtCustomer
-            // 
-            this.txtCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomer.Location = new System.Drawing.Point(13, 47);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.ReadOnly = true;
-            this.txtCustomer.Size = new System.Drawing.Size(633, 38);
-            this.txtCustomer.TabIndex = 4;
-            // 
-            // txtProductCode
-            // 
-            this.txtProductCode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtProductCode.Location = new System.Drawing.Point(13, 66);
-            this.txtProductCode.Name = "txtProductCode";
-            this.txtProductCode.ReadOnly = true;
-            this.txtProductCode.Size = new System.Drawing.Size(633, 38);
-            this.txtProductCode.TabIndex = 5;
-            // 
-            // txtDateOpened
-            // 
-            this.txtDateOpened.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDateOpened.Location = new System.Drawing.Point(13, 67);
-            this.txtDateOpened.Name = "txtDateOpened";
-            this.txtDateOpened.ReadOnly = true;
-            this.txtDateOpened.Size = new System.Drawing.Size(633, 38);
-            this.txtDateOpened.TabIndex = 6;
             // 
             // tableLayoutPanel7
             // 
@@ -319,7 +319,7 @@ namespace TechSupport.UserControls
             this.comboTechnician.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboTechnician.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTechnician.FormattingEnabled = true;
-            this.comboTechnician.Location = new System.Drawing.Point(25, 54);
+            this.comboTechnician.Location = new System.Drawing.Point(25, 52);
             this.comboTechnician.Name = "comboTechnician";
             this.comboTechnician.Size = new System.Drawing.Size(688, 46);
             this.comboTechnician.TabIndex = 7;
@@ -356,11 +356,11 @@ namespace TechSupport.UserControls
             this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescription.Location = new System.Drawing.Point(204, 3);
+            this.txtDescription.Location = new System.Drawing.Point(203, 3);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(531, 108);
+            this.txtDescription.Size = new System.Drawing.Size(532, 108);
             this.txtDescription.TabIndex = 8;
             // 
             // tableLayoutPanel9
@@ -377,6 +377,17 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel9.Size = new System.Drawing.Size(738, 115);
             this.tableLayoutPanel9.TabIndex = 8;
             // 
+            // txtTextToAdd
+            // 
+            this.txtTextToAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTextToAdd.Location = new System.Drawing.Point(204, 3);
+            this.txtTextToAdd.Multiline = true;
+            this.txtTextToAdd.Name = "txtTextToAdd";
+            this.txtTextToAdd.Size = new System.Drawing.Size(531, 109);
+            this.txtTextToAdd.TabIndex = 9;
+            // 
             // lblTextToAdd
             // 
             this.lblTextToAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -388,17 +399,6 @@ namespace TechSupport.UserControls
             this.lblTextToAdd.TabIndex = 3;
             this.lblTextToAdd.Tag = "label";
             this.lblTextToAdd.Text = "Text To Add";
-            // 
-            // txtTextToAdd
-            // 
-            this.txtTextToAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTextToAdd.Location = new System.Drawing.Point(204, 3);
-            this.txtTextToAdd.Multiline = true;
-            this.txtTextToAdd.Name = "txtTextToAdd";
-            this.txtTextToAdd.Size = new System.Drawing.Size(531, 109);
-            this.txtTextToAdd.TabIndex = 9;
             // 
             // tableLayoutPanel10
             // 
@@ -413,6 +413,30 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(738, 100);
             this.tableLayoutPanel10.TabIndex = 9;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(404, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(298, 84);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close Incident";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.CloseIncidentButton_CloseIncident);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(35, 8);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(298, 84);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.UpdateButton_Update);
             // 
             // tableLayoutPanel11
             // 
@@ -438,30 +462,6 @@ namespace TechSupport.UserControls
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.ClearButton_Clear);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(35, 8);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(298, 84);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.UpdateButton_Update);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(404, 8);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(298, 84);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Close Incident";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.CloseIncidentButton_CloseIncident);
             // 
             // UpdateIncident
             // 
