@@ -17,15 +17,15 @@ namespace TechSupport.DAL
         public static List<OpenIncident> GetOpenIncidents()
         {
             List<OpenIncident> incidents = new List<OpenIncident>();
-            String selectStatement = "SELECT Incidents.ProductCode AS [Product Code], " +
-                    "CONVERT(date, Incidents.DateOpened) AS[Date Opened], " +
-                    "Customers.Name AS Customer, " +
-                    "Technicians.Name AS Technician, " +
-                    "Incidents.Title, Incidents.Description " +
-                "FROM Incidents " +
-                    "JOIN Customers ON Incidents.CustomerID = Customers.CustomerID " +
-                    "LEFT JOIN Technicians ON Incidents.TechID = Technicians.TechID" +
-                    "WHERE Incidents.DateClosed IS NULL";
+            String selectStatement = @"SELECT ProductCode,
+                    CONVERT(date, DateOpened) AS [DateOpened],
+                    Customers.Name AS Customer,
+                    Technicians.Name AS Technician,
+                    Title, Description
+                FROM Incidents AS i
+                    JOIN Customers ON i.CustomerID = Customers.CustomerID
+                    LEFT JOIN Technicians ON i.TechID = Technicians.TechID
+                    WHERE i.DateClosed IS NULL";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
@@ -33,23 +33,22 @@ namespace TechSupport.DAL
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        int ordProductCode = reader.GetOrdinal("Product Code");
-                        int ordDateOpened = reader.GetOrdinal("Date Opened");
+                        int ordProductCode = reader.GetOrdinal("ProductCode");
+                        int ordDateOpened = reader.GetOrdinal("DateOpened");
                         int ordCustomer = reader.GetOrdinal("Customer");
                         int ordTechnician = reader.GetOrdinal("Technician");
                         int ordTitle = reader.GetOrdinal("Title");
                         int ordDescription = reader.GetOrdinal("Description");
                         while (reader.Read())
                         {
-                            string tech = "";
+                            string tech = null;
                             if (!reader.IsDBNull(ordTechnician))
                             {
                                 tech = reader.GetString(ordTechnician);
                             }
-                            OpenIncident incident = new OpenIncident(reader.GetString(ordProductCode),
+                            incidents.Add(new OpenIncident(reader.GetString(ordProductCode),
                                 reader.GetDateTime(ordDateOpened), reader.GetString(ordCustomer),
-                                tech, reader.GetString(ordTitle), reader.GetString(ordDescription));
-                            incidents.Add(incident);
+                                tech, reader.GetString(ordTitle), reader.GetString(ordDescription)));
                         }
                     }
                 }

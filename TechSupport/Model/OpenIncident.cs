@@ -24,13 +24,23 @@ namespace TechSupport.Model
         /// <param name="Title">The title of the OpenIncident</param>
         /// <param name="Description">The description of the OpenIncident</param>
         public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName, 
-            string Title, string Descrption)
+            string Title, string Description)
         {
-            if (string.IsNullOrEmpty(CustomerName) || string.IsNullOrEmpty(Title) 
-                || string.IsNullOrEmpty(ProductCode) || string.IsNullOrEmpty(Description))
+            if (string.IsNullOrEmpty(Title))
             {
-                throw new ArgumentException("title " + "customer name " + "technician name " + "date opened " + "product code " + "description",
-                      "Product Code, Customer Name, Technician Name, Title, and Description cannot be null or empty");
+                throw new ArgumentException("title", "Title of incident cannot be null or empty");
+            }
+            if (string.IsNullOrEmpty(CustomerName))
+            {
+                throw new ArgumentException("customer", "Customer of incident cannot be null or empty");
+            }
+            if (string.IsNullOrEmpty(ProductCode))
+            {
+                throw new ArgumentException("product code", "Product Code of incident cannot be null or empty");
+            }
+            if (string.IsNullOrEmpty(Description))
+            {
+                throw new ArgumentException("description", "Description of incident cannot be null or empty");
             }
             if (DateOpened == null)
             {

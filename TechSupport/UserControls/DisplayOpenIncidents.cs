@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -57,9 +58,20 @@ namespace TechSupport.UserControls
                     this.lblNoOpenIncidents.Text = "No Open Incidents";
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database Error" + Environment.NewLine + ex.Message + 
+                    Environment.NewLine + ex.Errors + 
+                    Environment.NewLine + ex.Data + 
+                    Environment.NewLine + ex.Source + 
+                    Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                MessageBox.Show("Database Error" + Environment.NewLine + ex.Message +
+                    Environment.NewLine + ex.Data +
+                    Environment.NewLine + ex.Source +
+                    Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

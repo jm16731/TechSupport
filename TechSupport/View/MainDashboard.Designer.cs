@@ -36,6 +36,7 @@ namespace TechSupport.View
             this.tabUpdateIncident = new System.Windows.Forms.TabPage();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
+            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@ namespace TechSupport.View
             // 
             // tabDisplayOpenIncidents
             // 
+            this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
             this.tabDisplayOpenIncidents.Controls.Add(this.listView1);
             this.tabDisplayOpenIncidents.Location = new System.Drawing.Point(10, 48);
             this.tabDisplayOpenIncidents.Name = "tabDisplayOpenIncidents";
@@ -113,6 +115,13 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
+            // usrCntrlDisplayOpenIncidents
+            // 
+            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(0, 4);
+            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
+            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1423, 661);
+            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -147,5 +156,6 @@ namespace TechSupport.View
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabPage tabUpdateIncident;
         private System.Windows.Forms.TabPage tabAddIncident;
+        private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
     }
 }
