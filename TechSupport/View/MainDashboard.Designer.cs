@@ -31,18 +31,21 @@ namespace TechSupport.View
         {
             this.tabCntrlIncidents = new System.Windows.Forms.TabControl();
             this.tabAddIncident = new System.Windows.Forms.TabPage();
+            this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
             this.tabDisplayOpenIncidents = new System.Windows.Forms.TabPage();
+            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabUpdateIncident = new System.Windows.Forms.TabPage();
+            this.updateIncident1 = new TechSupport.UserControls.UpdateIncident();
+            this.tabViewIncidentByTechnician = new System.Windows.Forms.TabPage();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
-            this.usrCntrlAddIncident = new TechSupport.UserControls.AddIncident();
-            this.usrCntrlDisplayOpenIncidents = new TechSupport.UserControls.DisplayOpenIncidents();
-            this.updateIncident1 = new TechSupport.UserControls.UpdateIncident();
+            this.viewIncidentByTechnician1 = new TechSupport.UserControls.ViewIncidentByTechnician();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
             this.tabUpdateIncident.SuspendLayout();
+            this.tabViewIncidentByTechnician.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCntrlIncidents
@@ -50,6 +53,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.Controls.Add(this.tabAddIncident);
             this.tabCntrlIncidents.Controls.Add(this.tabDisplayOpenIncidents);
             this.tabCntrlIncidents.Controls.Add(this.tabUpdateIncident);
+            this.tabCntrlIncidents.Controls.Add(this.tabViewIncidentByTechnician);
             this.tabCntrlIncidents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabCntrlIncidents.Location = new System.Drawing.Point(0, 229);
             this.tabCntrlIncidents.Name = "tabCntrlIncidents";
@@ -68,6 +72,13 @@ namespace TechSupport.View
             this.tabAddIncident.Text = "Add Incident";
             this.tabAddIncident.UseVisualStyleBackColor = true;
             // 
+            // usrCntrlAddIncident
+            // 
+            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 3);
+            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
+            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1416, 667);
+            this.usrCntrlAddIncident.TabIndex = 0;
+            // 
             // tabDisplayOpenIncidents
             // 
             this.tabDisplayOpenIncidents.Controls.Add(this.usrCntrlDisplayOpenIncidents);
@@ -78,6 +89,13 @@ namespace TechSupport.View
             this.tabDisplayOpenIncidents.TabIndex = 3;
             this.tabDisplayOpenIncidents.Text = "Display Open Incidents";
             this.tabDisplayOpenIncidents.UseVisualStyleBackColor = true;
+            // 
+            // usrCntrlDisplayOpenIncidents
+            // 
+            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(0, 4);
+            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
+            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1423, 661);
+            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
             // 
             // listView1
             // 
@@ -97,6 +115,23 @@ namespace TechSupport.View
             this.tabUpdateIncident.TabIndex = 4;
             this.tabUpdateIncident.Text = "Update Incident";
             this.tabUpdateIncident.UseVisualStyleBackColor = true;
+            // 
+            // updateIncident1
+            // 
+            this.updateIncident1.Location = new System.Drawing.Point(-2, 3);
+            this.updateIncident1.Name = "updateIncident1";
+            this.updateIncident1.Size = new System.Drawing.Size(1416, 667);
+            this.updateIncident1.TabIndex = 0;
+            // 
+            // tabViewIncidentByTechnician
+            // 
+            this.tabViewIncidentByTechnician.Controls.Add(this.viewIncidentByTechnician1);
+            this.tabViewIncidentByTechnician.Location = new System.Drawing.Point(10, 48);
+            this.tabViewIncidentByTechnician.Name = "tabViewIncidentByTechnician";
+            this.tabViewIncidentByTechnician.Size = new System.Drawing.Size(1416, 667);
+            this.tabViewIncidentByTechnician.TabIndex = 6;
+            this.tabViewIncidentByTechnician.Text = "View by Technician";
+            this.tabViewIncidentByTechnician.UseVisualStyleBackColor = true;
             // 
             // lblMainUsername
             // 
@@ -121,26 +156,12 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
-            // usrCntrlAddIncident
+            // viewIncidentByTechnician1
             // 
-            this.usrCntrlAddIncident.Location = new System.Drawing.Point(-2, 3);
-            this.usrCntrlAddIncident.Name = "usrCntrlAddIncident";
-            this.usrCntrlAddIncident.Size = new System.Drawing.Size(1416, 667);
-            this.usrCntrlAddIncident.TabIndex = 0;
-            // 
-            // usrCntrlDisplayOpenIncidents
-            // 
-            this.usrCntrlDisplayOpenIncidents.Location = new System.Drawing.Point(0, 4);
-            this.usrCntrlDisplayOpenIncidents.Name = "usrCntrlDisplayOpenIncidents";
-            this.usrCntrlDisplayOpenIncidents.Size = new System.Drawing.Size(1423, 661);
-            this.usrCntrlDisplayOpenIncidents.TabIndex = 1;
-            // 
-            // updateIncident1
-            // 
-            this.updateIncident1.Location = new System.Drawing.Point(-2, 3);
-            this.updateIncident1.Name = "updateIncident1";
-            this.updateIncident1.Size = new System.Drawing.Size(1416, 667);
-            this.updateIncident1.TabIndex = 0;
+            this.viewIncidentByTechnician1.Location = new System.Drawing.Point(-3, 0);
+            this.viewIncidentByTechnician1.Name = "viewIncidentByTechnician1";
+            this.viewIncidentByTechnician1.Size = new System.Drawing.Size(1416, 667);
+            this.viewIncidentByTechnician1.TabIndex = 0;
             // 
             // MainDashboard
             // 
@@ -163,6 +184,7 @@ namespace TechSupport.View
             this.tabAddIncident.ResumeLayout(false);
             this.tabDisplayOpenIncidents.ResumeLayout(false);
             this.tabUpdateIncident.ResumeLayout(false);
+            this.tabViewIncidentByTechnician.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +202,7 @@ namespace TechSupport.View
         private UserControls.DisplayOpenIncidents usrCntrlDisplayOpenIncidents;
         private UserControls.AddIncident usrCntrlAddIncident;
         private UserControls.UpdateIncident updateIncident1;
+        private System.Windows.Forms.TabPage tabViewIncidentByTechnician;
+        private UserControls.ViewIncidentByTechnician viewIncidentByTechnician1;
     }
 }
