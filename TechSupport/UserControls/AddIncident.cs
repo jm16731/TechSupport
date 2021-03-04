@@ -48,46 +48,20 @@ namespace TechSupport.UserControls
 
         private void Add_click(object sender, EventArgs e)
         {
-            Boolean passesVerification = true;
-            if (comboIncidentCustomer.SelectedIndex == -1)
-            {
-                lblCustomerNameError.Text = "Please choose a customer";
-                passesVerification = false;
-            }
-            if (comboIncidentProduct.SelectedIndex == -1)
-            {
-                lblProductNameError.Text = "Please choose a product";
-                passesVerification = false;
-            }
-            if (String.IsNullOrEmpty(txtIncidentTitle.Text))
-            {
-                lblTitleError.Text = "Please give a title";
-                passesVerification = false;
-            }
-            if (String.IsNullOrEmpty(txtIncidentDescription.Text))
-            {
-                lblDescriptionError.Text = "Please describe incident";
-                passesVerification = false;
-            }
-            if (!passesVerification)
-            {
-                return;
-            }
-
+            if (DidAddClickHaveErrors()) return;
             try
             {
-                int customerID = int.Parse(comboIncidentCustomer.ValueMember);
-                String productCode = comboIncidentProduct.ValueMember;
+                int customerID = (int) comboIncidentCustomer.SelectedValue;
+                String productCode = (string) comboIncidentProduct.SelectedValue;
                 if (!this.controller.IsCustomerRegisteredToProduct(customerID, productCode))
                 {
-                    MessageBox.Show("Customer not registered to product. Cannot created incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Customer not registered to product. Cannot create incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 String title = txtIncidentTitle.Text;
                 String description = txtIncidentDescription.Text;
-                Model.NewIncident incident = new Model.NewIncident(customerID, productCode, title, description);
-                bool ret = this.controller.CreateIncident(incident);
+                bool ret = this.controller.CreateIncident(new Model.NewIncident(customerID, productCode, title, description));
                 if (ret == false)
                 {
                     MessageBox.Show("Something went wrong with adding the incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,12 +73,38 @@ namespace TechSupport.UserControls
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("Error with new incident." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error with new incident." + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something went wrong." + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something went wrong." + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private bool DidAddClickHaveErrors()
+        {
+            Boolean didAddClickHaveErrors = false;
+            if (comboIncidentCustomer.SelectedIndex == -1)
+            {
+                lblCustomerNameError.Text = "Please choose a customer";
+                didAddClickHaveErrors = true;
+            }
+            if (comboIncidentProduct.SelectedIndex == -1)
+            {
+                lblProductNameError.Text = "Please choose a product";
+                didAddClickHaveErrors = true;
+            }
+            if (String.IsNullOrEmpty(txtIncidentTitle.Text))
+            {
+                lblTitleError.Text = "Please give a title";
+                didAddClickHaveErrors = true;
+            }
+            if (String.IsNullOrEmpty(txtIncidentDescription.Text))
+            {
+                lblDescriptionError.Text = "Please describe incident";
+                didAddClickHaveErrors = true;
+            }
+            return didAddClickHaveErrors;
         }
 
         /// <summary>
