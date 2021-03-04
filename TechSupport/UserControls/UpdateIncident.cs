@@ -112,8 +112,8 @@ namespace TechSupport.UserControls
 
         private void TrueUpdate()
         {
-            string update = this.txtDescription.Text + "\n" + DateTime.Now.ToString("MM/dd/yyyy") + " " + this.txtTextToAdd.Text;
-
+            string update = (string.IsNullOrEmpty(this.txtTextToAdd.Text)) ? this.txtDescription.Text :
+                this.txtDescription.Text + "\n<" + DateTime.Now.ToString("MM/dd/yyyy") + "> " + this.txtTextToAdd.Text;
             int length = (update.Length <= 200) ? update.Length : 200;
             try
             {
