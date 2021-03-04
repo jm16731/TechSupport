@@ -143,29 +143,32 @@ namespace TechSupport.DAL
         /// <returns>Whether or not said incident is open</returns>
         public static bool IsIncidentOpen(int incidentID)
         {
-            bool open = false;
-            String selectStatement = @"SELECT CAST (CASE
-                                        WHEN DateClosed = null THEN 1
-                                        ELSE 0
-                                        END AS BIT) AS isOpen
-                                    FROM Incidents
-                                    WHERE Incidents.IncidentID = @incidentID;";
+            SqlParameter isOpen;
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
-                using (SqlCommand command = new SqlCommand(selectStatement, connection))
+                using (SqlCommand command = new SqlCommand("isIncidentOpen", connection))
                 {
-                    command.Parameters.AddWithValue("@incidentID", incidentID);
                     connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@IncidentID", incidentID);
+
+                    isOpen = new SqlParameter("@isOpen", System.Data.SqlDbType.Bit)
                     {
-                        while (reader.Read())
-                        {
-                            open = (bool)reader["isOpen"];
-                        }
-                    }
+                        Direction = System.Data.ParameterDirection.Output
+                    };
+                    command.Parameters.Add(isOpen);
+
+                    command.ExecuteNonQuery();
                 }
             }
-            return open;
+            if (Convert.ToBoolean(isOpen.Value) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
