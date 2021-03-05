@@ -2,6 +2,9 @@
 
 namespace TechSupport.Model
 {
+    /// <summary>
+    /// Models a Technician of TechSupport
+    /// </summary>
     public class Technician
     {
         public int ID { get; }

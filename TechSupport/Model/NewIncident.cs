@@ -3,7 +3,7 @@
 namespace TechSupport.Model
 {
     /// <summary>
-    /// Models the creation of a New Incident
+    /// Models the creation of a new incident
     /// </summary>
     public class NewIncident
     {
@@ -12,6 +12,13 @@ namespace TechSupport.Model
         public string Title { get; }
         public string Description { get; }
 
+        /// <summary>
+        /// Creates a NewIncident
+        /// </summary>
+        /// <param name="customerID">ID of the customer whose incident it is</param>
+        /// <param name="productCode">Code of the product associated with the incident</param>
+        /// <param name="title">A brief title for the incident</param>
+        /// <param name="description">A description of the incident</param>
         public NewIncident(int customerID, string productCode, string title, string description)
         {
             if (string.IsNullOrEmpty(productCode) || string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))

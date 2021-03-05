@@ -5,6 +5,9 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// This class manages SQL queries to the Technicians table of the TechSupport db
+    /// </summary>
     class TechnicianDAL
     {
         /// <summary>

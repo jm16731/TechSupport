@@ -16,6 +16,17 @@ namespace TechSupport.Model
         public string Title { get; }
         public string Description { get; }
 
+        /// <summary>
+        /// Creates an Incident
+        /// </summary>
+        /// <param name="incidentID">ID of the incident</param>
+        /// <param name="customerName">Customer's name</param>
+        /// <param name="productName">Product's name</param>
+        /// <param name="techName">Name of the Technician handling the Incident</param>
+        /// <param name="dateOpened">Date the Incident was Opened</param>
+        /// <param name="dateClosed">Date the Incident was Closed</param>
+        /// <param name="title">Title of the Incident</param>
+        /// <param name="description">A description of the incident</param>
         public Incident(int incidentID, string customerName, string productName, string techName, DateTime dateOpened,
             DateTime? dateClosed, string title, string description)
         {

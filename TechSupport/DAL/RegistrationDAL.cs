@@ -3,6 +3,9 @@ using System.Data.SqlClient;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// This class manages SQL queries to the Registrations table of the TechSupport db
+    /// </summary>
     class RegistrationDAL
     {
 

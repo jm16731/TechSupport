@@ -5,10 +5,17 @@ using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// User Control for updating an incident in Tech Support
+    /// </summary>
     public partial class UpdateIncident : UserControl
     {
         private readonly IncidentController controller;
         int incidentID;
+
+        /// <summary>
+        /// Creates this user contorl
+        /// </summary>
         public UpdateIncident()
         {
             InitializeComponent();
