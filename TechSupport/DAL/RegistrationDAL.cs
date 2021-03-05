@@ -36,7 +36,8 @@ namespace TechSupport.DAL
             if (Convert.ToBoolean(registered.Value) == true)
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }

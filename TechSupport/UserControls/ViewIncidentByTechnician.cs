@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -53,7 +46,7 @@ namespace TechSupport.UserControls
             }
             try
             {
-                Technician tech = this.controller.GetTechnician((int) this.comboTechnicians.SelectedValue);
+                Technician tech = this.controller.GetTechnician((int)this.comboTechnicians.SelectedValue);
                 txtEmail.Text = tech.Email;
                 txtPhone.Text = tech.Phone;
                 viewIncidents.DataSource = null;
@@ -61,9 +54,9 @@ namespace TechSupport.UserControls
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Error communicating with database." + 
-                    Environment.NewLine + ex.Message + 
-                    Environment.NewLine + ex.StackTrace, 
+                MessageBox.Show("Error communicating with database." +
+                    Environment.NewLine + ex.Message +
+                    Environment.NewLine + ex.StackTrace,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)

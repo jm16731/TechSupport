@@ -25,10 +25,10 @@ namespace TechSupport.Model
         /// <param name="City">City of the customer</param>
         /// <param name="State">State of the customer</param>
         /// <param name="ZipCode">Zip Code of the customer</param>
-        public Customer (int ID, string Name, string Address, string City, string State, string ZipCode) : 
+        public Customer(int ID, string Name, string Address, string City, string State, string ZipCode) :
             this(ID, Name, Address, City, State, ZipCode, null, null)
         {
-            
+
         }
 
         /// <summary>

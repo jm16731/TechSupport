@@ -46,7 +46,7 @@ namespace TechSupport.UserControls
                     this.lblNoOpenIncidents.Text = "";
                     foreach (OpenIncident incident in incidentList)
                     {
-                        string[] row = { incident.ProductCode, incident.Title, 
+                        string[] row = { incident.ProductCode, incident.Title,
                             incident.DateOpened.ToShortDateString(),
                             incident.CustomerName, incident.TechnicianName };
                         ListViewItem lvi = new ListViewItem(row);
@@ -60,10 +60,10 @@ namespace TechSupport.UserControls
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Database Error" + Environment.NewLine + ex.Message + 
-                    Environment.NewLine + ex.Errors + 
-                    Environment.NewLine + ex.Data + 
-                    Environment.NewLine + ex.Source + 
+                MessageBox.Show("Database Error" + Environment.NewLine + ex.Message +
+                    Environment.NewLine + ex.Errors +
+                    Environment.NewLine + ex.Data +
+                    Environment.NewLine + ex.Source +
                     Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)

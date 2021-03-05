@@ -23,7 +23,7 @@ namespace TechSupport.Model
         /// <param name="TechnicianName">The name of the technician managing the OpenIncident</param>
         /// <param name="Title">The title of the OpenIncident</param>
         /// <param name="Description">The description of the OpenIncident</param>
-        public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName, 
+        public OpenIncident(string ProductCode, DateTime DateOpened, string CustomerName, string TechnicianName,
             string Title, string Description)
         {
             if (string.IsNullOrEmpty(Title))

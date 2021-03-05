@@ -85,7 +85,8 @@ namespace TechSupport.DAL
             if (rowsUpdated < 1)
             {
                 return false;
-            } else
+            }
+            else
             {
                 return true;
             }

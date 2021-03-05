@@ -51,8 +51,8 @@ namespace TechSupport.UserControls
             if (DidAddClickHaveErrors()) return;
             try
             {
-                int customerID = (int) comboIncidentCustomer.SelectedValue;
-                String productCode = (string) comboIncidentProduct.SelectedValue;
+                int customerID = (int)comboIncidentCustomer.SelectedValue;
+                String productCode = (string)comboIncidentProduct.SelectedValue;
                 if (!this.controller.IsCustomerRegisteredToProduct(customerID, productCode))
                 {
                     MessageBox.Show("Customer not registered to product. Cannot create incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,11 +65,12 @@ namespace TechSupport.UserControls
                 if (ret == false)
                 {
                     MessageBox.Show("Something went wrong with adding the incident.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Incident successfully created", "Success!!", MessageBoxButtons.OK);
                 }
-                
+
             }
             catch (ArgumentException ex)
             {

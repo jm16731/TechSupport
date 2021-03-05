@@ -19,7 +19,7 @@ namespace TechSupport.Model
         public Incident(int incidentID, string customerName, string productName, string techName, DateTime dateOpened,
             DateTime? dateClosed, string title, string description)
         {
-            if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(title) 
+            if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(title)
                 || string.IsNullOrEmpty(description) || string.IsNullOrEmpty(customerName))
             {
                 throw new ArgumentException("productName " + "title " + "description " + "customer name", "Title, Description, " +

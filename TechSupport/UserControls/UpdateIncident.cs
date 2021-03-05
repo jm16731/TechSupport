@@ -94,7 +94,7 @@ namespace TechSupport.UserControls
             }
             if (this.txtDescription.Text.Length > 200 && !string.IsNullOrEmpty(this.txtTextToAdd.Text))
             {
-                MessageBox.Show("Description all ready exceeds 200 characters. Cannot update description. Please delete your text to add", 
+                MessageBox.Show("Description all ready exceeds 200 characters. Cannot update description. Please delete your text to add",
                     "", MessageBoxButtons.OK);
                 return;
             }
@@ -125,7 +125,7 @@ namespace TechSupport.UserControls
             {
                 MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void CloseIncidentButton_CloseIncident(object sender, EventArgs e)
