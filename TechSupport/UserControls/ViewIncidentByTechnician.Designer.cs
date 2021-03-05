@@ -45,16 +45,13 @@ namespace TechSupport.UserControls
             // 
             this.viewIncidents.AllowUserToAddRows = false;
             this.viewIncidents.AllowUserToDeleteRows = false;
-            this.viewIncidents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.viewIncidents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewIncidents.Location = new System.Drawing.Point(3, 241);
             this.viewIncidents.Name = "viewIncidents";
             this.viewIncidents.ReadOnly = true;
             this.viewIncidents.RowHeadersWidth = 102;
             this.viewIncidents.RowTemplate.Height = 40;
-            this.viewIncidents.Size = new System.Drawing.Size(1410, 426);
+            this.viewIncidents.Size = new System.Drawing.Size(1410, 360);
             this.viewIncidents.TabIndex = 4;
             // 
             // tableLayoutPanel1
@@ -144,8 +141,8 @@ namespace TechSupport.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.viewIncidents);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ViewIncidentByTechnician";
             this.Size = new System.Drawing.Size(1416, 667);
             ((System.ComponentModel.ISupportInitialize)(this.viewIncidents)).EndInit();
