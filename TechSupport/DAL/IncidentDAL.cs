@@ -278,7 +278,7 @@ namespace TechSupport.DAL
 	                JOIN Customers AS c ON i.CustomerID = c.CustomerID
 	                JOIN Technicians AS t on i.TechID = t.TechID
 	                JOIN Products AS p ON i.ProductCode = p.ProductCode
-                WHERE i.techID = 11";
+                WHERE i.techID = @techID";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
