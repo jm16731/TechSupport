@@ -68,6 +68,11 @@ namespace TechSupport.UserControls
                     this.txtTextToAdd.Enabled = false;
                 }
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("No such incident", "Error", MessageBoxButtons.OK);
+                this.incidentID = -1;
+            }
             catch (FormatException)
             {
                 MessageBox.Show("Incident ID must be a number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,7 +80,7 @@ namespace TechSupport.UserControls
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.incidentID = -1;
             }
         }
@@ -114,6 +119,11 @@ namespace TechSupport.UserControls
                     return;
                 }
             }
+            if (this.comboTechnician.SelectedIndex == -1)
+            {
+                MessageBox.Show("Error: No Technician selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             this.TrueUpdate();
         }
 
@@ -127,6 +137,10 @@ namespace TechSupport.UserControls
                 this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), (int)comboTechnician.SelectedValue);
                 this.txtTextToAdd.Text = "";
                 this.txtDescription.Text = update.Substring(0, length);
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
             }
             catch (ArgumentException ex)
             {
@@ -143,14 +157,20 @@ namespace TechSupport.UserControls
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (this.comboTechnician.SelectedIndex == -1)
+            {
+                MessageBox.Show("Error: No Technician selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult result = MessageBox.Show("Incident cannot be changed further once closed. Are you sure?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                this.TrueUpdate();
                 try
                 {
+                    this.TrueUpdate();
                     this.controller.CloseIncident(this.incidentID);
                     MessageBox.Show("Incident closed", "", MessageBoxButtons.OK);
+                    this.ClearButton_Clear(sender, e);
                 }
                 catch (ArgumentException)
                 {
