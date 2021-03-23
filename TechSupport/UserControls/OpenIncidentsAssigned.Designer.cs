@@ -29,12 +29,24 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TechSupport.UserControls.Reports.OpenIncidentsAssigned.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1423, 661);
+            this.reportViewer1.TabIndex = 0;
             // 
             // OpenIncidentsAssigned
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.reportViewer1);
             this.Name = "OpenIncidentsAssigned";
             this.Size = new System.Drawing.Size(1423, 661);
             this.ResumeLayout(false);
@@ -42,5 +54,7 @@ namespace TechSupport.UserControls
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
