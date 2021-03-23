@@ -29,7 +29,6 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -48,7 +47,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>Aqua</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -70,7 +69,6 @@
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -89,7 +87,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>Aqua</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -128,7 +126,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -161,7 +159,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -204,7 +202,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -242,7 +240,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -285,7 +283,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -323,7 +321,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -366,7 +364,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -404,7 +402,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -427,7 +425,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=IIf(CountRows() &gt; 1, "Incidents Assigned", "Incident Assigned")</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#333333</Color>
@@ -442,13 +440,14 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -475,7 +474,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>HotPink</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -511,7 +510,6 @@
                             <Style>
                               <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#666666</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -530,7 +528,7 @@
                         <Style>Solid</Style>
                         <Width>1pt</Width>
                       </BottomBorder>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>Aqua</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -555,7 +553,6 @@
                                 <Style>
                                   <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#666666</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -574,7 +571,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>Aqua</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -599,7 +596,6 @@
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>#666666</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -618,7 +614,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>Aqua</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -660,7 +656,7 @@
                             <Value>=Fields!ProductName.Value</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
-                              <Color>#333333</Color>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -677,7 +673,7 @@
                         <Style>Solid</Style>
                         <Width>1pt</Width>
                       </BottomBorder>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>Blue</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -711,7 +707,7 @@
                                 <Value>=Fields!IncidentTitle.Value</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
-                                  <Color>#333333</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -728,7 +724,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -762,7 +758,7 @@
                                     <Value>=Fields!CustomerName.Value</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -779,7 +775,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>CornflowerBlue</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -819,7 +815,7 @@
                                     <Value>Total</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -836,7 +832,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>CornflowerBlue</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -867,7 +863,7 @@
                                 <Value>Total</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
-                                  <Color>#333333</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -884,7 +880,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -908,7 +904,7 @@
                                     <Value />
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -925,7 +921,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>CornflowerBlue</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -954,7 +950,7 @@
                             <Value>Total</Value>
                             <Style>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#333333</Color>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -966,7 +962,7 @@
                       <Border>
                         <Style>None</Style>
                       </Border>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>Blue</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -990,7 +986,7 @@
                                 <Value />
                                 <Style>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#333333</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -1002,7 +998,7 @@
                           <Border>
                             <Style>None</Style>
                           </Border>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -1023,10 +1019,10 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value />
+                                    <Value>=CountRows()</Value>
                                     <Style>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>#333333</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1038,7 +1034,7 @@
                               <Border>
                                 <Style>None</Style>
                               </Border>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>CornflowerBlue</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -1083,7 +1079,10 @@
               <TextRuns>
                 <TextRun>
                   <Value>Open Incidents Assigned to Technicians</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -1091,13 +1090,14 @@
           </Paragraphs>
           <rd:DefaultName>Textbox28</rd:DefaultName>
           <Top>0.3175in</Top>
-          <Left>2in</Left>
-          <Height>0.25in</Height>
-          <Width>2.49917in</Width>
+          <Left>1.13417in</Left>
+          <Height>0.31667in</Height>
+          <Width>4.28667in</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>Aqua</BackgroundColor>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
