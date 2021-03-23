@@ -38,9 +38,10 @@ namespace TechSupport.View
             this.tabUpdateIncident = new System.Windows.Forms.TabPage();
             this.updateIncident1 = new TechSupport.UserControls.UpdateIncident();
             this.tabViewIncidentByTechnician = new System.Windows.Forms.TabPage();
+            this.viewIncidentByTechnician1 = new TechSupport.UserControls.ViewIncidentByTechnician();
             this.lblMainUsername = new System.Windows.Forms.Label();
             this.lnklblLogout = new System.Windows.Forms.LinkLabel();
-            this.viewIncidentByTechnician1 = new TechSupport.UserControls.ViewIncidentByTechnician();
+            this.tabReport = new System.Windows.Forms.TabPage();
             this.tabCntrlIncidents.SuspendLayout();
             this.tabAddIncident.SuspendLayout();
             this.tabDisplayOpenIncidents.SuspendLayout();
@@ -54,6 +55,7 @@ namespace TechSupport.View
             this.tabCntrlIncidents.Controls.Add(this.tabDisplayOpenIncidents);
             this.tabCntrlIncidents.Controls.Add(this.tabUpdateIncident);
             this.tabCntrlIncidents.Controls.Add(this.tabViewIncidentByTechnician);
+            this.tabCntrlIncidents.Controls.Add(this.tabReport);
             this.tabCntrlIncidents.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabCntrlIncidents.Location = new System.Drawing.Point(0, 229);
             this.tabCntrlIncidents.Name = "tabCntrlIncidents";
@@ -133,6 +135,13 @@ namespace TechSupport.View
             this.tabViewIncidentByTechnician.Text = "View by Technician";
             this.tabViewIncidentByTechnician.UseVisualStyleBackColor = true;
             // 
+            // viewIncidentByTechnician1
+            // 
+            this.viewIncidentByTechnician1.Location = new System.Drawing.Point(-3, 0);
+            this.viewIncidentByTechnician1.Name = "viewIncidentByTechnician1";
+            this.viewIncidentByTechnician1.Size = new System.Drawing.Size(1416, 667);
+            this.viewIncidentByTechnician1.TabIndex = 0;
+            // 
             // lblMainUsername
             // 
             this.lblMainUsername.AutoSize = true;
@@ -156,12 +165,14 @@ namespace TechSupport.View
             this.lnklblLogout.Text = "Logout";
             this.lnklblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinklblLogout_linkClicked);
             // 
-            // viewIncidentByTechnician1
+            // tabReport
             // 
-            this.viewIncidentByTechnician1.Location = new System.Drawing.Point(-3, 0);
-            this.viewIncidentByTechnician1.Name = "viewIncidentByTechnician1";
-            this.viewIncidentByTechnician1.Size = new System.Drawing.Size(1416, 667);
-            this.viewIncidentByTechnician1.TabIndex = 0;
+            this.tabReport.Location = new System.Drawing.Point(10, 48);
+            this.tabReport.Name = "tabReport";
+            this.tabReport.Size = new System.Drawing.Size(1416, 667);
+            this.tabReport.TabIndex = 7;
+            this.tabReport.Text = "Report";
+            this.tabReport.UseVisualStyleBackColor = true;
             // 
             // MainDashboard
             // 
@@ -204,5 +215,6 @@ namespace TechSupport.View
         private UserControls.UpdateIncident updateIncident1;
         private System.Windows.Forms.TabPage tabViewIncidentByTechnician;
         private UserControls.ViewIncidentByTechnician viewIncidentByTechnician1;
+        private System.Windows.Forms.TabPage tabReport;
     }
 }
