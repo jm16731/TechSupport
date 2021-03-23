@@ -100,6 +100,12 @@
     <Compile Include="UserControls\DisplayOpenIncidents.Designer.cs">
       <DependentUpon>DisplayOpenIncidents.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\OpenIncidentsAssigned.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OpenIncidentsAssigned.Designer.cs">
+      <DependentUpon>OpenIncidentsAssigned.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UpdateIncident.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,10 @@
     <EmbeddedResource Include="UserControls\DisplayOpenIncidents.resx">
       <DependentUpon>DisplayOpenIncidents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OpenIncidentsAssigned.resx">
+      <DependentUpon>OpenIncidentsAssigned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Reports\OpenIncidentsAssigned.rdlc" />
     <EmbeddedResource Include="UserControls\UpdateIncident.resx">
       <DependentUpon>UpdateIncident.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,7 +161,6 @@
     <EmbeddedResource Include="View\MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Reports\OpenIncidentAssigned.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

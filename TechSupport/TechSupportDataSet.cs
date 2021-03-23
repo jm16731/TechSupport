@@ -1,3 +1,7 @@
 ﻿namespace TechSupport
 {
 }
+
+namespace TechSupport
+{
+}

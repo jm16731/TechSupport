@@ -112,9 +112,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Date Opened.Value</Value>
+                              <Value>=Fields!DateOpened.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
+                                <Format>D</Format>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
@@ -145,7 +146,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Technician Name.Value</Value>
+                              <Value>=Fields!TechnicianName.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -638,12 +639,12 @@
             <TablixMember>
               <Group Name="ProductName">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!Product Name.Value</GroupExpression>
+                  <GroupExpression>=Fields!ProductName.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Product Name.Value</Value>
+                  <Value>=Fields!ProductName.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
@@ -656,7 +657,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!Product Name.Value</Value>
+                            <Value>=Fields!ProductName.Value</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
                               <Color>#333333</Color>
@@ -689,12 +690,12 @@
                 <TablixMember>
                   <Group Name="IncidentTitle">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Incident Title.Value</GroupExpression>
+                      <GroupExpression>=Fields!IncidentTitle.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Incident Title.Value</Value>
+                      <Value>=Fields!IncidentTitle.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
@@ -707,7 +708,7 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>=Fields!Incident Title.Value</Value>
+                                <Value>=Fields!IncidentTitle.Value</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
                                   <Color>#333333</Color>
@@ -740,12 +741,12 @@
                     <TablixMember>
                       <Group Name="CustomerName">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!Customer Name.Value</GroupExpression>
+                          <GroupExpression>=Fields!CustomerName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!Customer Name.Value</Value>
+                          <Value>=Fields!CustomerName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
@@ -758,7 +759,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!Customer Name.Value</Value>
+                                    <Value>=Fields!CustomerName.Value</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
                                       <Color>#333333</Color>
@@ -1082,7 +1083,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>76598a44-1b3d-40c7-9c15-05ad1ffa3ba1</rd:DataSourceID>
+      <rd:DataSourceID>a46d0487-03f0-40e1-a8a3-245ac48822f0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1092,24 +1093,24 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Product Name">
-          <DataField>Product Name</DataField>
+        <Field Name="ProductName">
+          <DataField>ProductName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Incident Title">
-          <DataField>Incident Title</DataField>
+        <Field Name="IncidentTitle">
+          <DataField>IncidentTitle</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Customer Name">
-          <DataField>Customer Name</DataField>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Date Opened">
-          <DataField>Date Opened</DataField>
+        <Field Name="DateOpened">
+          <DataField>DateOpened</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Technician Name">
-          <DataField>Technician Name</DataField>
+        <Field Name="TechnicianName">
+          <DataField>TechnicianName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -1124,5 +1125,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>52ba7d19-5979-46cc-adb7-4fd8e213811a</rd:ReportID>
+  <rd:ReportID>e3542435-23dc-430b-9cac-b80c4f0d208c</rd:ReportID>
 </Report>

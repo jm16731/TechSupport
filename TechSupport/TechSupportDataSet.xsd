@@ -12,9 +12,9 @@
               <DbSource ConnectionRef="TechSupportConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Products.Name AS 'Product Name', Incidents.Title AS 'Incident Title',
-	Customers.Name AS 'Customer Name', Incidents.DateOpened AS 'Date Opened',
-	Technicians.Name AS 'Technician Name'
+                    <CommandText>SELECT Products.Name AS ProductName, Incidents.Title AS IncidentTitle,
+	Customers.Name AS CustomerName, Incidents.DateOpened AS DateOpened,
+	Technicians.Name AS TechnicianName
 FROM Incidents
 	JOIN Products ON Incidents.ProductCode = Products.ProductCode
 	JOIN Customers ON Incidents.CustomerID = Customers.CustomerID
@@ -26,11 +26,11 @@ WHERE Incidents.DateClosed IS NULL</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Product Name" DataSetColumn="Product Name" />
-              <Mapping SourceColumn="Incident Title" DataSetColumn="Incident Title" />
-              <Mapping SourceColumn="Customer Name" DataSetColumn="Customer Name" />
-              <Mapping SourceColumn="Date Opened" DataSetColumn="Date Opened" />
-              <Mapping SourceColumn="Technician Name" DataSetColumn="Technician Name" />
+              <Mapping SourceColumn="ProductName" DataSetColumn="ProductName" />
+              <Mapping SourceColumn="IncidentTitle" DataSetColumn="IncidentTitle" />
+              <Mapping SourceColumn="CustomerName" DataSetColumn="CustomerName" />
+              <Mapping SourceColumn="DateOpened" DataSetColumn="DateOpened" />
+              <Mapping SourceColumn="TechnicianName" DataSetColumn="TechnicianName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -45,29 +45,29 @@ WHERE Incidents.DateClosed IS NULL</CommandText>
         <xs:element name="OpenIncidentsAssigned" msprop:Generator_TableClassName="OpenIncidentsAssignedDataTable" msprop:Generator_TableVarName="tableOpenIncidentsAssigned" msprop:Generator_RowChangedName="OpenIncidentsAssignedRowChanged" msprop:Generator_TablePropName="OpenIncidentsAssigned" msprop:Generator_RowDeletingName="OpenIncidentsAssignedRowDeleting" msprop:Generator_RowChangingName="OpenIncidentsAssignedRowChanging" msprop:Generator_RowEvHandlerName="OpenIncidentsAssignedRowChangeEventHandler" msprop:Generator_RowDeletedName="OpenIncidentsAssignedRowDeleted" msprop:Generator_RowClassName="OpenIncidentsAssignedRow" msprop:Generator_UserTableName="OpenIncidentsAssigned" msprop:Generator_RowEvArgName="OpenIncidentsAssignedRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Product_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnProduct_Name" msprop:Generator_ColumnPropNameInRow="Product_Name" msprop:Generator_ColumnPropNameInTable="Product_NameColumn" msprop:Generator_UserColumnName="Product Name">
+              <xs:element name="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_UserColumnName="ProductName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Incident_x0020_Title" msprop:Generator_ColumnVarNameInTable="columnIncident_Title" msprop:Generator_ColumnPropNameInRow="Incident_Title" msprop:Generator_ColumnPropNameInTable="Incident_TitleColumn" msprop:Generator_UserColumnName="Incident Title">
+              <xs:element name="IncidentTitle" msprop:Generator_ColumnVarNameInTable="columnIncidentTitle" msprop:Generator_ColumnPropNameInRow="IncidentTitle" msprop:Generator_ColumnPropNameInTable="IncidentTitleColumn" msprop:Generator_UserColumnName="IncidentTitle">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Customer_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer Name">
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Date_x0020_Opened" msprop:Generator_ColumnVarNameInTable="columnDate_Opened" msprop:Generator_ColumnPropNameInRow="Date_Opened" msprop:Generator_ColumnPropNameInTable="Date_OpenedColumn" msprop:Generator_UserColumnName="Date Opened" type="xs:dateTime" />
-              <xs:element name="Technician_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnTechnician_Name" msprop:Generator_ColumnPropNameInRow="Technician_Name" msprop:Generator_ColumnPropNameInTable="Technician_NameColumn" msprop:Generator_UserColumnName="Technician Name">
+              <xs:element name="DateOpened" msprop:Generator_ColumnVarNameInTable="columnDateOpened" msprop:Generator_ColumnPropNameInRow="DateOpened" msprop:Generator_ColumnPropNameInTable="DateOpenedColumn" msprop:Generator_UserColumnName="DateOpened" type="xs:dateTime" />
+              <xs:element name="TechnicianName" msprop:Generator_ColumnVarNameInTable="columnTechnicianName" msprop:Generator_ColumnPropNameInRow="TechnicianName" msprop:Generator_ColumnPropNameInTable="TechnicianNameColumn" msprop:Generator_UserColumnName="TechnicianName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
