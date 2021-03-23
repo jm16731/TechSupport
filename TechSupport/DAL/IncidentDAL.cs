@@ -266,11 +266,11 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
-        /// Retrieves a list of incidents associated with a technician
+        /// Retrieves a list of open incidents associated with a technician
         /// </summary>
         /// <param name="techID">ID of the technician whose incidents are desired</param>
         /// <returns>List of Incidents handled by said technician</returns>
-        public static List<Incident> GetIncidentsByTechnician(int techID)
+        public static List<Incident> GetOpenIncidentsByTechnician(int techID)
         {
             List<Incident> incidents = new List<Incident>();
             String selectStatement = @"SELECT i.IncidentID, c.Name AS CustomerName, p.Name AS ProductName, t.Name AS TechnicianName, 
@@ -279,7 +279,7 @@ namespace TechSupport.DAL
 	                JOIN Customers AS c ON i.CustomerID = c.CustomerID
 	                JOIN Technicians AS t on i.TechID = t.TechID
 	                JOIN Products AS p ON i.ProductCode = p.ProductCode
-                WHERE i.techID = @techID";
+                WHERE i.techID = @techID AND i.DateClosed IS NULL";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
