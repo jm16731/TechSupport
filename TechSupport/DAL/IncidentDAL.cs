@@ -240,7 +240,7 @@ namespace TechSupport.DAL
         /// <param name="description">The new description of the incident</param>
         /// <param name="technicianID">The id of the new technician of the incident</param>
         /// <returns>Whether or not the operation succeeded</returns>
-        public static bool UpdateIncident(int incidentID, string description, int technicianID)
+        public static bool UpdateIncident(int incidentID, string description, int? technicianID)
         {
             int rowsUpdated;
             String selectStatement = "UPDATE Incidents SET Description = @description, TechID = @technicianID WHERE IncidentID = @incidentID";

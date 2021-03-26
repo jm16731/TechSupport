@@ -88,11 +88,15 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="IncidentDAL.UpdateIncident(int, string, int)"/>
-        public bool UpdateIncident(int incidentID, string description, int technicianID)
+        public bool UpdateIncident(int incidentID, string description, int? technicianID)
         {
-            if (incidentID < 1 || technicianID < 1)
+            if (incidentID < 1)
             {
-                throw new ArgumentException("IncidentID and TechnicianID must be greater than 0");
+                throw new ArgumentException("IncidentID must be greater than 0");
+            }
+            if (technicianID < 1)
+            {
+                technicianID = null;
             }
             return IncidentDAL.UpdateIncident(incidentID, description, technicianID);
         }

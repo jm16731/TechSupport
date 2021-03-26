@@ -94,6 +94,9 @@ namespace TechSupport.UserControls
             this.txtDateOpened.Text = "";
             this.txtDescription.Text = "";
             this.comboTechnician.SelectedIndex = -1;
+            this.btnUpdate.Enabled = false;
+            this.btnClose.Enabled = false;
+            this.txtTextToAdd.Enabled = false;
         }
 
         private void UpdateButton_Update(object sender, EventArgs e)
@@ -119,11 +122,6 @@ namespace TechSupport.UserControls
                     return;
                 }
             }
-            if (this.comboTechnician.SelectedIndex == -1)
-            {
-                MessageBox.Show("Error: No Technician selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             this.TrueUpdate();
         }
 
@@ -134,7 +132,7 @@ namespace TechSupport.UserControls
             int length = (update.Length <= 200) ? update.Length : 200;
             try
             {
-                this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), (int)comboTechnician.SelectedValue);
+                this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), (int?)comboTechnician.SelectedValue);
                 this.txtTextToAdd.Text = "";
                 this.txtDescription.Text = update.Substring(0, length);
             }

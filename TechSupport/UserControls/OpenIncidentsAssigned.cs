@@ -16,5 +16,10 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            reportViewer1.RefreshReport();
+        }
     }
 }
