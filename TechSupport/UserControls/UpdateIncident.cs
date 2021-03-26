@@ -71,6 +71,10 @@ namespace TechSupport.UserControls
                     this.btnClose.Enabled = false;
                     this.txtTextToAdd.Enabled = false;
                 }
+                if (this.txtDescription.Text.Length > 200)
+                {
+                    this.txtTextToAdd.Enabled = false;
+                }
             }
             catch (NullReferenceException)
             {
