@@ -52,7 +52,7 @@ namespace TechSupport.UserControls
                 this.txtTitle.Text = incident.Title;
                 this.txtCustomer.Text = incident.CustomerName;
                 this.txtProductCode.Text = incident.ProductCode;
-                this.txtDateOpened.Text = incident.DateOpened.ToString();
+                this.txtDateOpened.Text = incident.DateOpened.ToLongDateString();
                 this.txtDescription.Text = incident.Description;
                 this.comboTechnician.SelectedIndex = this.comboTechnician.FindStringExact(incident.TechnicianName);
 
