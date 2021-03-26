@@ -118,12 +118,6 @@ namespace TechSupport.UserControls
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (this.HasIncidentBeenUpdatedSinceRetrieval())
-            {
-                MessageBox.Show("Incident updated since you retrieved it. Cannot update incident",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (this.txtDescription.Text.Length > 200 && !string.IsNullOrEmpty(this.txtTextToAdd.Text))
             {
                 MessageBox.Show("Description all ready exceeds 200 characters. Cannot update description. Please delete your text to add",
@@ -149,9 +143,18 @@ namespace TechSupport.UserControls
             int length = (update.Length <= 200) ? update.Length : 200;
             try
             {
-                this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), (int?)comboTechnician.SelectedValue);
-                this.txtTextToAdd.Text = "";
-                this.txtDescription.Text = update.Substring(0, length);
+                if (this.controller.UpdateIncident(this.incidentID, update.Substring(0, length), 
+                    (int?)comboTechnician.SelectedValue, this.txtDescription.Text))
+                {
+                    this.txtTextToAdd.Text = "";
+                    this.txtDescription.Text = update.Substring(0, length);
+                }
+                else
+                {
+                    MessageBox.Show("Incident updated since you retrieved it. Cannot update incident",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new ArgumentException();
+                }
             }
             catch (NullReferenceException ex)
             {
@@ -166,12 +169,6 @@ namespace TechSupport.UserControls
 
         private void CloseIncidentButton_CloseIncident(object sender, EventArgs e)
         {
-            if (this.HasIncidentBeenUpdatedSinceRetrieval())
-            {
-                MessageBox.Show("Incident updated since you retrieved it. Cannot close incident",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (this.comboTechnician.SelectedIndex == -1)
             {
                 MessageBox.Show("Error: No Technician selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -193,11 +190,5 @@ namespace TechSupport.UserControls
                 }
             }
         }
-
-        private bool HasIncidentBeenUpdatedSinceRetrieval()
-        {
-            return this.controller.HasIncidentBeenUpdatedSinceRetrieval(this.txtDescription.Text);
-        }
-
     }
 }

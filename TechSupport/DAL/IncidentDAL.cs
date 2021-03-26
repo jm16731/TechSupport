@@ -173,38 +173,6 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
-        /// Checks to see if an incident record has been changed since it was retrieved
-        /// </summary>
-        /// <param name="description">Description of the incident to check</param>
-        /// <returns>If incident has been changed since retrieval</returns>
-        public static bool HasIncidentBeenUpdatedSinceRetrieval(string description)
-        {
-            bool changed = true;
-            String selectStatement = @"SELECT Description, DateClosed
-                                    FROM Incidents
-                                    WHERE Description = @description;";
-            using (SqlConnection connection = GetSQLConnection.GetConnection())
-            {
-                using (SqlCommand command = new SqlCommand(selectStatement, connection))
-                {
-                    command.Parameters.AddWithValue("@description", description);
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            if (reader.IsDBNull(reader.GetOrdinal("DateClosed")))
-                            {
-                                changed = false;
-                            }
-                        }
-                    }
-                }
-            }
-            return changed;
-        }
-
-        /// <summary>
         /// Closes an incident by setting a DateClosed value
         /// </summary>
         /// <param name="incidentID">The incident to close</param>
@@ -239,16 +207,20 @@ namespace TechSupport.DAL
         /// <param name="incidentID">The id of the incident to update</param>
         /// <param name="description">The new description of the incident</param>
         /// <param name="technicianID">The id of the new technician of the incident</param>
+        /// <param name="oldDescription">The old description of the incident</param>
         /// <returns>Whether or not the operation succeeded</returns>
-        public static bool UpdateIncident(int incidentID, string description, int? technicianID)
+        public static bool UpdateIncident(int incidentID, string description, int? technicianID, string oldDescription)
         {
             int rowsUpdated;
-            String selectStatement = "UPDATE Incidents SET Description = @description, TechID = @technicianID WHERE IncidentID = @incidentID";
+            String selectStatement = @"UPDATE Incidents 
+                                        SET Description = @description, TechID = @technicianID 
+                                        WHERE IncidentID = @incidentID AND Description = @oldDescription AND DateClosed IS NULL";
             using (SqlConnection connection = GetSQLConnection.GetConnection())
             {
                 using (SqlCommand command = new SqlCommand(selectStatement, connection))
                 {
                     command.Parameters.AddWithValue("@description", description);
+                    command.Parameters.AddWithValue("@oldDescription", oldDescription);
                     command.Parameters.AddWithValue("@incidentID", incidentID);
                     command.Parameters.AddWithValue("@technicianID", technicianID ?? Convert.DBNull);
                     connection.Open();

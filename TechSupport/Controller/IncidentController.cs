@@ -71,12 +71,6 @@ namespace TechSupport.Controller
             return TechnicianDAL.GetTechnicians();
         }
 
-        /// <see cref="IncidentDAL.HasIncidentBeenUpdatedSinceRetrieval(string)"/>
-        public bool HasIncidentBeenUpdatedSinceRetrieval(string description)
-        {
-            return IncidentDAL.HasIncidentBeenUpdatedSinceRetrieval(description);
-        }
-
         /// <see cref="IncidentDAL.CloseIncident(int)"/>
         public bool CloseIncident(int incidentID)
         {
@@ -87,8 +81,8 @@ namespace TechSupport.Controller
             return IncidentDAL.CloseIncident(incidentID);
         }
 
-        /// <see cref="IncidentDAL.UpdateIncident(int, string, int)"/>
-        public bool UpdateIncident(int incidentID, string description, int? technicianID)
+        /// <see cref="IncidentDAL.UpdateIncident(int, string, int, string)"/>
+        public bool UpdateIncident(int incidentID, string description, int? technicianID, string oldDescription)
         {
             if (incidentID < 1)
             {
@@ -98,7 +92,7 @@ namespace TechSupport.Controller
             {
                 technicianID = null;
             }
-            return IncidentDAL.UpdateIncident(incidentID, description, technicianID);
+            return IncidentDAL.UpdateIncident(incidentID, description, technicianID, oldDescription);
         }
 
         /// <see cref="IncidentDAL.GetOpenIncidentsByTechnician(int)"/>
