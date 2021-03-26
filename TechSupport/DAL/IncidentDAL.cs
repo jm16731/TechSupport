@@ -250,7 +250,7 @@ namespace TechSupport.DAL
                 {
                     command.Parameters.AddWithValue("@description", description);
                     command.Parameters.AddWithValue("@incidentID", incidentID);
-                    command.Parameters.AddWithValue("@technicianID", technicianID);
+                    command.Parameters.AddWithValue("@technicianID", technicianID ?? Convert.DBNull);
                     connection.Open();
                     rowsUpdated = command.ExecuteNonQuery();
                 }
