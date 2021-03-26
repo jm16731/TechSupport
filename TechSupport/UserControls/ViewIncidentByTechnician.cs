@@ -50,7 +50,7 @@ namespace TechSupport.UserControls
                 txtEmail.Text = tech.Email;
                 txtPhone.Text = tech.Phone;
                 viewIncidents.DataSource = null;
-                viewIncidents.DataSource = this.controller.GetIncidentsByTechnician(tech.ID);
+                viewIncidents.DataSource = this.controller.GetOpenIncidentsByTechnician(tech.ID);
             }
             catch (SqlException ex)
             {

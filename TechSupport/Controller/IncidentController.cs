@@ -96,7 +96,7 @@ namespace TechSupport.Controller
         }
 
         /// <see cref="IncidentDAL.GetOpenIncidentsByTechnician(int)"/>
-        public List<Incident> GetIncidentsByTechnician(int techID)
+        public List<Incident> GetOpenIncidentsByTechnician(int techID)
         {
             if (techID < 1)
             {
@@ -104,6 +104,7 @@ namespace TechSupport.Controller
             }
             return IncidentDAL.GetOpenIncidentsByTechnician(techID);
         }
+
         /// <see cref="TechnicianDAL.GetTechnician(int)"/>
         public Technician GetTechnician(int techID)
         {
