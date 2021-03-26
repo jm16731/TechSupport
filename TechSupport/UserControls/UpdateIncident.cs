@@ -12,6 +12,7 @@ namespace TechSupport.UserControls
     {
         private readonly IncidentController controller;
         int incidentID;
+        OpenIncident incident;
 
         /// <summary>
         /// Creates this user contorl
@@ -24,7 +25,8 @@ namespace TechSupport.UserControls
             this.btnUpdate.Enabled = false;
             this.btnClose.Enabled = false;
             this.txtTextToAdd.Enabled = false;
-            incidentID = -1;
+            this.incidentID = -1;
+            this.incident = null;
 
             this.RefreshData();
         }
@@ -34,10 +36,10 @@ namespace TechSupport.UserControls
         /// </summary>
         public void RefreshData()
         {
-            this.comboTechnician.DataSource = null;
-            this.comboTechnician.DataSource = this.controller.GetTechnicians();
             this.comboTechnician.DisplayMember = "Name";
             this.comboTechnician.ValueMember = "ID";
+            this.comboTechnician.DataSource = null;
+            this.comboTechnician.DataSource = this.controller.GetTechnicians();
         }
 
         private void SearchButton_Search(object sender, EventArgs e)
@@ -53,7 +55,9 @@ namespace TechSupport.UserControls
                 this.txtDateOpened.Text = incident.DateOpened.ToString();
                 this.txtDescription.Text = incident.Description;
                 this.comboTechnician.SelectedIndex = this.comboTechnician.FindStringExact(incident.TechnicianName);
+
                 this.incidentID = incidentID;
+                this.incident = incident;
 
                 if (this.controller.IsIncidentOpen(incidentID))
                 {
@@ -97,10 +101,19 @@ namespace TechSupport.UserControls
             this.btnUpdate.Enabled = false;
             this.btnClose.Enabled = false;
             this.txtTextToAdd.Enabled = false;
+            this.incidentID = -1;
+            this.incident = null;
         }
 
         private void UpdateButton_Update(object sender, EventArgs e)
         {
+            if (this.incident.Description == this.txtDescription.Text 
+                || this.incident.TechnicianName == ((Technician) this.comboTechnician.SelectedItem).Name)
+            {
+                MessageBox.Show("No change has been made. Nothing to update.", 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (this.HasIncidentBeenUpdatedSinceRetrieval())
             {
                 MessageBox.Show("Incident updated since you retrieved it. Cannot update incident",
