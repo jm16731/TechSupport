@@ -19,6 +19,7 @@ namespace TechSupport.UserControls
 
         private void reportViewer1_Load_1(object sender, EventArgs e)
         {
+            this.openIncidentsAssignedTableAdapter.Fill(this.techSupportDataSet.OpenIncidentsAssigned);
             this.reportViewer1.RefreshReport();
         }
     }
