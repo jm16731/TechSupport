@@ -29,19 +29,43 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.techSupportDataSet = new TechSupport.TechSupportDataSet();
+            this.openIncidentsAssignedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.openIncidentsAssignedTableAdapter = new TechSupport.TechSupportDataSetTableAdapters.OpenIncidentsAssignedTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.techSupportDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openIncidentsAssignedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "OpenIncidentsAssigned";
+            reportDataSource1.Value = this.openIncidentsAssignedBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TechSupport.UserControls.Reports.OpenIncidentsAssigned.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1423, 661);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load_1);
+            // 
+            // techSupportDataSet
+            // 
+            this.techSupportDataSet.DataSetName = "TechSupportDataSet";
+            this.techSupportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // openIncidentsAssignedBindingSource
+            // 
+            this.openIncidentsAssignedBindingSource.DataMember = "OpenIncidentsAssigned";
+            this.openIncidentsAssignedBindingSource.DataSource = this.techSupportDataSet;
+            // 
+            // openIncidentsAssignedTableAdapter
+            // 
+            this.openIncidentsAssignedTableAdapter.ClearBeforeFill = true;
             // 
             // OpenIncidentsAssigned
             // 
@@ -50,6 +74,8 @@ namespace TechSupport.UserControls
             this.Controls.Add(this.reportViewer1);
             this.Name = "OpenIncidentsAssigned";
             this.Size = new System.Drawing.Size(1423, 661);
+            ((System.ComponentModel.ISupportInitialize)(this.techSupportDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openIncidentsAssignedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,5 +83,8 @@ namespace TechSupport.UserControls
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource openIncidentsAssignedBindingSource;
+        private TechSupportDataSet techSupportDataSet;
+        private TechSupportDataSetTableAdapters.OpenIncidentsAssignedTableAdapter openIncidentsAssignedTableAdapter;
     }
 }
