@@ -624,25 +624,13 @@
                       <TablixMembers>
                         <TablixMember>
                           <Group Name="Details" />
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                            <ToggleItem>CustomerName</ToggleItem>
-                          </Visibility>
                         </TablixMember>
                         <TablixMember>
                           <KeepWithGroup>Before</KeepWithGroup>
                         </TablixMember>
                       </TablixMembers>
-                      <Visibility>
-                        <Hidden>true</Hidden>
-                        <ToggleItem>IncidentTitle</ToggleItem>
-                      </Visibility>
                     </TablixMember>
                   </TablixMembers>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                    <ToggleItem>ProductName</ToggleItem>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
