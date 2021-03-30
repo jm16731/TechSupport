@@ -95,16 +95,6 @@ namespace TechSupport.Controller
             return IncidentDAL.UpdateIncident(incidentID, description, technicianID, oldDescription);
         }
 
-        /// <see cref="IncidentDAL.GetOpenIncidentsByTechnician(int)"/>
-        public List<Incident> GetOpenIncidentsByTechnician(int techID)
-        {
-            if (techID < 1)
-            {
-                throw new ArgumentException("TechID must be greater than 0");
-            }
-            return IncidentDAL.GetOpenIncidentsByTechnician(techID);
-        }
-
         /// <see cref="TechnicianDAL.GetTechnician(int)"/>
         public Technician GetTechnician(int techID)
         {
@@ -113,12 +103,6 @@ namespace TechSupport.Controller
                 throw new ArgumentException("TechID must be greater than 0");
             }
             return TechnicianDAL.GetTechnician(techID);
-        }
-
-        /// <see cref="TechnicianDAL.GetTechniciansWhoHaveHandledOrAreHandlingIncidents" />
-        public List<Technician> GetTechniciansWhoHaveHandledOrAreHandlingIncidents()
-        {
-            return TechnicianDAL.GetTechniciansWhoHaveHandledOrAreHandlingIncidents();
         }
     }
 }
