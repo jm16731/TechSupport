@@ -29,16 +29,25 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.viewIncidents = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTechnicians = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.comboTechnicians = new System.Windows.Forms.ComboBox();
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.techSupportDataSet = new TechSupport.TechSupportDataSet();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter = new TechSupport.TechSupportDataSetTableAdapters.TechniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter();
+            this.openIncidentsByTechnicianBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.openIncidentsByTechnicianTableAdapter = new TechSupport.TechSupportDataSetTableAdapters.OpenIncidentsByTechnicianTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.viewIncidents)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techSupportDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openIncidentsByTechnicianBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // viewIncidents
@@ -110,12 +119,25 @@ namespace TechSupport.UserControls
             // comboTechnicians
             // 
             this.comboTechnicians.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboTechnicians.DataSource = this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource;
+            this.comboTechnicians.DisplayMember = "Name";
             this.comboTechnicians.FormattingEnabled = true;
             this.comboTechnicians.Location = new System.Drawing.Point(317, 20);
             this.comboTechnicians.Name = "comboTechnicians";
             this.comboTechnicians.Size = new System.Drawing.Size(872, 39);
             this.comboTechnicians.TabIndex = 1;
+            this.comboTechnicians.ValueMember = "TechID";
             this.comboTechnicians.SelectionChangeCommitted += new System.EventHandler(this.PopulateData);
+            // 
+            // techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource
+            // 
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource.DataMember = "TechniciansWhoHaveHandledOrAreHandlingIncidents";
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource.DataSource = this.techSupportDataSet;
+            // 
+            // techSupportDataSet
+            // 
+            this.techSupportDataSet.DataSetName = "TechSupportDataSet";
+            this.techSupportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtEmail
             // 
@@ -137,6 +159,19 @@ namespace TechSupport.UserControls
             this.txtPhone.Size = new System.Drawing.Size(872, 45);
             this.txtPhone.TabIndex = 3;
             // 
+            // techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter
+            // 
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // openIncidentsByTechnicianBindingSource
+            // 
+            this.openIncidentsByTechnicianBindingSource.DataMember = "OpenIncidentsByTechnician";
+            this.openIncidentsByTechnicianBindingSource.DataSource = this.techSupportDataSet;
+            // 
+            // openIncidentsByTechnicianTableAdapter
+            // 
+            this.openIncidentsByTechnicianTableAdapter.ClearBeforeFill = true;
+            // 
             // ViewIncidentByTechnician
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -148,6 +183,9 @@ namespace TechSupport.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.viewIncidents)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techSupportDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openIncidentsByTechnicianBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +200,10 @@ namespace TechSupport.UserControls
         private System.Windows.Forms.ComboBox comboTechnicians;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.BindingSource techniciansWhoHaveHandledOrAreHandlingIncidentsBindingSource;
+        private TechSupportDataSet techSupportDataSet;
+        private TechSupportDataSetTableAdapters.TechniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter;
+        private System.Windows.Forms.BindingSource openIncidentsByTechnicianBindingSource;
+        private TechSupportDataSetTableAdapters.OpenIncidentsByTechnicianTableAdapter openIncidentsByTechnicianTableAdapter;
     }
 }

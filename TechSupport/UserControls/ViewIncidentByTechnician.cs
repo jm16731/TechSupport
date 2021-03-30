@@ -29,10 +29,8 @@ namespace TechSupport.UserControls
         /// </summary>
         public void RefreshData()
         {
-            this.comboTechnicians.DataSource = null;
-            this.comboTechnicians.DataSource = this.controller.GetTechniciansWhoHaveHandledOrAreHandlingIncidents();
-            this.comboTechnicians.DisplayMember = "Name";
-            this.comboTechnicians.ValueMember = "ID";
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter.GetData();
+            this.techniciansWhoHaveHandledOrAreHandlingIncidentsTableAdapter.Fill(this.techSupportDataSet.TechniciansWhoHaveHandledOrAreHandlingIncidents);
         }
 
         private void PopulateData(object sender, EventArgs e)
@@ -50,7 +48,12 @@ namespace TechSupport.UserControls
                 txtEmail.Text = tech.Email;
                 txtPhone.Text = tech.Phone;
                 viewIncidents.DataSource = null;
-                viewIncidents.DataSource = this.controller.GetOpenIncidentsByTechnician(tech.ID);
+
+                this.openIncidentsByTechnicianBindingSource = new BindingSource();
+                this.openIncidentsByTechnicianBindingSource.DataSource = this.techSupportDataSet.OpenIncidentsByTechnician;
+                this.openIncidentsByTechnicianTableAdapter.GetData(tech.ID);
+                this.openIncidentsByTechnicianTableAdapter.Fill(this.techSupportDataSet.OpenIncidentsByTechnician, tech.ID);
+                viewIncidents.DataSource = this.openIncidentsByTechnicianBindingSource.DataSource;
             }
             catch (SqlException ex)
             {
